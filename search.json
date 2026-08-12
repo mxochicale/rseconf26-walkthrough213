@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "",
+    "section": "Overview",
+    "text": "Overview\n\n\nWhat We’ll Cover\n\n\nintro - \nrapid prototyping workflow - \nstructured-production-oriented workflow - \nconclusions, future work and call for action - \n\n\nKey Themes\n\n\n\n\n☁️ Cloud keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n🤖 Robotics keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n👥 Collaborative keywords\n\n\nkeyword1, keyword2, keyword3"
+  },
+  {
+    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
+    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
+    "title": "",
+    "section": " Github: Getting started docs",
+    "text": "Github: Getting started docs\n\n\nFigure 1: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
+    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
+    "title": "",
+    "section": " Github: Getting started docs",
+    "text": "Github: Getting started docs\n\n\nFigure 2: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "index.html#title-of-the-slide",
+    "href": "index.html#title-of-the-slide",
+    "title": "",
+    "section": "Title of the slide",
+    "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
+  },
+  {
+    "objectID": "index.html#title-of-the-slide-1",
+    "href": "index.html#title-of-the-slide-1",
+    "title": "",
+    "section": "Title of the slide",
+    "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
+  },
+  {
+    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2",
+    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2",
+    "title": "",
+    "section": " Github: Getting started docs",
+    "text": "Github: Getting started docs\n\n\nFigure 3: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "index.html#reproduce-this-work",
+    "href": "index.html#reproduce-this-work",
+    "title": "",
+    "section": "Reproduce this work",
+    "text": "Reproduce this work\n\n\nGet running in three steps\n\nClone the repo — everything here (code, data, this deck) lives in one place\nBuild the environment — Dockerfile / environment.yml included\nRun the notebook or pipeline — outputs regenerate the figures in this talk\n\ngit clone https://github.com/&lt;org&gt;/&lt;repo&gt;.git\ncd &lt;repo&gt;\n# TODO: add your one-line setup command\n\n\n📦 #### What’s included - Source code + tests - Reproducible environment - Example data / demo notebook - This slide deck (Quarto)\n\nView on GitHub →\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
+  }
+]
