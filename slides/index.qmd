@@ -138,10 +138,13 @@ Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI R
 
 <!-- TODO: link items 3-4 to real slide anchors once those sections exist,
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
-1. [**Section title 1**](#sectag_title_1) - <add details>
-2. [**Section title 2**](#sectag_title_2) - <add details>
-3. **Demonstrations** - <add details>
-4. **Future Work** - <add details>
+
+1. [**intro**](#sectag_title_1) - <add details>
+2. [**rapid prototyping workflow**](#sectag_title_1) - <add details>
+3. [**structured-production-oriented workflow**](#sectag_title_2) - <add details>
+4. **conclusions, future work and call for action** - <add details>
+
+
 :::
 
 ::: {.column width="50%"}
