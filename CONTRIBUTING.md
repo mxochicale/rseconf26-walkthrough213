@@ -10,11 +10,11 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 * Setting up signing Git commits with your signing key as suggested [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification).
 * Clone the repository by typing (or copying) the following lines in a terminal
 ```
-git clone git@github.com:mxochicale/{ADD_REPOSISTORY_NAME}.git
+git clone git@github.com:mxochicale/rseconf26-walkthrough213.git
 ```
 
 ## New issues
-* Open an issue (bug report, feature request, or something is not working): https://github.com/mxochicale/{ADD_REPOSISTORY_NAME}/issues/new
+* Open an issue (bug report, feature request, or something is not working): https://github.com/mxochicale/rseconf26-walkthrough213/issues/new
 * Workflow for issue management 
 ```mermaid
   flowchart TD;
@@ -31,7 +31,7 @@ git clone git@github.com:mxochicale/{ADD_REPOSISTORY_NAME}.git
 ## Committing and pushing changes 
 1. Clone this repo 
 ```
-git clone git@github.com:mxochicale/{ADD_REPOSISTORY_NAME}.git
+git clone git@github.com:mxochicale/rseconf26-walkthrough213.git
 ``` 
 2. Create new branch using issue number
 ```

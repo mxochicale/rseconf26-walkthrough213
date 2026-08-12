@@ -1,6 +1,6 @@
 ---
 title: ""
-pagetitle: "add-title"
+pagetitle: "rseconf26-s213"
 subtitle: ""
 
 format:
@@ -95,27 +95,28 @@ format:
   line-height: 1.5em!important;
   box-shadow: 0 20px 60px rgba(0,0,0,0.45);"}
 
-<span class="kicker">Open · Reproducible · Ready to fork</span>
 
 <span style="color:#f5f5f7; font-size:1.75em; text-align:center; display:block;">
 
 <!-- TODO: replace with the real talk title -->
-[Add Title]{style="color:#ffffff; font-size:1.65em; display:block; font-weight:800;"}
+[
+Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI Research Platform
+]{style="color:#ffffff; font-size:1.65em; display:block; font-weight:800;"}
 
 </span>
 
-[ [**Name Lastname**](http://name-surname.github.io/) · [Organisation](https://www.ucl.ac.uk/advanced-research-computing/)]{style="font-size:0.55em; color:#b7bdc9;"}
+[ [**Miguel Xochicale**](http://mxochicale.github.io/) · [UCL-ARC](https://www.ucl.ac.uk/advanced-research-computing/)]{style="font-size:0.55em; color:#b7bdc9;"}
 
 ::: {.badge-row}
-[⭐ GitHub repo](#){.badge}
-[📄 License: Apache 2.0](#){.badge}
-[🔗 DOI: 10.xxxx/xxxxx](#){.badge}
+[⭐ GitHub repo](https://github.com/mxochicale/rseconf26-walkthrough213){.badge}
+[📄 License: Apache 2.0](https://github.com/mxochicale/rseconf26-walkthrough213/blob/main/LICENSE){.badge}
+[🔗 DOI: 10.xxxx/xxxxx](#TO_ADD_ZENODO_DOI){.badge}
 :::
 
 :::
 
 ::: footer
-[Add Event name?, date? and place? · [web-animations 2025 by mxochicale](https://mxochicale.github.io/web-animations/)]{.dim-text style="text-align:left;"}
+[RSECon26, 9–11 September 2026, Sheffield, UK · [web-animations 2025 by mxochicale](https://mxochicale.github.io/web-animations/)]{.dim-text style="text-align:left;"}
 :::
 
 ::: {.notes}
