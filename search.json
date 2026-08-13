@@ -4,28 +4,35 @@
     "href": "index.html#overview",
     "title": "",
     "section": "Overview",
-    "text": "Overview\n\n\nWhat We’ll Cover\n\n\nIntroduction - \nRapid Prototyping Workflow - \nStructured Production Workflow - \nConclusions, Future Work & Next Steps - \n\n\nKey Themes\n\n\n\n\n☁️ Cloud keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n🤖 Robotics keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n👥 Collaborative keywords\n\n\nkeyword1, keyword2, keyword3"
+    "text": "Overview\n\n\nWhat We’ll Cover\n\n\nIntroduction \nRapid Prototyping Workflow \nStructured Production Workflow \nConclusions, Future Work & Next Steps \n\n\nKey Themes\n\n\n\n\n☁️ Cloud keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n🤖 Robotics keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n👥 Collaborative keywords\n\n\nkeyword1, keyword2, keyword3"
   },
   {
-    "objectID": "index.html#unified-ai-platform-for-research",
-    "href": "index.html#unified-ai-platform-for-research",
+    "objectID": "index.html#building-reproducible-ai-workflows",
+    "href": "index.html#building-reproducible-ai-workflows",
     "title": "",
-    "section": "Unified AI Platform for Research",
-    "text": "Unified AI Platform for Research\nScalable, GPU-accelerated infrastructure enabling UCL researchers to develop, train, evaluate, and deploy AI and machine learning models.\n\n\nFigure 1: Unified AI Platform\n\nAn overview of Kubeflow Trainer: https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/"
+    "section": "Building Reproducible AI Workflows",
+    "text": "Building Reproducible AI Workflows\n\n\nFigure 1: Balance between speed vs structure"
   },
   {
-    "objectID": "index.html#uai-kubeflow-trainer-capabilities",
-    "href": "index.html#uai-kubeflow-trainer-capabilities",
+    "objectID": "index.html#ucl-unified-ai-platform-for-research",
+    "href": "index.html#ucl-unified-ai-platform-for-research",
     "title": "",
-    "section": "UAI: Kubeflow Trainer capabilities",
-    "text": "UAI: Kubeflow Trainer capabilities\n\n\nFigure 2: User Personas in Kubeflow Trainer\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
+    "section": "UCL Unified AI Platform for Research",
+    "text": "UCL Unified AI Platform for Research\n\n\nFigure 2: Unified AI Platform\n\nUnified AI Platform for Research: https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/"
+  },
+  {
+    "objectID": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
+    "href": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
+    "title": "",
+    "section": "UAI Kubeflow Trainer: User personas and capabilities",
+    "text": "UAI Kubeflow Trainer: User personas and capabilities\n\n\nFigure 3: User Personas in Kubeflow Trainer\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
   },
   {
     "objectID": "index.html#uai-github-container-registry",
     "href": "index.html#uai-github-container-registry",
     "title": "",
     "section": "UAI: GitHub Container Registry",
-    "text": "UAI: GitHub Container Registry\n\n\nFigure 3: Worflow for GitHub Container Registry\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
+    "text": "UAI: GitHub Container Registry\n\n\nFigure 4: Worflow for GitHub Container Registry\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
   },
   {
     "objectID": "index.html#dockerfiles",
@@ -46,21 +53,21 @@
     "href": "index.html#diffusion-based-synthesis-512512",
     "title": "",
     "section": "Diffusion-based synthesis (512×512)",
-    "text": "Diffusion-based synthesis (512×512)\n\n\nFigure 4: Representative fetal ultrasound images from real data, Tian et al. [22], and our proposed high-resolution (512×512) diffusion-based synthesis approach.\n\nMannering et al. 2026 in MIUA 2026 (https://arxiv.org/abs/2608.05471)\n\n\nSpeaker notes go here."
+    "text": "Diffusion-based synthesis (512×512)\n\n\nFigure 5: Representative fetal ultrasound images from real data, Tian et al. [22], and our proposed high-resolution (512×512) diffusion-based synthesis approach.\n\nMannering et al. 2026 in MIUA 2026 (https://arxiv.org/abs/2608.05471)\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 5: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#title-of-the-slide",
@@ -74,14 +81,14 @@
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 8: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-3",
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-3",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 8: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 9: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#title-of-the-slide-1",
@@ -95,7 +102,7 @@
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-4",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 9: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 10: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#reproduce-this-work",

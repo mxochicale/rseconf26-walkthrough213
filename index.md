@@ -14,16 +14,17 @@ Research Platform</span>
 
 </span>
 
-<span style="font-size:0.55em; color:#b7bdc9;">[**Miguel
+<span style="font-size:0.55em; color:#b7bdc9;">Matthias J. Golomb, David
+Guzman, Andrew Esterson, Sylvie Da Graca Ramos, [**Miguel
 Xochicale**](http://mxochicale.github.io/) ·
 [UCL-ARC](https://www.ucl.ac.uk/advanced-research-computing/)</span>
 
 <div class="badge-row">
 
-<a href="https://github.com/mxochicale/rseconf26-walkthrough213"
-class="badge">⭐ GitHub repo</a> <a
-href="https://github.com/mxochicale/rseconf26-walkthrough213/blob/main/LICENSE"
-class="badge">📄 License: Apache 2.0</a>
+<a href="https://github.com/xfetus/fetal-ultrasound-edm2"
+class="badge">⭐ GitHub repo</a>
+<a href="https://virtual.oxfordabstracts.com/event/76908/submission/213"
+class="badge">📄 Submission abstract 213</a>
 <a href="#TO_ADD_ZENODO_DOI" class="badge">🔗 DOI: 10.xxxx/xxxxx</a>
 
 </div>
@@ -59,11 +60,10 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 <!-- TODO: link items 3-4 to real slide anchors once those sections exist,
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
-1.  [**Introduction**](#sectag_title_1) - <add details>
-2.  [**Rapid Prototyping Workflow**](#sectag_title_2) - <add details>
-3.  [**Structured Production Workflow**](#sectag_title_3) -
-    <add details>
-4.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4) -
+1.  [**Introduction**](#sectag_title_1) <add details>
+2.  [**Rapid Prototyping Workflow**](#sectag_title_2) <add details>
+3.  [**Structured Production Workflow**](#sectag_title_3) <add details>
+4.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4)
     <add details>
 
 </div>
@@ -115,22 +115,40 @@ campus network, and physical hardware (sensors, robots).
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## Unified AI Platform for Research
-
-Scalable, GPU-accelerated infrastructure enabling UCL researchers to
-develop, train, evaluate, and deploy AI and machine learning models.
+## Building Reproducible AI Workflows
 
 <div id="fig-template-section1">
 
-<img src="figures/uai_platform.svg" data-fig-align="center" />
+<img src="figures/balance-between-speed-vs-structure.svg"
+data-fig-align="center" />
 
-Figure 1: Unified AI Platform
+Figure 1: Balance between speed vs structure
 
 </div>
 
 <div style="font-size: 55%;">
 
-An overview of Kubeflow Trainer:
+</div>
+
+<div class="notes">
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## UCL Unified AI Platform for Research
+
+<div id="fig-template-section1">
+
+<img src="figures/uai_platform.svg" data-fig-align="center" />
+
+Figure 2: Unified AI Platform
+
+</div>
+
+<div style="font-size: 55%;">
+
+Unified AI Platform for Research:
 <https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/>
 
 </div>
@@ -141,13 +159,13 @@ An overview of Kubeflow Trainer:
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## UAI: Kubeflow Trainer capabilities
+## UAI Kubeflow Trainer: User personas and capabilities
 
 <div id="fig-template-section1">
 
 <img src="figures/uai_kubeflow.svg" data-fig-align="center" />
 
-Figure 2: User Personas in Kubeflow Trainer
+Figure 3: User Personas in Kubeflow Trainer
 
 </div>
 
@@ -170,7 +188,7 @@ An overview of Kubeflow Trainer:
 
 <img src="figures/uai_docker_images.svg" data-fig-align="center" />
 
-Figure 3: Worflow for GitHub Container Registry
+Figure 4: Worflow for GitHub Container Registry
 
 </div>
 
@@ -443,7 +461,7 @@ Speaker notes go here. {.scrollable}
 
 <img src="figures/miua_fig1.svg" data-fig-align="center" />
 
-Figure 4: Representative fetal ultrasound images from real data, Tian et
+Figure 5: Representative fetal ultrasound images from real data, Tian et
 al. \[22\], and our proposed high-resolution (512×512) diffusion-based
 synthesis approach.
 
@@ -471,7 +489,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 5: Getting started documentation provide with a range of links to
+Figure 6: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -514,7 +532,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 6: Getting started documentation provide with a range of links to
+Figure 7: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -581,7 +599,7 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 7: Getting started documentation provide with a range of links to
+Figure 8: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -622,7 +640,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 8: Getting started documentation provide with a range of links to
+Figure 9: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -682,8 +700,8 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 9: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
+Figure 10: Getting started documentation provide with a range of links
+to setup, use, run and debug application including github workflow.
 
 </div>
 
