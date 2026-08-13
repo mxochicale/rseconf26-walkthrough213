@@ -188,6 +188,273 @@ the campus network, and physical hardware (sensors, robots).
 :::
 
 
+
+<!-- *********************** NEW SLIDE *********************** -->
+## UAI: GitHub Container Registry {style="font-size: 70%;"}
+
+::: {#fig-template-section1}
+
+![](figures/uai_docker_images.svg){fig-align=center}
+
+Worflow for GitHub Container Registry
+:::
+
+
+::: {style="font-size: 55%;"}
+An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+:::
+
+
+::: {.notes}
+
+:::
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Dockerfiles {style="font-size: 70%;"}
+
+
+::: {.panel-tabset}
+
+### Dockerfile ->
+
+```{.python filename="Dockerfile"}
+
+# syntax=docker/dockerfile:1.7
+FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+RUN mkdir -p /workspace && chmod -R 777 /workspace
+WORKDIR /workspace
+
+COPY requirements.txt .
+
+RUN /opt/conda/bin/python -m pip install --upgrade pip && \
+    /opt/conda/bin/python -m pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["/opt/conda/bin/python"]
+
+```
+
+
+### <- requirements.txt
+
+```{.python filename="requirements.txt"}
+
+# core dependencies
+pillow
+loguru
+notebook
+numpy
+omegaconf
+pandas
+pyyaml
+wandb
+
+# test dependencies
+black
+codespell
+detect-secrets
+isort
+pre-commit
+pylint
+pytest
+
+# learning dependencies
+accelerate
+basicsr
+diffusers
+einops
+scikit-learn
+torch
+torchvision
+
+```
+
+
+### Dockerfile-scratch-volume
+```{.python filename="Dockerfile-scratch-volume"}
+
+# syntax=docker/dockerfile:1.7
+FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+RUN mkdir -p /workspace && chmod -R 777 /workspace
+RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
+
+WORKDIR /workspace
+
+```
+
+:::
+
+::: {.notes}
+Speaker notes go here.
+ {.scrollable} 
+
+:::
+
+
+
+
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Training EDM2 Model (kubeflow 0.3.0) {style="font-size: 60%;"}
+
+
+::: {.panel-tabset}
+
+### training-edm2-model-ghcr 
+
+```{.python filename="training-edm2-model-ghcr.ipynb"}
+
+# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb
+
+## Set how many PyTorch nodes you want to use for distributed training.
+NUM_NODES = 1
+
+# Set the resources for each PyTorch node.
+RESOURCES_PER_NODE = {
+    "cpu": "4",           # CPUs per node
+    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
+    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
+}
+
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
+
+command = TrainerCommand(
+    command=[
+        "torchrun",
+        f"--nnodes={NUM_NODES}",
+        "train_edm2.py", #path of script in scratch 
+        "--outdir", "/scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
+        "--data", "/scratch-volume/FETAL_PLANES_DB", # pragma: allowlist secret
+        "--batch", "4",
+        "--preset", "edm2-img512-s",
+        "--batch-gpu", "4",
+    ]
+)
+
+
+
+job_id = trainer.train(
+    runtime=torch_runtime,
+    trainer=CustomTrainerContainer(
+        image=GITHUB_CONTAINER_REGISTRY,
+        num_nodes=NUM_NODES,
+        resources_per_node=RESOURCES_PER_NODE,
+        env=ENV_VARS        
+    ),
+    options=[command, pod_template_overrides],
+)
+
+
+```
+
+
+
+### training-edm2-model-scratch-volume
+```{.python filename="training-edm2-model-scratch-volume.ipynb"}
+
+# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb
+
+
+## Set how many PyTorch nodes you want to use for distributed training.
+NUM_NODES = 1
+
+# Set the resources for each PyTorch node.
+RESOURCES_PER_NODE = {
+    "cpu": "4",           # CPUs per node
+    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
+    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
+}
+
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"
+# VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace && chmod -R 777 /workspace 
+#                    RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
+
+
+command = TrainerCommand(
+    command=[
+        "bash", "-c",
+        (
+            # Create writable dirs
+            "mkdir -p /scratch-volume/pip-packages "
+            "/scratch-volume/torch-inductor-cache "
+            "/scratch-volume/home && "
+            # Install deps exclude torch/torchvision (already in base image)
+            # Use --upgrade to overwrite stale packages from previous runs
+            "pip install "
+            "pandas "
+            "accelerate "
+            "basicsr "
+            "diffusers "
+            "einops "
+            "scikit-learn "
+            "--target=/scratch-volume/pip-packages "
+            "--upgrade "
+            "--no-cache-dir "
+            "--quiet && "
+            # Set cache env vars inline to guarantee they're set before torchrun
+            "export HOME=/scratch-volume/home && "
+            "export TORCHINDUCTOR_CACHE_DIR=/scratch-volume/torch-inductor-cache && "
+            "export PYTHONPATH=/scratch-volume/pip-packages:$PYTHONPATH && "          
+            "torchrun /scratch-volume/fetal-ultrasound-edm2/train_edm2.py "
+            "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY "
+            "--data /scratch-volume/FETAL_PLANES_DB "
+            "--batch 4 "
+            "--preset edm2-img512-s "
+            "--batch-gpu 4"
+        )
+    ]
+)
+
+
+
+job_id = trainer.train(
+    runtime=torch_runtime,
+    trainer=CustomTrainerContainer(
+        image=GITHUB_CONTAINER_REGISTRY,
+        num_nodes=NUM_NODES,
+        resources_per_node=RESOURCES_PER_NODE,
+        env=ENV_VARS        
+    ),
+    options=[command, pod_template_overrides],
+)
+
+
+```
+
+:::
+
+
+::: {style="font-size: 55%;"}
+
+Jupyter Notebooks: <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>    
+<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
+
+:::
+
+
+
+
+::: {.notes}
+Speaker notes go here.
+ {.scrollable} 
+
+:::
+
+
+
+
+
 <!-- *********************** NEW SLIDE *********************** -->
 ## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
 
