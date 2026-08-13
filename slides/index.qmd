@@ -507,6 +507,33 @@ Speaker notes go here.
 
 
 <!-- *********************** NEW SLIDE *********************** -->
+## Diffusion-based synthesis (512×512)
+
+::: {#fig-template-section2}
+
+![](figures/miua_fig1.svg){fig-align=center}
+
+Representative fetal ultrasound images from real data, Tian et al. [22], and our
+proposed high-resolution (512×512) diffusion-based synthesis approach.
+
+:::
+
+
+::: {style="font-size: 55%;"}
+**Mannering et al. 2026** in MIUA 2026 (https://arxiv.org/abs/2608.05471)
+
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
 ## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
 
 ::: {#fig-template-section2}
