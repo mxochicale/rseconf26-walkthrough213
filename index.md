@@ -59,11 +59,12 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 <!-- TODO: link items 3-4 to real slide anchors once those sections exist,
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
-1.  [**intro**](#sectag_title_1) - <add details>
-2.  [**rapid prototyping workflow**](#sectag_title_1) - <add details>
-3.  [**structured-production-oriented workflow**](#sectag_title_2) -
+1.  [**Introduction**](#sectag_title_1) - <add details>
+2.  [**Rapid Prototyping Workflow**](#sectag_title_2) - <add details>
+3.  [**Structured Production Workflow**](#sectag_title_3) -
     <add details>
-4.  **conclusions, future work and call for action** - <add details>
+4.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4) -
+    <add details>
 
 </div>
 
@@ -99,9 +100,9 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
      SECTION: Section title 1
      ============================================================ -->
 
-# Section title 1
+# Introduction
 
-**Add Subtitle**
+**Containerising AI workflows**
 
 <div class="notes">
 
@@ -114,6 +115,279 @@ campus network, and physical hardware (sensors, robots).
 
 <!-- *********************** NEW SLIDE *********************** -->
 
+## UAI: GitHub Container Registry
+
+<div id="fig-template-section1">
+
+<img src="figures/uai_docker_images.svg" data-fig-align="center" />
+
+Figure 1: Worflow for GitHub Container Registry
+
+</div>
+
+<div style="font-size: 55%;">
+
+An overview of Kubeflow Trainer:
+<https://www.kubeflow.org/docs/components/trainer/overview/>
+
+</div>
+
+<div class="notes">
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Dockerfiles
+
+<div class="panel-tabset">
+
+### Dockerfile -\>
+
+<div class="code-with-filename">
+
+**Dockerfile**
+
+``` python
+
+# syntax=docker/dockerfile:1.7
+FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+RUN mkdir -p /workspace && chmod -R 777 /workspace
+WORKDIR /workspace
+
+COPY requirements.txt .
+
+RUN /opt/conda/bin/python -m pip install --upgrade pip && \
+    /opt/conda/bin/python -m pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["/opt/conda/bin/python"]
+```
+
+</div>
+
+### \<- requirements.txt
+
+<div class="code-with-filename">
+
+**requirements.txt**
+
+``` python
+
+# core dependencies
+pillow
+loguru
+notebook
+numpy
+omegaconf
+pandas
+pyyaml
+wandb
+
+# test dependencies
+black
+codespell
+detect-secrets
+isort
+pre-commit
+pylint
+pytest
+
+# learning dependencies
+accelerate
+basicsr
+diffusers
+einops
+scikit-learn
+torch
+torchvision
+```
+
+</div>
+
+### Dockerfile-scratch-volume
+
+<div class="code-with-filename">
+
+**Dockerfile-scratch-volume**
+
+``` python
+
+# syntax=docker/dockerfile:1.7
+FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+RUN mkdir -p /workspace && chmod -R 777 /workspace
+RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
+
+WORKDIR /workspace
+```
+
+</div>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here. {.scrollable}
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Training EDM2 Model (kubeflow 0.3.0)
+
+<div class="panel-tabset">
+
+### training-edm2-model-ghcr
+
+<div class="code-with-filename">
+
+**training-edm2-model-ghcr.ipynb**
+
+``` python
+
+# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb
+
+## Set how many PyTorch nodes you want to use for distributed training.
+NUM_NODES = 1
+
+# Set the resources for each PyTorch node.
+RESOURCES_PER_NODE = {
+    "cpu": "4",           # CPUs per node
+    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
+    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
+}
+
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
+
+command = TrainerCommand(
+    command=[
+        "torchrun",
+        f"--nnodes={NUM_NODES}",
+        "train_edm2.py", #path of script in scratch 
+        "--outdir", "/scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
+        "--data", "/scratch-volume/FETAL_PLANES_DB", # pragma: allowlist secret
+        "--batch", "4",
+        "--preset", "edm2-img512-s",
+        "--batch-gpu", "4",
+    ]
+)
+
+
+
+job_id = trainer.train(
+    runtime=torch_runtime,
+    trainer=CustomTrainerContainer(
+        image=GITHUB_CONTAINER_REGISTRY,
+        num_nodes=NUM_NODES,
+        resources_per_node=RESOURCES_PER_NODE,
+        env=ENV_VARS        
+    ),
+    options=[command, pod_template_overrides],
+)
+
+```
+
+</div>
+
+### training-edm2-model-scratch-volume
+
+<div class="code-with-filename">
+
+**training-edm2-model-scratch-volume.ipynb**
+
+``` python
+
+# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb
+
+
+## Set how many PyTorch nodes you want to use for distributed training.
+NUM_NODES = 1
+
+# Set the resources for each PyTorch node.
+RESOURCES_PER_NODE = {
+    "cpu": "4",           # CPUs per node
+    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
+    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
+}
+
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"
+# VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace && chmod -R 777 /workspace 
+#                    RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
+
+
+command = TrainerCommand(
+    command=[
+        "bash", "-c",
+        (
+            # Create writable dirs
+            "mkdir -p /scratch-volume/pip-packages "
+            "/scratch-volume/torch-inductor-cache "
+            "/scratch-volume/home && "
+            # Install deps exclude torch/torchvision (already in base image)
+            # Use --upgrade to overwrite stale packages from previous runs
+            "pip install "
+            "pandas "
+            "accelerate "
+            "basicsr "
+            "diffusers "
+            "einops "
+            "scikit-learn "
+            "--target=/scratch-volume/pip-packages "
+            "--upgrade "
+            "--no-cache-dir "
+            "--quiet && "
+            # Set cache env vars inline to guarantee they're set before torchrun
+            "export HOME=/scratch-volume/home && "
+            "export TORCHINDUCTOR_CACHE_DIR=/scratch-volume/torch-inductor-cache && "
+            "export PYTHONPATH=/scratch-volume/pip-packages:$PYTHONPATH && "          
+            "torchrun /scratch-volume/fetal-ultrasound-edm2/train_edm2.py "
+            "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY "
+            "--data /scratch-volume/FETAL_PLANES_DB "
+            "--batch 4 "
+            "--preset edm2-img512-s "
+            "--batch-gpu 4"
+        )
+    ]
+)
+
+
+
+job_id = trainer.train(
+    runtime=torch_runtime,
+    trainer=CustomTrainerContainer(
+        image=GITHUB_CONTAINER_REGISTRY,
+        num_nodes=NUM_NODES,
+        resources_per_node=RESOURCES_PER_NODE,
+        env=ENV_VARS        
+    ),
+    options=[command, pod_template_overrides],
+)
+
+```
+
+</div>
+
+</div>
+
+<div style="font-size: 55%;">
+
+Jupyter Notebooks:
+<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>\
+<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here. {.scrollable}
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
 ##  Github: Getting started docs
 
 <div id="fig-template-section2">
@@ -121,7 +395,7 @@ campus network, and physical hardware (sensors, robots).
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 1: Getting started documentation provide with a range of links to
+Figure 2: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -144,7 +418,7 @@ Speaker notes go here.
      SECTION: Section title 2
      ============================================================ -->
 
-# Section title 2
+# Rapid Prototyping Workflow
 
 **Add Subtitle**
 
@@ -164,7 +438,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 2: Getting started documentation provide with a range of links to
+Figure 3: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -204,6 +478,90 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 <div class="notes">
 
 Notes go here
+
+</div>
+
+<!-- ============================================================
+     SECTION: Section title 3
+     ============================================================ -->
+
+# Structured Production Workflow
+
+**Add Subtitle**
+
+<div class="notes">
+
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+##  Github: Getting started docs
+
+<div id="fig-template-section2">
+
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
+
+Figure 4: Getting started documentation provide with a range of links to
+setup, use, run and debug application including github workflow.
+
+</div>
+
+<div style="font-size: 55%;">
+
+**Sciortino et al. 2017** in Computers in Biology and Medicine
+<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
+Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+
+# Conclusions, Future Work & Next Steps
+
+<div class="notes">
+
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+##  Github: Getting started docs
+
+<div id="fig-template-section2">
+
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
+
+Figure 5: Getting started documentation provide with a range of links to
+setup, use, run and debug application including github workflow.
+
+</div>
+
+<div style="font-size: 55%;">
+
+**Sciortino et al. 2017** in Computers in Biology and Medicine
+<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
+Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
 
@@ -248,7 +606,7 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 3: Getting started documentation provide with a range of links to
+Figure 6: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
