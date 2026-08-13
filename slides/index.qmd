@@ -189,6 +189,57 @@ the campus network, and physical hardware (sensors, robots).
 
 
 
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Unified AI Platform for Research  {style="font-size: 70%;"}
+
+Scalable, GPU-accelerated infrastructure enabling UCL researchers to develop, train, evaluate, and deploy AI and machine learning models.
+
+::: {#fig-template-section1}
+
+![](figures/uai_platform.svg){fig-align=center}
+
+Unified AI Platform
+:::
+
+
+::: {style="font-size: 55%;"}
+An overview of Kubeflow Trainer: <https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/>
+:::
+
+
+::: {.notes}
+
+:::
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## UAI: Kubeflow Trainer capabilities {style="font-size: 70%;"}
+
+::: {#fig-template-section1}
+
+![](figures/uai_kubeflow.svg){fig-align=center}
+
+User Personas in Kubeflow Trainer
+:::
+
+
+::: {style="font-size: 55%;"}
+An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+:::
+
+
+::: {.notes}
+
+:::
+
+
+
+
+
+
 <!-- *********************** NEW SLIDE *********************** -->
 ## UAI: GitHub Container Registry {style="font-size: 70%;"}
 
@@ -219,7 +270,7 @@ An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/train
 
 ::: {.panel-tabset}
 
-### Dockerfile ->
+### STRUCTURE: Dockerfile ->
 
 ```{.python filename="Dockerfile"}
 
@@ -276,7 +327,7 @@ torchvision
 ```
 
 
-### Dockerfile-scratch-volume
+### SPEED: Dockerfile-scratch-volume
 ```{.python filename="Dockerfile-scratch-volume"}
 
 # syntax=docker/dockerfile:1.7
@@ -311,7 +362,7 @@ Speaker notes go here.
 
 ::: {.panel-tabset}
 
-### training-edm2-model-ghcr 
+### STRUCTRE: training-edm2-model-ghcr 
 
 ```{.python filename="training-edm2-model-ghcr.ipynb"}
 
@@ -360,7 +411,7 @@ job_id = trainer.train(
 
 
 
-### training-edm2-model-scratch-volume
+### SPEED: training-edm2-model-scratch-volume
 ```{.python filename="training-edm2-model-scratch-volume.ipynb"}
 
 # https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb
