@@ -139,10 +139,10 @@ Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI R
 <!-- TODO: link items 3-4 to real slide anchors once those sections exist,
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
-1. [**intro**](#sectag_title_1) - <add details>
-2. [**rapid prototyping workflow**](#sectag_title_1) - <add details>
-3. [**structured-production-oriented workflow**](#sectag_title_2) - <add details>
-4. **conclusions, future work and call for action** - <add details>
+1. [**Introduction**](#sectag_title_1) - <add details>
+2. [**Rapid Prototyping Workflow**](#sectag_title_2) - <add details>
+3. [**Structured Production Workflow**](#sectag_title_3) - <add details>
+4. [**Conclusions, Future Work & Next Steps**](#sectag_title_4) - <add details>
 
 
 :::
@@ -178,8 +178,8 @@ keyword1, keyword2, keyword3
 <!-- ============================================================
      SECTION: Section title 1
      ============================================================ -->
-# Section title 1 {#sectag_title_1 .section-divider}
-**Add Subtitle**
+# Introduction {#sectag_title_1 .section-divider}
+**Containerising AI workflows**
 
 ::: {.notes}
 <!-- TODO: notes specific to Section title 1 -->
@@ -215,16 +215,13 @@ Speaker notes go here.
 <!-- ============================================================
      SECTION: Section title 2
      ============================================================ -->
-# Section title 2 {#sectag_title_2 .section-divider}
-
+# Rapid Prototyping Workflow {#sectag_title_2 .section-divider}
 **Add Subtitle**
 
 ::: {.notes}
 <!-- TODO: notes specific to Section title 2 (was previously a duplicate
      of Section title 1's notes — make sure this describes section 2) -->
 :::
-
-
 
 <!-- *********************** NEW SLIDE *********************** -->
 ## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
@@ -265,6 +262,72 @@ Speaker notes go here.
 
 ::: {.notes}
 Notes go here
+:::
+
+
+
+
+
+<!-- ============================================================
+     SECTION: Section title 3
+     ============================================================ -->
+# Structured Production Workflow {#sectag_title_3 .section-divider}
+**Add Subtitle**
+
+::: {.notes}
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+:::
+
+<!-- *********************** NEW SLIDE *********************** -->
+## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
+
+::: {#fig-template-section2}
+
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+
+Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
+:::
+
+::: {style="font-size: 55%;"}
+**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
+**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+# Conclusions, Future Work & Next Steps {#sectag_title_4 .section-divider}
+
+::: {.notes}
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+:::
+
+<!-- *********************** NEW SLIDE *********************** -->
+## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
+
+::: {#fig-template-section2}
+
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+
+Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
+:::
+
+::: {style="font-size: 55%;"}
+**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
+**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+:::
+
+::: {.notes}
+Speaker notes go here.
 :::
 
 
