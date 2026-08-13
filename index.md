@@ -115,13 +115,62 @@ campus network, and physical hardware (sensors, robots).
 
 <!-- *********************** NEW SLIDE *********************** -->
 
+## Unified AI Platform for Research
+
+Scalable, GPU-accelerated infrastructure enabling UCL researchers to
+develop, train, evaluate, and deploy AI and machine learning models.
+
+<div id="fig-template-section1">
+
+<img src="figures/uai_platform.svg" data-fig-align="center" />
+
+Figure 1: Unified AI Platform
+
+</div>
+
+<div style="font-size: 55%;">
+
+An overview of Kubeflow Trainer:
+<https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/>
+
+</div>
+
+<div class="notes">
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## UAI: Kubeflow Trainer capabilities
+
+<div id="fig-template-section1">
+
+<img src="figures/uai_kubeflow.svg" data-fig-align="center" />
+
+Figure 2: User Personas in Kubeflow Trainer
+
+</div>
+
+<div style="font-size: 55%;">
+
+An overview of Kubeflow Trainer:
+<https://www.kubeflow.org/docs/components/trainer/overview/>
+
+</div>
+
+<div class="notes">
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
 ## UAI: GitHub Container Registry
 
 <div id="fig-template-section1">
 
 <img src="figures/uai_docker_images.svg" data-fig-align="center" />
 
-Figure 1: Worflow for GitHub Container Registry
+Figure 3: Worflow for GitHub Container Registry
 
 </div>
 
@@ -142,7 +191,7 @@ An overview of Kubeflow Trainer:
 
 <div class="panel-tabset">
 
-### Dockerfile -\>
+### STRUCTURE: Dockerfile -\>
 
 <div class="code-with-filename">
 
@@ -207,7 +256,7 @@ torchvision
 
 </div>
 
-### Dockerfile-scratch-volume
+### SPEED: Dockerfile-scratch-volume
 
 <div class="code-with-filename">
 
@@ -240,7 +289,7 @@ Speaker notes go here. {.scrollable}
 
 <div class="panel-tabset">
 
-### training-edm2-model-ghcr
+### STRUCTRE: training-edm2-model-ghcr
 
 <div class="code-with-filename">
 
@@ -292,7 +341,7 @@ job_id = trainer.train(
 
 </div>
 
-### training-edm2-model-scratch-volume
+### SPEED: training-edm2-model-scratch-volume
 
 <div class="code-with-filename">
 
@@ -388,6 +437,33 @@ Speaker notes go here. {.scrollable}
 
 <!-- *********************** NEW SLIDE *********************** -->
 
+## Diffusion-based synthesis (512×512)
+
+<div id="fig-template-section2">
+
+<img src="figures/miua_fig1.svg" data-fig-align="center" />
+
+Figure 4: Representative fetal ultrasound images from real data, Tian et
+al. \[22\], and our proposed high-resolution (512×512) diffusion-based
+synthesis approach.
+
+</div>
+
+<div style="font-size: 55%;">
+
+**Mannering et al. 2026** in MIUA 2026
+(https://arxiv.org/abs/2608.05471)
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
 ##  Github: Getting started docs
 
 <div id="fig-template-section2">
@@ -395,7 +471,7 @@ Speaker notes go here. {.scrollable}
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 2: Getting started documentation provide with a range of links to
+Figure 5: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -438,7 +514,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 3: Getting started documentation provide with a range of links to
+Figure 6: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -505,7 +581,7 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 4: Getting started documentation provide with a range of links to
+Figure 7: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -546,7 +622,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 5: Getting started documentation provide with a range of links to
+Figure 8: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -606,7 +682,7 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 6: Getting started documentation provide with a range of links to
+Figure 9: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
