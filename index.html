@@ -307,8 +307,9 @@
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 <ol type="1">
 <li><a href="#/sectag_title_1"><strong>Introduction</strong></a> <add details=""></add></li>
-<li><a href="#/sectag_title_2"><strong>Rapid Prototyping Workflow</strong></a> <add details=""></add></li>
-<li><a href="#/sectag_title_3"><strong>Structured Production Workflow</strong></a> <add details=""></add></li>
+<li><a href="#/sectag_title_2"><strong>Building docker images</strong></a> <add details=""></add></li>
+<li><a href="#/sectag_title_3"><strong>Training models</strong></a> <add details=""></add></li>
+<li><a href="#/sectag_title_3"><strong>Rapid vs Structured Workflows</strong></a> <add details=""></add></li>
 <li><a href="#/sectag_title_4"><strong>Conclusions, Future Work &amp; Next Steps</strong></a> <add details=""></add></li>
 </ol>
 </div><div class="column" style="width:50%;">
@@ -373,7 +374,7 @@
 <h2>Building Reproducible AI Workflows</h2>
 
 <img data-src="figures/balance-between-speed-vs-structure.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section1"><p class="caption">
-Figure&nbsp;1: Balance between speed vs structure
+Figure&nbsp;1: Reproducibility is a tradeoff between iteration speed and environment guarantees
 </p><div style="font-size: 55%;">
 
 </div>
@@ -413,18 +414,17 @@ Figure&nbsp;2: Unified AI Platform
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<!-- *********************** NEW SLIDE *********************** -->
-</section>
-<section id="uai-kubeflow-trainer-user-personas-and-capabilities" class="slide level2" style="font-size: 70%;">
-<h2>UAI Kubeflow Trainer: User personas and capabilities</h2>
-
-<img data-src="figures/uai_kubeflow.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section1"><p class="caption">
-Figure&nbsp;3: User Personas in Kubeflow Trainer
-</p><div style="font-size: 55%;">
-<p>An overview of Kubeflow Trainer: <a href="https://www.kubeflow.org/docs/components/trainer/overview/" class="uri">https://www.kubeflow.org/docs/components/trainer/overview/</a></p>
-</div>
+<!-- ============================================================
+     SECTION: Section title 2
+     ============================================================ -->
+</section></section>
+<section>
+<section id="sectag_title_2" class="title-slide slide level1 section-divider center">
+<h1>Building docker images</h1>
+<p><strong>Add Subtitle</strong></p>
 <aside class="notes">
-
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -438,13 +438,13 @@ Figure&nbsp;3: User Personas in Kubeflow Trainer
       }</style></aside>
 <!-- *********************** NEW SLIDE *********************** -->
 </section>
-<section id="uai-github-container-registry" class="slide level2" style="font-size: 70%;">
-<h2>UAI: GitHub Container Registry</h2>
+<section id="uai-github-container-registry-workflow" class="slide level2" style="font-size: 70%;">
+<h2>UAI: GitHub Container Registry Workflow</h2>
 
 <img data-src="figures/uai_docker_images.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section1"><p class="caption">
-Figure&nbsp;4: Worflow for GitHub Container Registry
+Figure&nbsp;3: Worflow for GitHub Container Registry
 </p><div style="font-size: 55%;">
-<p>An overview of Kubeflow Trainer: <a href="https://www.kubeflow.org/docs/components/trainer/overview/" class="uri">https://www.kubeflow.org/docs/components/trainer/overview/</a></p>
+
 </div>
 <aside class="notes">
 
@@ -542,6 +542,51 @@ Figure&nbsp;4: Worflow for GitHub Container Registry
 </div>
 <aside class="notes">
 <p>Speaker notes go here. {.scrollable}</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- ============================================================
+     SECTION: Section title 3
+     ============================================================ -->
+</section></section>
+<section>
+<section id="sectag_title_3" class="title-slide slide level1 section-divider center">
+<h1>Training models</h1>
+<p><strong>Add Subtitle</strong></p>
+<aside class="notes">
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- *********************** NEW SLIDE *********************** -->
+</section>
+<section id="uai-kubeflow-trainer-user-personas-and-capabilities" class="slide level2" style="font-size: 70%;">
+<h2>UAI Kubeflow Trainer: User personas and capabilities</h2>
+
+<img data-src="figures/uai_kubeflow.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section1"><p class="caption">
+Figure&nbsp;4: User Personas in Kubeflow Trainer
+</p><div style="font-size: 55%;">
+<p>An overview of Kubeflow Trainer: <a href="https://www.kubeflow.org/docs/components/trainer/overview/" class="uri">https://www.kubeflow.org/docs/components/trainer/overview/</a></p>
+</div>
+<aside class="notes">
+
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -701,6 +746,27 @@ Figure&nbsp;4: Worflow for GitHub Container Registry
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+</section></section>
+<section>
+<section id="sectag_title_6" class="title-slide slide level1 section-divider center">
+<h1>Reproducing results</h1>
+<aside class="notes">
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- *********************** NEW SLIDE *********************** -->
 </section>
 <section id="diffusion-based-synthesis-512512" class="slide level2">
@@ -713,6 +779,64 @@ Figure&nbsp;5: Representative fetal ultrasound images from real data, Tian et al
 </div>
 <aside class="notes">
 <p>Speaker notes go here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- ============================================================
+     CALL TO ACTION: Reproduce this work
+     ============================================================ -->
+<!-- *********************** NEW SLIDE *********************** -->
+</section>
+<section id="reproduce-this-work" class="slide level2" style="font-size: 100%;">
+<h2>Reproduce this work</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<h4 id="get-running-in-three-steps">Get running in three steps</h4>
+<ol type="1">
+<li><strong>Clone</strong> the repo — everything here (code, data, this deck) lives in one place</li>
+<li><strong>Build</strong> the environment — <code>Dockerfile</code> / <code>environment.yml</code> included</li>
+<li><strong>Run</strong> the notebook or pipeline — outputs regenerate the figures in this talk</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>org<span class="op">&gt;</span>/<span class="op">&lt;</span>repo<span class="op">&gt;</span>.git</span>
+<span id="cb6-2"><a aria-label="2"></a><span class="bu">cd</span> <span class="op">&lt;</span>repo<span class="op">&gt;</span></span>
+<span id="cb6-3"><a aria-label="3"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: add your one-line setup command</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:45%;">
+<div class="card">
+<p><span class="card-icon">📦</span> #### What’s included - Source code + tests - Reproducible environment - Example data / demo notebook - This slide deck (Quarto)</p>
+</div>
+<p><a href="#/" class="cta">View on GitHub →</a></p>
+</div></div>
+<aside class="notes">
+<p>Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+</section></section>
+<section>
+<section id="sectag_title_4" class="title-slide slide level1 section-divider center">
+<h1>Conclusions, Future Work &amp; Next Steps</h1>
+<aside class="notes">
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -748,50 +872,13 @@ Figure&nbsp;6: Getting started documentation provide with a range of links to se
           display:block!important;
       }</style></aside>
 <!-- ============================================================
-     SECTION: Section title 2
+     EXTRA SLIDES (appendix)
      ============================================================ -->
 </section></section>
 <section>
-<section id="sectag_title_2" class="title-slide slide level1 section-divider center">
-<h1>Rapid Prototyping Workflow</h1>
-<p><strong>Add Subtitle</strong></p>
-<aside class="notes">
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- *********************** NEW SLIDE *********************** -->
-</section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1" class="slide level2" style="font-size: 100%;">
-<h2><i class="fa-brands fa-github" aria-label="github"></i> Github: Getting started docs</h2>
-
-<img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section2"><p class="caption">
-Figure&nbsp;7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-</p><div style="font-size: 55%;">
-<p><strong>Sciortino et al.&nbsp;2017</strong> in Computers in Biology and Medicine <a href="https://doi.org/10.1016/j.compbiomed.2017.01.008" class="uri">https://doi.org/10.1016/j.compbiomed.2017.01.008</a> <strong>He et al.&nbsp;2021</strong> in Front. Med. <a href="https://doi.org/10.3389/fmed.2021.729978" class="uri">https://doi.org/10.3389/fmed.2021.729978</a></p>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#111111">
+<h1>Appendix</h1>
+<p>Extra slides for Q&amp;A</p>
 <!-- *********************** NEW SLIDE *********************** -->
 </section>
 <section id="title-of-the-slide" class="slide level2" style="font-size: 100%;">
@@ -821,180 +908,18 @@ Figure&nbsp;7: Getting started documentation provide with a range of links to se
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<!-- ============================================================
-     SECTION: Section title 3
-     ============================================================ -->
-</section></section>
-<section>
-<section id="sectag_title_3" class="title-slide slide level1 section-divider center">
-<h1>Structured Production Workflow</h1>
-<p><strong>Add Subtitle</strong></p>
-<aside class="notes">
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <!-- *********************** NEW SLIDE *********************** -->
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2" class="slide level2" style="font-size: 100%;">
-<h2><i class="fa-brands fa-github" aria-label="github"></i> Github: Getting started docs</h2>
-
-<img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section2"><p class="caption">
-Figure&nbsp;8: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-</p><div style="font-size: 55%;">
-<p><strong>Sciortino et al.&nbsp;2017</strong> in Computers in Biology and Medicine <a href="https://doi.org/10.1016/j.compbiomed.2017.01.008" class="uri">https://doi.org/10.1016/j.compbiomed.2017.01.008</a> <strong>He et al.&nbsp;2021</strong> in Front. Med. <a href="https://doi.org/10.3389/fmed.2021.729978" class="uri">https://doi.org/10.3389/fmed.2021.729978</a></p>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- ============================================================
-     SECTION: Section title 4
-     ============================================================ -->
-</section></section>
-<section>
-<section id="sectag_title_4" class="title-slide slide level1 section-divider center">
-<h1>Conclusions, Future Work &amp; Next Steps</h1>
-<aside class="notes">
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- *********************** NEW SLIDE *********************** -->
-</section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-3" class="slide level2" style="font-size: 100%;">
-<h2><i class="fa-brands fa-github" aria-label="github"></i> Github: Getting started docs</h2>
-
-<img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section2"><p class="caption">
-Figure&nbsp;9: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-</p><div style="font-size: 55%;">
-<p><strong>Sciortino et al.&nbsp;2017</strong> in Computers in Biology and Medicine <a href="https://doi.org/10.1016/j.compbiomed.2017.01.008" class="uri">https://doi.org/10.1016/j.compbiomed.2017.01.008</a> <strong>He et al.&nbsp;2021</strong> in Front. Med. <a href="https://doi.org/10.3389/fmed.2021.729978" class="uri">https://doi.org/10.3389/fmed.2021.729978</a></p>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- ============================================================
-     EXTRA SLIDES (appendix)
-     ============================================================ -->
-</section></section>
-<section>
-<section id="appendix" class="title-slide slide level1 center" data-background-color="#111111">
-<h1>Appendix</h1>
-<p>Extra slides for Q&amp;A</p>
-<!-- *********************** NEW SLIDE *********************** -->
-</section>
-<section id="title-of-the-slide-1" class="slide level2" style="font-size: 100%;">
-<h2>Title of the slide</h2>
-<ul>
-<li>Bullet point 1</li>
-<li>Bullet point 2</li>
-<li><strong>Bullet point</strong> 3
-<ul>
-<li>Bullet point 3.1</li>
-<li>Bullet point 3.2</li>
-</ul></li>
-</ul>
-<div style="font-size: 55%;">
-<p><strong>Sciortino et al.&nbsp;2017</strong> in Computers in Biology and Medicine <a href="https://doi.org/10.1016/j.compbiomed.2017.01.008" class="uri">https://doi.org/10.1016/j.compbiomed.2017.01.008</a> <strong>He et al.&nbsp;2021</strong> in Front. Med. <a href="https://doi.org/10.3389/fmed.2021.729978" class="uri">https://doi.org/10.3389/fmed.2021.729978</a></p>
-</div>
-<aside class="notes">
-<p>Notes go here</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- *********************** NEW SLIDE *********************** -->
-</section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-4" class="slide level2" style="font-size: 100%;">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1" class="slide level2" style="font-size: 100%;">
 <h2><i class="fa-brands fa-github" aria-label="github"></i> Github: Getting started docs</h2>
 
 <img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-template-section1"><p class="caption">
-Figure&nbsp;10: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
+Figure&nbsp;7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
 </p><div style="font-size: 55%;">
 <p><strong>Sciortino et al.&nbsp;2017</strong> in Computers in Biology and Medicine <a href="https://doi.org/10.1016/j.compbiomed.2017.01.008" class="uri">https://doi.org/10.1016/j.compbiomed.2017.01.008</a> <strong>He et al.&nbsp;2021</strong> in Front. Med. <a href="https://doi.org/10.3389/fmed.2021.729978" class="uri">https://doi.org/10.3389/fmed.2021.729978</a></p>
 </div>
 <aside class="notes">
 <p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- ============================================================
-     CALL TO ACTION: Reproduce this work
-     ============================================================ -->
-</section>
-<section id="reproduce-this-work" class="slide level2">
-<h2>Reproduce this work</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<h4 id="get-running-in-three-steps">Get running in three steps</h4>
-<ol type="1">
-<li><strong>Clone</strong> the repo — everything here (code, data, this deck) lives in one place</li>
-<li><strong>Build</strong> the environment — <code>Dockerfile</code> / <code>environment.yml</code> included</li>
-<li><strong>Run</strong> the notebook or pipeline — outputs regenerate the figures in this talk</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>org<span class="op">&gt;</span>/<span class="op">&lt;</span>repo<span class="op">&gt;</span>.git</span>
-<span id="cb6-2"><a aria-label="2"></a><span class="bu">cd</span> <span class="op">&lt;</span>repo<span class="op">&gt;</span></span>
-<span id="cb6-3"><a aria-label="3"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: add your one-line setup command</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column" style="width:45%;">
-<div class="card">
-<p><span class="card-icon">📦</span> #### What’s included - Source code + tests - Reproducible environment - Example data / demo notebook - This slide deck (Quarto)</p>
-</div>
-<p><a href="#/" class="cta">View on GitHub →</a></p>
-</div></div>
-<aside class="notes">
-<p>Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

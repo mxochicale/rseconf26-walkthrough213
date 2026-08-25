@@ -61,9 +61,10 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
 1.  [**Introduction**](#sectag_title_1) <add details>
-2.  [**Rapid Prototyping Workflow**](#sectag_title_2) <add details>
-3.  [**Structured Production Workflow**](#sectag_title_3) <add details>
-4.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4)
+2.  [**Building docker images**](#sectag_title_2) <add details>
+3.  [**Training models**](#sectag_title_3) <add details>
+4.  [**Rapid vs Structured Workflows**](#sectag_title_3) <add details>
+5.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4)
     <add details>
 
 </div>
@@ -122,7 +123,8 @@ campus network, and physical hardware (sensors, robots).
 <img src="figures/balance-between-speed-vs-structure.svg"
 data-fig-align="center" />
 
-Figure 1: Balance between speed vs structure
+Figure 1: Reproducibility is a tradeoff between iteration speed and
+environment guarantees
 
 </div>
 
@@ -157,45 +159,34 @@ Unified AI Platform for Research:
 
 </div>
 
-<!-- *********************** NEW SLIDE *********************** -->
+<!-- ============================================================
+     SECTION: Section title 2
+     ============================================================ -->
 
-## UAI Kubeflow Trainer: User personas and capabilities
+# Building docker images
 
-<div id="fig-template-section1">
-
-<img src="figures/uai_kubeflow.svg" data-fig-align="center" />
-
-Figure 3: User Personas in Kubeflow Trainer
-
-</div>
-
-<div style="font-size: 55%;">
-
-An overview of Kubeflow Trainer:
-<https://www.kubeflow.org/docs/components/trainer/overview/>
-
-</div>
+**Add Subtitle**
 
 <div class="notes">
 
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+
 </div>
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## UAI: GitHub Container Registry
+## UAI: GitHub Container Registry Workflow
 
 <div id="fig-template-section1">
 
 <img src="figures/uai_docker_images.svg" data-fig-align="center" />
 
-Figure 4: Worflow for GitHub Container Registry
+Figure 3: Worflow for GitHub Container Registry
 
 </div>
 
 <div style="font-size: 55%;">
-
-An overview of Kubeflow Trainer:
-<https://www.kubeflow.org/docs/components/trainer/overview/>
 
 </div>
 
@@ -298,6 +289,44 @@ WORKDIR /workspace
 <div class="notes">
 
 Speaker notes go here. {.scrollable}
+
+</div>
+
+<!-- ============================================================
+     SECTION: Section title 3
+     ============================================================ -->
+
+# Training models
+
+**Add Subtitle**
+
+<div class="notes">
+
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## UAI Kubeflow Trainer: User personas and capabilities
+
+<div id="fig-template-section1">
+
+<img src="figures/uai_kubeflow.svg" data-fig-align="center" />
+
+Figure 4: User Personas in Kubeflow Trainer
+
+</div>
+
+<div style="font-size: 55%;">
+
+An overview of Kubeflow Trainer:
+<https://www.kubeflow.org/docs/components/trainer/overview/>
+
+</div>
+
+<div class="notes">
 
 </div>
 
@@ -453,6 +482,19 @@ Speaker notes go here. {.scrollable}
 
 </div>
 
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+
+# Reproducing results
+
+<div class="notes">
+
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+
+</div>
+
 <!-- *********************** NEW SLIDE *********************** -->
 
 ## Diffusion-based synthesis (512×512)
@@ -480,141 +522,55 @@ Speaker notes go here.
 
 </div>
 
-<!-- *********************** NEW SLIDE *********************** -->
-
-##  Github: Getting started docs
-
-<div id="fig-template-section2">
-
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
-
-Figure 6: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
-
-</div>
-
-<div style="font-size: 55%;">
-
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-
-</div>
-
-<div class="notes">
-
-Speaker notes go here.
-
-</div>
-
 <!-- ============================================================
-     SECTION: Section title 2
+     CALL TO ACTION: Reproduce this work
      ============================================================ -->
 
-# Rapid Prototyping Workflow
-
-**Add Subtitle**
-
-<div class="notes">
-
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-
-</div>
-
 <!-- *********************** NEW SLIDE *********************** -->
 
-##  Github: Getting started docs
+## Reproduce this work
 
-<div id="fig-template-section2">
+<div class="columns">
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<div class="column" width="55%">
 
-Figure 7: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
+#### Get running in three steps
 
-</div>
+1.  **Clone** the repo — everything here (code, data, this deck) lives
+    in one place
+2.  **Build** the environment — `Dockerfile` / `environment.yml`
+    included
+3.  **Run** the notebook or pipeline — outputs regenerate the figures in
+    this talk
 
-<div style="font-size: 55%;">
-
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-
-</div>
-
-<div class="notes">
-
-Speaker notes go here.
+``` bash
+git clone https://github.com/<org>/<repo>.git
+cd <repo>
+# TODO: add your one-line setup command
+```
 
 </div>
 
-<!-- *********************** NEW SLIDE *********************** -->
+<div class="column" width="45%">
 
-## Title of the slide
+<div class="card">
 
-- Bullet point 1
-- Bullet point 2
-- **Bullet point** 3
-  - Bullet point 3.1
-  - Bullet point 3.2
+<span class="card-icon">📦</span> \#### What’s included - Source code +
+tests - Reproducible environment - Example data / demo notebook - This
+slide deck (Quarto)
 
-<div style="font-size: 55%;">
+</div>
 
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+<a href="#" class="cta">View on GitHub →</a>
+
+</div>
 
 </div>
 
 <div class="notes">
 
-Notes go here
-
-</div>
-
-<!-- ============================================================
-     SECTION: Section title 3
-     ============================================================ -->
-
-# Structured Production Workflow
-
-**Add Subtitle**
-
-<div class="notes">
-
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-
-</div>
-
-<!-- *********************** NEW SLIDE *********************** -->
-
-##  Github: Getting started docs
-
-<div id="fig-template-section2">
-
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
-
-Figure 8: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
-
-</div>
-
-<div style="font-size: 55%;">
-
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-
-</div>
-
-<div class="notes">
-
-Speaker notes go here.
+Emphasise licensing and how to cite — point people to the CITATION.cff
+if the repo has one.
 
 </div>
 
@@ -640,7 +596,7 @@ Speaker notes go here.
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 9: Getting started documentation provide with a range of links to
+Figure 6: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
@@ -700,8 +656,8 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 10: Getting started documentation provide with a range of links
-to setup, use, run and debug application including github workflow.
+Figure 7: Getting started documentation provide with a range of links to
+setup, use, run and debug application including github workflow.
 
 </div>
 
@@ -716,55 +672,5 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 <div class="notes">
 
 Speaker notes go here.
-
-</div>
-
-<!-- ============================================================
-     CALL TO ACTION: Reproduce this work
-     ============================================================ -->
-
-## Reproduce this work
-
-<div class="columns">
-
-<div class="column" width="55%">
-
-#### Get running in three steps
-
-1.  **Clone** the repo — everything here (code, data, this deck) lives
-    in one place
-2.  **Build** the environment — `Dockerfile` / `environment.yml`
-    included
-3.  **Run** the notebook or pipeline — outputs regenerate the figures in
-    this talk
-
-``` bash
-git clone https://github.com/<org>/<repo>.git
-cd <repo>
-# TODO: add your one-line setup command
-```
-
-</div>
-
-<div class="column" width="45%">
-
-<div class="card">
-
-<span class="card-icon">📦</span> \#### What’s included - Source code +
-tests - Reproducible environment - Example data / demo notebook - This
-slide deck (Quarto)
-
-</div>
-
-<a href="#" class="cta">View on GitHub →</a>
-
-</div>
-
-</div>
-
-<div class="notes">
-
-Emphasise licensing and how to cite — point people to the CITATION.cff
-if the repo has one.
 
 </div>

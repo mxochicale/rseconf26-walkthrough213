@@ -4,14 +4,14 @@
     "href": "index.html#overview",
     "title": "",
     "section": "Overview",
-    "text": "Overview\n\n\nWhat We’ll Cover\n\n\nIntroduction \nRapid Prototyping Workflow \nStructured Production Workflow \nConclusions, Future Work & Next Steps \n\n\nKey Themes\n\n\n\n\n☁️ Cloud keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n🤖 Robotics keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n👥 Collaborative keywords\n\n\nkeyword1, keyword2, keyword3"
+    "text": "Overview\n\n\nWhat We’ll Cover\n\n\nIntroduction \nBuilding docker images \nTraining models \nRapid vs Structured Workflows \nConclusions, Future Work & Next Steps \n\n\nKey Themes\n\n\n\n\n☁️ Cloud keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n🤖 Robotics keywords\n\n\nkeyword1, keyword2, keyword3\n\n\n\n\n\n\n👥 Collaborative keywords\n\n\nkeyword1, keyword2, keyword3"
   },
   {
     "objectID": "index.html#building-reproducible-ai-workflows",
     "href": "index.html#building-reproducible-ai-workflows",
     "title": "",
     "section": "Building Reproducible AI Workflows",
-    "text": "Building Reproducible AI Workflows\n\n\nFigure 1: Balance between speed vs structure"
+    "text": "Building Reproducible AI Workflows\n\n\nFigure 1: Reproducibility is a tradeoff between iteration speed and environment guarantees"
   },
   {
     "objectID": "index.html#ucl-unified-ai-platform-for-research",
@@ -21,18 +21,11 @@
     "text": "UCL Unified AI Platform for Research\n\n\nFigure 2: Unified AI Platform\n\nUnified AI Platform for Research: https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/"
   },
   {
-    "objectID": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
-    "href": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
+    "objectID": "index.html#uai-github-container-registry-workflow",
+    "href": "index.html#uai-github-container-registry-workflow",
     "title": "",
-    "section": "UAI Kubeflow Trainer: User personas and capabilities",
-    "text": "UAI Kubeflow Trainer: User personas and capabilities\n\n\nFigure 3: User Personas in Kubeflow Trainer\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
-  },
-  {
-    "objectID": "index.html#uai-github-container-registry",
-    "href": "index.html#uai-github-container-registry",
-    "title": "",
-    "section": "UAI: GitHub Container Registry",
-    "text": "UAI: GitHub Container Registry\n\n\nFigure 4: Worflow for GitHub Container Registry\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
+    "section": "UAI: GitHub Container Registry Workflow",
+    "text": "UAI: GitHub Container Registry Workflow\n\n\nFigure 3: Worflow for GitHub Container Registry"
   },
   {
     "objectID": "index.html#dockerfiles",
@@ -40,6 +33,13 @@
     "title": "",
     "section": "Dockerfiles",
     "text": "Dockerfiles\n\nSTRUCTURE: Dockerfile -&gt;&lt;- requirements.txtSPEED: Dockerfile-scratch-volume\n\n\n\n\nDockerfile\n\n\n# syntax=docker/dockerfile:1.7\nFROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel\n\nRUN mkdir -p /workspace && chmod -R 777 /workspace\nWORKDIR /workspace\n\nCOPY requirements.txt .\n\nRUN /opt/conda/bin/python -m pip install --upgrade pip && \\\n    /opt/conda/bin/python -m pip install --no-cache-dir -r requirements.txt\n\nCOPY . .\n\nCMD [\"/opt/conda/bin/python\"]\n\n\n\n\n\nrequirements.txt\n\n\n# core dependencies\npillow\nloguru\nnotebook\nnumpy\nomegaconf\npandas\npyyaml\nwandb\n\n# test dependencies\nblack\ncodespell\ndetect-secrets\nisort\npre-commit\npylint\npytest\n\n# learning dependencies\naccelerate\nbasicsr\ndiffusers\neinops\nscikit-learn\ntorch\ntorchvision\n\n\n\n\n\nDockerfile-scratch-volume\n\n\n# syntax=docker/dockerfile:1.7\nFROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel\n\nRUN mkdir -p /workspace && chmod -R 777 /workspace\nRUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local\n\nWORKDIR /workspace\n\n\n\n\n\nSpeaker notes go here. {.scrollable}"
+  },
+  {
+    "objectID": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
+    "href": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
+    "title": "",
+    "section": "UAI Kubeflow Trainer: User personas and capabilities",
+    "text": "UAI Kubeflow Trainer: User personas and capabilities\n\n\nFigure 4: User Personas in Kubeflow Trainer\n\nAn overview of Kubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
   },
   {
     "objectID": "index.html#training-edm2-model-kubeflow-0.3.0",
@@ -56,18 +56,18 @@
     "text": "Diffusion-based synthesis (512×512)\n\n\nFigure 5: Representative fetal ultrasound images from real data, Tian et al. [22], and our proposed high-resolution (512×512) diffusion-based synthesis approach.\n\nMannering et al. 2026 in MIUA 2026 (https://arxiv.org/abs/2608.05471)\n\n\nSpeaker notes go here."
   },
   {
+    "objectID": "index.html#reproduce-this-work",
+    "href": "index.html#reproduce-this-work",
+    "title": "",
+    "section": "Reproduce this work",
+    "text": "Reproduce this work\n\n\nGet running in three steps\n\nClone the repo — everything here (code, data, this deck) lives in one place\nBuild the environment — Dockerfile / environment.yml included\nRun the notebook or pipeline — outputs regenerate the figures in this talk\n\ngit clone https://github.com/&lt;org&gt;/&lt;repo&gt;.git\ncd &lt;repo&gt;\n# TODO: add your one-line setup command\n\n\n📦 #### What’s included - Source code + tests - Reproducible environment - Example data / demo notebook - This slide deck (Quarto)\n\nView on GitHub →\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
+  },
+  {
     "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
     "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
     "title": "",
     "section": " Github: Getting started docs",
     "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
-    "title": "",
-    "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#title-of-the-slide",
@@ -77,38 +77,10 @@
     "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
   },
   {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-2",
+    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
+    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 8: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-3",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-3",
-    "title": "",
-    "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 9: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "index.html#title-of-the-slide-1",
-    "href": "index.html#title-of-the-slide-1",
-    "title": "",
-    "section": "Title of the slide",
-    "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
-  },
-  {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-4",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-4",
-    "title": "",
-    "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 10: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "index.html#reproduce-this-work",
-    "href": "index.html#reproduce-this-work",
-    "title": "",
-    "section": "Reproduce this work",
-    "text": "Reproduce this work\n\n\nGet running in three steps\n\nClone the repo — everything here (code, data, this deck) lives in one place\nBuild the environment — Dockerfile / environment.yml included\nRun the notebook or pipeline — outputs regenerate the figures in this talk\n\ngit clone https://github.com/&lt;org&gt;/&lt;repo&gt;.git\ncd &lt;repo&gt;\n# TODO: add your one-line setup command\n\n\n📦 #### What’s included - Source code + tests - Reproducible environment - Example data / demo notebook - This slide deck (Quarto)\n\nView on GitHub →\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
+    "text": "Github: Getting started docs\n\n\nFigure 7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   }
 ]
