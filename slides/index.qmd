@@ -140,9 +140,10 @@ Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI R
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
 1. [**Introduction**](#sectag_title_1) <add details>
-2. [**Rapid Prototyping Workflow**](#sectag_title_2) <add details>
-3. [**Structured Production Workflow**](#sectag_title_3) <add details>
-4. [**Conclusions, Future Work & Next Steps**](#sectag_title_4) <add details>
+2. [**Building docker images**](#sectag_title_2) <add details>
+3. [**Training models**](#sectag_title_3) <add details>
+4. [**Rapid vs Structured Workflows**](#sectag_title_3) <add details>
+5. [**Conclusions, Future Work & Next Steps**](#sectag_title_4) <add details>
 
 
 :::
@@ -195,7 +196,8 @@ the campus network, and physical hardware (sensors, robots).
 
 ![](figures/balance-between-speed-vs-structure.svg){fig-align=center}
 
-Balance between speed vs structure
+Reproducibility is a tradeoff between iteration speed and environment guarantees 
+
 :::
 
 
@@ -237,33 +239,25 @@ Unified AI Platform for Research: <https://www.ucl.ac.uk/advanced-research-compu
 
 
 
-<!-- *********************** NEW SLIDE *********************** -->
-## UAI Kubeflow Trainer: User personas and capabilities {style="font-size: 70%;"}
-
-::: {#fig-template-section1}
-
-![](figures/uai_kubeflow.svg){fig-align=center}
-
-User Personas in Kubeflow Trainer
-:::
 
 
-::: {style="font-size: 55%;"}
-An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
-:::
 
+<!-- ============================================================
+     SECTION: Section title 2
+     ============================================================ -->
+# Building docker images {#sectag_title_2 .section-divider}
+**Add Subtitle**
 
 ::: {.notes}
-
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
 :::
 
 
 
 
-
-
 <!-- *********************** NEW SLIDE *********************** -->
-## UAI: GitHub Container Registry {style="font-size: 70%;"}
+## UAI: GitHub Container Registry Workflow {style="font-size: 70%;"}
 
 ::: {#fig-template-section1}
 
@@ -274,13 +268,15 @@ Worflow for GitHub Container Registry
 
 
 ::: {style="font-size: 55%;"}
-An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+
+
 :::
 
 
 ::: {.notes}
 
 :::
+
 
 
 
@@ -370,6 +366,42 @@ Speaker notes go here.
 
 :::
 
+
+
+
+
+<!-- ============================================================
+     SECTION: Section title 3
+     ============================================================ -->
+# Training models {#sectag_title_3 .section-divider}
+**Add Subtitle**
+
+::: {.notes}
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
+:::
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## UAI Kubeflow Trainer: User personas and capabilities {style="font-size: 70%;"}
+
+::: {#fig-template-section1}
+
+![](figures/uai_kubeflow.svg){fig-align=center}
+
+User Personas in Kubeflow Trainer
+:::
+
+
+::: {style="font-size: 55%;"}
+An overview of Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+:::
+
+
+::: {.notes}
+
+:::
 
 
 
@@ -516,12 +548,23 @@ Jupyter Notebooks: <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/un
 :::
 
 
-
-
 ::: {.notes}
 Speaker notes go here.
  {.scrollable} 
+:::
 
+
+
+
+
+<!-- ============================================================
+     SECTION: Section title 4
+     ============================================================ -->
+# Reproducing results {#sectag_title_6 .section-divider}
+
+::: {.notes}
+<!-- TODO: notes specific to Section title 2 (was previously a duplicate
+     of Section title 1's notes — make sure this describes section 2) -->
 :::
 
 
@@ -552,118 +595,48 @@ Speaker notes go here.
 
 
 
-
-
-
-<!-- *********************** NEW SLIDE *********************** -->
-## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
-
-::: {#fig-template-section2}
-
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-:::
-
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
-
-
-
-
-
 <!-- ============================================================
-     SECTION: Section title 2
+     CALL TO ACTION: Reproduce this work
      ============================================================ -->
-# Rapid Prototyping Workflow {#sectag_title_2 .section-divider}
-**Add Subtitle**
-
-::: {.notes}
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-:::
-
 <!-- *********************** NEW SLIDE *********************** -->
-## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
+## Reproduce this work {style="font-size: 100%;"}
 
-::: {#fig-template-section2}
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+:::: {.columns}
 
-Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
+::: {.column width="55%"}
+#### Get running in three steps
+
+1. **Clone** the repo — everything here (code, data, this deck) lives in one place
+2. **Build** the environment — `Dockerfile` / `environment.yml` included
+3. **Run** the notebook or pipeline — outputs regenerate the figures in this talk
+
+```bash
+git clone https://github.com/<org>/<repo>.git
+cd <repo>
+# TODO: add your one-line setup command
+```
 :::
 
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+::: {.column width="45%"}
+::: {.card}
+<span class="card-icon">📦</span>
+#### What's included
+- Source code + tests
+- Reproducible environment
+- Example data / demo notebook
+- This slide deck (Quarto)
 :::
+
+[View on GitHub →](#){.cta}
+:::
+
+::::
 
 ::: {.notes}
-Speaker notes go here.
+Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.
 :::
 
-
-
-
-<!-- *********************** NEW SLIDE *********************** -->
-## Title of the slide {style="font-size: 100%;"}
-
-* Bullet point 1
-* Bullet point 2
-* **Bullet point** 3
-  * Bullet point 3.1
-  * Bullet point 3.2
-
-
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-:::
-
-::: {.notes}
-Notes go here
-:::
-
-
-
-
-
-<!-- ============================================================
-     SECTION: Section title 3
-     ============================================================ -->
-# Structured Production Workflow {#sectag_title_3 .section-divider}
-**Add Subtitle**
-
-::: {.notes}
-<!-- TODO: notes specific to Section title 2 (was previously a duplicate
-     of Section title 1's notes — make sure this describes section 2) -->
-:::
-
-<!-- *********************** NEW SLIDE *********************** -->
-## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
-
-::: {#fig-template-section2}
-
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-:::
-
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
 
 
 
@@ -677,6 +650,10 @@ Speaker notes go here.
 <!-- TODO: notes specific to Section title 2 (was previously a duplicate
      of Section title 1's notes — make sure this describes section 2) -->
 :::
+
+
+
+
 
 <!-- *********************** NEW SLIDE *********************** -->
 ## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
@@ -752,43 +729,4 @@ Speaker notes go here.
 :::
 
 
-<!-- ============================================================
-     CALL TO ACTION: Reproduce this work
-     ============================================================ -->
-## Reproduce this work
 
-
-:::: {.columns}
-
-::: {.column width="55%"}
-#### Get running in three steps
-
-1. **Clone** the repo — everything here (code, data, this deck) lives in one place
-2. **Build** the environment — `Dockerfile` / `environment.yml` included
-3. **Run** the notebook or pipeline — outputs regenerate the figures in this talk
-
-```bash
-git clone https://github.com/<org>/<repo>.git
-cd <repo>
-# TODO: add your one-line setup command
-```
-:::
-
-::: {.column width="45%"}
-::: {.card}
-<span class="card-icon">📦</span>
-#### What's included
-- Source code + tests
-- Reproducible environment
-- Example data / demo notebook
-- This slide deck (Quarto)
-:::
-
-[View on GitHub →](#){.cta}
-:::
-
-::::
-
-::: {.notes}
-Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.
-:::
