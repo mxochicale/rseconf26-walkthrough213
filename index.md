@@ -14,9 +14,12 @@ Research Platform</span>
 
 </span>
 
-<span style="font-size:0.55em; color:#b7bdc9;">Matthias J. Golomb, David
-Guzman, Andrew Esterson, Sylvie Da Graca Ramos, [**Miguel
-Xochicale**](http://mxochicale.github.io/) ·
+<span style="font-size:0.55em; color:#b7bdc9;">[Matthias J.
+Golomb](https://profiles.ucl.ac.uk/107875-matthias-golomb), [David
+Guzman](https://www.linkedin.com/in/david-guzman-555a321ab), [Andrew
+Esterson](https://profiles.ucl.ac.uk/99482-andrew-esterson), [Sylvie Da
+Graca Ramos](https://profiles.ucl.ac.uk/95114-sylvie-da-graca-ramos),
+and [**Miguel Xochicale**](http://mxochicale.github.io/) ·
 [UCL-ARC](https://www.ucl.ac.uk/advanced-research-computing/)</span>
 
 <div class="badge-row">
@@ -51,12 +54,6 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 
 ## Overview
 
-<div class="columns">
-
-<div class="column" width="50%">
-
-### What We’ll Cover
-
 <!-- TODO: link items 3-4 to real slide anchors once those sections exist,
      e.g. add `{#sectag_demos}` / `{#sectag_future}` to their section headers -->
 
@@ -67,11 +64,9 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 5.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4)
     <add details>
 
-</div>
+<div class="notes">
 
-<div class="column" width="50%">
-
-### Key Themes
+Key Themes
 
 <!-- TODO: replace placeholder keywords -->
 
@@ -92,8 +87,6 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 > ### :busts_in_silhouette: Collaborative keywords
 >
 > keyword1, keyword2, keyword3
-
-</div>
 
 </div>
 
@@ -163,9 +156,9 @@ Unified AI Platform for Research:
      SECTION: Section title 2
      ============================================================ -->
 
-# Building docker images
+# Building containers
 
-**Add Subtitle**
+**Using docker containers**
 
 <div class="notes">
 
@@ -298,7 +291,7 @@ Speaker notes go here. {.scrollable}
 
 # Training models
 
-**Add Subtitle**
+**Using Unified AI Kubeflow Trainer**
 
 <div class="notes">
 
@@ -536,17 +529,14 @@ Speaker notes go here.
 
 #### Get running in three steps
 
-1.  **Clone** the repo — everything here (code, data, this deck) lives
-    in one place
-2.  **Build** the environment — `Dockerfile` / `environment.yml`
-    included
-3.  **Run** the notebook or pipeline — outputs regenerate the figures in
+1.  **Clone** the repo, everything here (code, data, this deck) lives in
+    one place
+2.  **Build** the environment `Dockerfile` included
+3.  **Run** the notebook or pipeline, outputs regenerate the figures in
     this talk
 
 ``` bash
-git clone https://github.com/<org>/<repo>.git
-cd <repo>
-# TODO: add your one-line setup command
+git clone https://github.com/xfetus/fetal-ultrasound-edm2.git
 ```
 
 </div>
@@ -555,13 +545,16 @@ cd <repo>
 
 <div class="card">
 
-<span class="card-icon">📦</span> \#### What’s included - Source code +
-tests - Reproducible environment - Example data / demo notebook - This
-slide deck (Quarto)
+<span class="card-icon">📦</span> What’s included:\
+- Source code + tests\
+- Reproducible environment\
+- Example data / demo notebook\
+- This slide deck (Quarto)
 
 </div>
 
-<a href="#" class="cta">View on GitHub →</a>
+<a href="https://github.com/xfetus/fetal-ultrasound-edm2"
+class="cta">View on GitHub →</a>
 
 </div>
 
