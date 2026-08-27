@@ -53,7 +53,7 @@
     "href": "index.html#diffusion-based-synthesis-512512",
     "title": "",
     "section": "Diffusion-based synthesis (512×512)",
-    "text": "Diffusion-based synthesis (512×512)\n\n\nFigure 5: Representative fetal ultrasound images from real data, Tian et al. [22], and our proposed high-resolution (512×512) diffusion-based synthesis approach.\n\nMannering et al. 2026 in MIUA 2026 (https://arxiv.org/abs/2608.05471)\n\n\nSpeaker notes go here."
+    "text": "Diffusion-based synthesis (512×512)\n\n\nFigure 5: Representative fetal ultrasound images from real data, Tian et al. [22], and our proposed high-resolution (512×512) diffusion-based synthesis approach.\n\nMannering et al. 2026 in Medical Image Understanding and Analysis (MIUA) 2026 https://arxiv.org/abs/2608.05471\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#reproduce-this-work",
@@ -63,11 +63,18 @@
     "text": "Reproduce this work\n\n\nGet running in three steps\n\nClone the repo, everything here (code, data, this deck) lives in one place\nBuild the environment Dockerfile included\nRun the notebook or pipeline, outputs regenerate the figures in this talk\n\ngit clone https://github.com/xfetus/fetal-ultrasound-edm2.git\n\n\n📦 What’s included:\n- Source code + tests\n- Reproducible environment\n- Example data / demo notebook\n- This slide deck (Quarto)\n\nView on GitHub →\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
   },
   {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
+    "objectID": "index.html#conclusions-future-work-next-steps",
+    "href": "index.html#conclusions-future-work-next-steps",
     "title": "",
-    "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "section": "Conclusions, Future Work & Next Steps",
+    "text": "Conclusions, Future Work & Next Steps\nConclusions\n\nFast experimentation and reproducible engineering can coexist\nScratch-volume prototyping vs. GHCR containerised production\nSame execution path, different trade-offs: speed vs. scalability\n\nFuture Work\n\nWider adoption of Unified AI to cut vendor reliance & cost\nConsistent, reproducible research practice across teams\nMore cross-faculty collaboration and shared case studies\n\nNext steps and call to action\n\nExplore good practice in AI infrastructure to better support DevOps and MLOps engineers, data scientists and RSEs\nHelp shape future hackathons, workshops and training\nGet in touch, we’d like to hear from you about good practice and how we might make use of this platform collaboratively\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "",
+    "section": "Thank You",
+    "text": "Thank You\n\n\nCollaborators\n\nHarvey Mannering (PhD student) and Zhiwu Huang (Lecturer) at University of Southampton\nYilin Zhang (PhD student) at University of Southampton\n\nZiao Liu (PhD student) at Tsinghua University\n\nJacqueline Matthew ( Clinical Research Fellow) at King’s College London\n\n\nUnified AI Team\nDorothy Chung, Matthias Golomb, David Guzman, Andrew Esterson and Sylvie Ramos\n\n\n\n\n💬 Get in Touch\n\n\nEmail: m.xochicale@ucl.ac.uk\nGitHub: github.com/mxochicale\nLinkedIn: in/mxochicale\nUCL ARC: ucl.ac.uk/arc\nUnified AI: Unified AI Platform for Research\n\n\n\n\n\nThank the room. Leave the slide up during questions — GitHub handle and repo URL are visible for anyone who wants to follow up."
   },
   {
     "objectID": "index.html#title-of-the-slide",
@@ -77,10 +84,10 @@
     "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
   },
   {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs-1",
+    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
+    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
     "title": "",
     "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 7: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
+    "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   }
 ]

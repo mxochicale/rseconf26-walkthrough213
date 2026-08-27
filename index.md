@@ -504,8 +504,8 @@ synthesis approach.
 
 <div style="font-size: 55%;">
 
-**Mannering et al. 2026** in MIUA 2026
-(https://arxiv.org/abs/2608.05471)
+**Mannering et al. 2026** in Medical Image Understanding and Analysis
+(MIUA) 2026 <https://arxiv.org/abs/2608.05471>
 
 </div>
 
@@ -582,17 +582,31 @@ if the repo has one.
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-##  Github: Getting started docs
+## Conclusions, Future Work & Next Steps
 
-<div id="fig-template-section2">
+Conclusions
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+- Fast experimentation and reproducible engineering can coexist
+- Scratch-volume prototyping vs. GHCR containerised production
+- Same execution path, different trade-offs: speed vs. scalability
 
-Figure 6: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
+Future Work
 
-</div>
+- Wider adoption of Unified AI to cut vendor reliance & cost
+- Consistent, reproducible research practice across teams
+- More cross-faculty collaboration and shared case studies
+
+Next steps and call to action
+
+- Explore good practice in AI infrastructure to better support DevOps
+  and MLOps engineers, data scientists and RSEs
+- Help shape future hackathons, workshops and training
+- Get in touch, we’d like to hear from you about good practice and how
+  we might make use of this platform collaboratively
+
+<div class="notes">
+
+Notes go here
 
 <div style="font-size: 55%;">
 
@@ -602,9 +616,55 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 </div>
 
+</div>
+
+<!-- ============================================================ -->
+
+## Thank You
+
+<div class="columns">
+
+<div class="column" width="50%">
+
+### Collaborators
+
+- Harvey Mannering (PhD student) and Zhiwu Huang (Lecturer) at
+  University of Southampton
+- Yilin Zhang (PhD student) at University of Southampton\
+- Ziao Liu (PhD student) at Tsinghua University\
+- Jacqueline Matthew ( Clinical Research Fellow) at King’s College
+  London
+
+</div>
+
+<div class="column" width="50%">
+
+### Unified AI Team
+
+Dorothy Chung, Matthias Golomb, David Guzman, Andrew Esterson and Sylvie
+Ramos
+
+------------------------------------------------------------------------
+
+> [!NOTE]
+>
+> ### :speech_balloon: Get in Touch
+>
+> **Email**: [m.xochicale@ucl.ac.uk](m.xochicale@ucl.ac.uk)\
+> **GitHub**: [github.com/mxochicale](https://github.com/mxochicale)\
+> **LinkedIn**: [in/mxochicale](https://linkedin.com/in/mxochicale)\
+> **UCL ARC**: [ucl.ac.uk/arc](https://www.ucl.ac.uk/arc)\
+> **Unified AI**: [Unified AI Platform for
+> Research](https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/)
+
+</div>
+
+</div>
+
 <div class="notes">
 
-Speaker notes go here.
+Thank the room. Leave the slide up during questions — GitHub handle and
+repo URL are visible for anyone who wants to follow up.
 
 </div>
 
@@ -649,7 +709,7 @@ Notes go here
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-Figure 7: Getting started documentation provide with a range of links to
+Figure 6: Getting started documentation provide with a range of links to
 setup, use, run and debug application including github workflow.
 
 </div>
