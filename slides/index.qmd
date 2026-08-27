@@ -574,9 +574,9 @@ proposed high-resolution (512×512) diffusion-based synthesis approach.
 
 
 ::: {style="font-size: 55%;"}
-**Mannering et al. 2026** in MIUA 2026 (https://arxiv.org/abs/2608.05471)
-
+**Mannering et al. 2026** in Medical Image Understanding and Analysis (MIUA) 2026 <https://arxiv.org/abs/2608.05471>
 :::
+
 
 ::: {.notes}
 Speaker notes go here.
@@ -640,26 +640,41 @@ Emphasise licensing and how to cite — point people to the CITATION.cff if the 
 
 
 
-
-
 <!-- *********************** NEW SLIDE *********************** -->
-## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
+## Conclusions, Future Work & Next Steps {style="font-size: 60%;"}
 
-::: {#fig-template-section2}
+Conclusions
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+* Fast experimentation and reproducible engineering can coexist
+* Scratch-volume prototyping vs. GHCR containerised production
+* Same execution path, different trade-offs: speed vs. scalability
 
-Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-:::
+Future Work
+
+* Wider adoption of Unified AI to cut vendor reliance & cost
+* Consistent, reproducible research practice across teams
+* More cross-faculty collaboration and shared case studies
+
+
+Next steps and call to action
+
+* Explore good practice in AI infrastructure to better support DevOps and MLOps engineers, data scientists and RSEs
+* Help shape future hackathons, workshops and training
+* Get in touch, we'd like to hear from you about good practice and how we might make use of this platform collaboratively
+
+::: {.notes}
+Notes go here
 
 ::: {style="font-size: 55%;"}
 **Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
 **He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 :::
 
-::: {.notes}
-Speaker notes go here.
+
+
 :::
+
+
 
 
 
