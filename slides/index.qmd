@@ -663,6 +663,44 @@ Speaker notes go here.
 
 
 
+<!-- ============================================================ -->
+## Thank You {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Collaborators
+
+* Harvey Mannering (PhD student) and Zhiwu Huang (Lecturer) at University of Southampton
+* Yilin Zhang (PhD student) at University of Southampton   
+* Ziao Liu (PhD student) at Tsinghua University   
+* Jacqueline Matthew ( Clinical Research Fellow) at King’s College London   
+
+:::
+
+::: {.column width="50%"}
+### Unified AI Team
+
+Dorothy Chung, Matthias Golomb, David Guzman, Andrew Esterson and Sylvie Ramos  
+
+---
+
+::: {.callout-note icon=false}
+## :speech_balloon: Get in Touch
+**Email**: [m.xochicale@ucl.ac.uk](m.xochicale@ucl.ac.uk)  
+**GitHub**: [github.com/mxochicale](https://github.com/mxochicale)  
+**LinkedIn**: [in/mxochicale](https://linkedin.com/in/mxochicale)   
+**UCL ARC**: [ucl.ac.uk/arc](https://www.ucl.ac.uk/arc)  
+**Unified AI**: [Unified AI Platform for Research](https://www.ucl.ac.uk/advanced-research-computing/platforms-services/unified-ai-platform-research/)
+:::
+:::
+
+::::
+
+::: {.notes}
+Thank the room. Leave the slide up during questions — 
+GitHub handle and repo URL are visible for anyone who wants to follow up.
+:::
 
 
 <!-- ============================================================
@@ -714,6 +752,7 @@ Getting started documentation provide with a range of links to setup, use, run a
 ::: {.notes}
 Speaker notes go here.
 :::
+
 
 
 
