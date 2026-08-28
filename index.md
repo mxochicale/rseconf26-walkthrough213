@@ -193,6 +193,25 @@ Figure 3: Worflow for GitHub Container Registry
 
 <div class="panel-tabset">
 
+### SPEED: Dockerfile-scratch-volume
+
+<div class="code-with-filename">
+
+**Dockerfile-scratch-volume**
+
+``` python
+
+# syntax=docker/dockerfile:1.7
+FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+RUN mkdir -p /workspace && chmod -R 777 /workspace
+RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
+
+WORKDIR /workspace
+```
+
+</div>
+
 ### STRUCTURE: Dockerfile -\>
 
 <div class="code-with-filename">
@@ -258,25 +277,6 @@ torchvision
 
 </div>
 
-### SPEED: Dockerfile-scratch-volume
-
-<div class="code-with-filename">
-
-**Dockerfile-scratch-volume**
-
-``` python
-
-# syntax=docker/dockerfile:1.7
-FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
-
-RUN mkdir -p /workspace && chmod -R 777 /workspace
-RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
-
-WORKDIR /workspace
-```
-
-</div>
-
 </div>
 
 <div class="notes">
@@ -325,72 +325,23 @@ An overview of Kubeflow Trainer:
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## Training EDM2 Model (kubeflow 0.3.0)
+## Training EDM2 Model (kubeflow 0.4.0)
 
 <div class="panel-tabset">
-
-### STRUCTRE: training-edm2-model-ghcr
-
-<div class="code-with-filename">
-
-**training-edm2-model-ghcr.ipynb**
-
-``` python
-
-# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb
-
-## Set how many PyTorch nodes you want to use for distributed training.
-NUM_NODES = 1
-
-# Set the resources for each PyTorch node.
-RESOURCES_PER_NODE = {
-    "cpu": "4",           # CPUs per node
-    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
-    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
-}
-
-GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
-
-command = TrainerCommand(
-    command=[
-        "torchrun",
-        f"--nnodes={NUM_NODES}",
-        "train_edm2.py", #path of script in scratch 
-        "--outdir", "/scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
-        "--data", "/scratch-volume/FETAL_PLANES_DB", # pragma: allowlist secret
-        "--batch", "4",
-        "--preset", "edm2-img512-s",
-        "--batch-gpu", "4",
-    ]
-)
-
-
-
-job_id = trainer.train(
-    runtime=torch_runtime,
-    trainer=CustomTrainerContainer(
-        image=GITHUB_CONTAINER_REGISTRY,
-        num_nodes=NUM_NODES,
-        resources_per_node=RESOURCES_PER_NODE,
-        env=ENV_VARS        
-    ),
-    options=[command, pod_template_overrides],
-)
-
-```
-
-</div>
 
 ### SPEED: training-edm2-model-scratch-volume
 
 <div class="code-with-filename">
 
-**training-edm2-model-scratch-volume.ipynb**
+<div class="code-with-filename-file">
+
+<pre><a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb" target="_blank"><strong>training-edm2-model-scratch-volume.ipynb</strong></a></pre>
+
+</div>
+
+</div>
 
 ``` python
-
-# https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb
-
 
 ## Set how many PyTorch nodes you want to use for distributed training.
 NUM_NODES = 1
@@ -406,6 +357,48 @@ GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasou
 # VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace && chmod -R 777 /workspace 
 #                    RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
 
+
+
+## Volume mounts
+from kubeflow.trainer.options.kubernetes import RuntimePatch
+
+pod_name = "node"
+volume_name = "scratch-volume"
+mount_path = "/scratch-volume"
+volumes = [{"name": volume_name, "persistentVolumeClaim": {"claimName": volume_name}}]
+volume_mounts = [{"name": volume_name, "mountPath": mount_path}]
+
+volume_patch = RuntimePatch(
+    training_runtime_spec={
+        "template": {
+            "spec": {
+                "replicatedJobs": [
+                    {
+                        "name": "node",
+                        "template": {
+                            "spec": {
+                                "template": {
+                                    "spec": {
+                                        "volumes": volumes,
+                                        "containers": [
+                                            {
+                                                "name": pod_name,
+                                                "volumeMounts": volume_mounts,
+                                            }
+                                        ],
+                                    }   
+                                }    
+                            }
+                        },
+                    }
+                ]
+            }
+        }
+    }
+)
+
+
+## Trainer Command 
 
 command = TrainerCommand(
     command=[
@@ -433,8 +426,11 @@ command = TrainerCommand(
             "export TORCHINDUCTOR_CACHE_DIR=/scratch-volume/torch-inductor-cache && "
             "export PYTHONPATH=/scratch-volume/pip-packages:$PYTHONPATH && "          
             "torchrun /scratch-volume/fetal-ultrasound-edm2/train_edm2.py "
-            "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY "
-            "--data /scratch-volume/FETAL_PLANES_DB "
+            "--outdir /scratch-volume/data-fetal-us-edm2/OUTPUT_DIRECTORY "
+            "--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB "
+            "--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23 "
+            "--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset "
+            "--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES "
             "--batch 4 "
             "--preset edm2-img512-s "
             "--batch-gpu 4"
@@ -443,27 +439,124 @@ command = TrainerCommand(
 )
 
 
-
 job_id = trainer.train(
-    runtime=torch_runtime,
+    runtime=trainer.get_runtime("torch-distributed"),
     trainer=CustomTrainerContainer(
         image=GITHUB_CONTAINER_REGISTRY,
         num_nodes=NUM_NODES,
         resources_per_node=RESOURCES_PER_NODE,
         env=ENV_VARS        
     ),
-    options=[command, pod_template_overrides],
+    options=[volume_patch, command],
 )
+
+```
+
+### STRUCTRE: training-edm2-model-ghcr
+
+<div class="code-with-filename">
+
+<div class="code-with-filename-file">
+
+<pre><a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb" target="_blank"><strong>training-edm2-model-ghcr.ipynb</strong></a></pre>
+
+</div>
+
+</div>
+
+``` python
+
+
+## Set how many PyTorch nodes you want to use for distributed training.
+NUM_NODES = 1
+
+# Set the resources for each PyTorch node.
+RESOURCES_PER_NODE = {
+    "cpu": "4",           # CPUs per node
+    "memory": "64Gi",     # Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works
+    "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
+}
+
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
+
+
+## Mount scratch volume
+
+from kubeflow.trainer.options.kubernetes import RuntimePatch
+
+pod_name = "node"
+volume_name = "scratch-volume"
+mount_path = "/scratch-volume"
+volumes = [{"name": volume_name, "persistentVolumeClaim": {"claimName": volume_name}}]
+volume_mounts = [{"name": volume_name, "mountPath": mount_path}]
+
+volume_patch = RuntimePatch(
+    training_runtime_spec={
+        "template": {
+            "spec": {
+                "replicatedJobs": [
+                    {
+                        "name": "node",
+                        "template": {
+                            "spec": {
+                                "template": {
+                                    "spec": {
+                                        "volumes": volumes,
+                                        "containers": [
+                                            {
+                                                "name": pod_name,
+                                                "volumeMounts": volume_mounts,
+                                            }
+                                        ],
+                                    }   
+                                }    
+                            }
+                        },
+                    }
+                ]
+            }
+        }
+    }
+)
+
+
+## Trainer command
+command = TrainerCommand(
+    command=[
+        "torchrun",
+        f"--nnodes={NUM_NODES}",
+        "train_edm2.py", #path of script in scratch 
+        "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
+        "--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB",
+        "--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23",
+        "--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset",
+        "--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES",
+        "--batch 4",
+        "--preset edm2-img512-s",
+        "--batch-gpu 4",
+    ]
+)
+
+## Train trainer
+job_id = trainer.train(
+    runtime=trainer.get_runtime("torch-distributed"),
+    trainer=CustomTrainerContainer(
+        image=GITHUB_CONTAINER_REGISTRY,
+        num_nodes=NUM_NODES,
+        resources_per_node=RESOURCES_PER_NODE,
+        env=ENV_VARS        
+    ),
+    options=[volume_patch, command],
+)
+
 
 ```
 
 </div>
 
-</div>
-
 <div style="font-size: 55%;">
 
-Jupyter Notebooks:
+Jupyter Notebooks:\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
 

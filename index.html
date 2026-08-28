@@ -471,78 +471,78 @@ Figure&nbsp;3: Worflow for GitHub Container Registry
 <section id="dockerfiles" class="slide level2" style="font-size: 70%;">
 <h2>Dockerfiles</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">STRUCTURE: Dockerfile -&gt;</a></li><li><a href="#tabset-1-2">&lt;- requirements.txt</a></li><li><a href="#tabset-1-3">SPEED: Dockerfile-scratch-volume</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">SPEED: Dockerfile-scratch-volume</a></li><li><a href="#tabset-1-2">STRUCTURE: Dockerfile -&gt;</a></li><li><a href="#tabset-1-3">&lt;- requirements.txt</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Dockerfile</strong></pre>
+<pre><strong>Dockerfile-scratch-volume</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="Dockerfile"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="Dockerfile-scratch-volume"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a></span>
 <span id="cb1-2"><a aria-label="2"></a><span class="co"># syntax=docker/dockerfile:1.7</span></span>
 <span id="cb1-3"><a aria-label="3"></a>FROM docker.io<span class="op">/</span>pytorch<span class="op">/</span>pytorch:<span class="fl">2.9.1</span><span class="op">-</span>cuda12<span class="fl">.8</span><span class="op">-</span>cudnn9<span class="op">-</span>devel</span>
 <span id="cb1-4"><a aria-label="4"></a></span>
 <span id="cb1-5"><a aria-label="5"></a>RUN mkdir <span class="op">-</span>p <span class="op">/</span>workspace <span class="op">&amp;&amp;</span> chmod <span class="op">-</span>R <span class="dv">777</span> <span class="op">/</span>workspace</span>
-<span id="cb1-6"><a aria-label="6"></a>WORKDIR <span class="op">/</span>workspace</span>
+<span id="cb1-6"><a aria-label="6"></a>RUN mkdir <span class="op">-</span>p <span class="op">/</span>.cache<span class="op">/</span>pip <span class="op">/</span>.local <span class="op">&amp;&amp;</span> chmod <span class="op">-</span>R <span class="dv">777</span> <span class="op">/</span>.cache<span class="op">/</span>pip <span class="op">/</span>.local</span>
 <span id="cb1-7"><a aria-label="7"></a></span>
-<span id="cb1-8"><a aria-label="8"></a>COPY requirements.txt .</span>
-<span id="cb1-9"><a aria-label="9"></a></span>
-<span id="cb1-10"><a aria-label="10"></a>RUN <span class="op">/</span>opt<span class="op">/</span>conda<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install <span class="op">--</span>upgrade pip <span class="op">&amp;&amp;</span> <span class="op">\</span></span>
-<span id="cb1-11"><a aria-label="11"></a>    <span class="op">/</span>opt<span class="op">/</span>conda<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install <span class="op">--</span>no<span class="op">-</span>cache<span class="op">-</span><span class="bu">dir</span> <span class="op">-</span>r requirements.txt</span>
-<span id="cb1-12"><a aria-label="12"></a></span>
-<span id="cb1-13"><a aria-label="13"></a>COPY . .</span>
-<span id="cb1-14"><a aria-label="14"></a></span>
-<span id="cb1-15"><a aria-label="15"></a>CMD [<span class="st">"/opt/conda/bin/python"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a aria-label="8"></a>WORKDIR <span class="op">/</span>workspace</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>requirements.txt</strong></pre>
+<pre><strong>Dockerfile</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="requirements.txt"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a></span>
-<span id="cb2-2"><a aria-label="2"></a><span class="co"># core dependencies</span></span>
-<span id="cb2-3"><a aria-label="3"></a>pillow</span>
-<span id="cb2-4"><a aria-label="4"></a>loguru</span>
-<span id="cb2-5"><a aria-label="5"></a>notebook</span>
-<span id="cb2-6"><a aria-label="6"></a>numpy</span>
-<span id="cb2-7"><a aria-label="7"></a>omegaconf</span>
-<span id="cb2-8"><a aria-label="8"></a>pandas</span>
-<span id="cb2-9"><a aria-label="9"></a>pyyaml</span>
-<span id="cb2-10"><a aria-label="10"></a>wandb</span>
-<span id="cb2-11"><a aria-label="11"></a></span>
-<span id="cb2-12"><a aria-label="12"></a><span class="co"># test dependencies</span></span>
-<span id="cb2-13"><a aria-label="13"></a>black</span>
-<span id="cb2-14"><a aria-label="14"></a>codespell</span>
-<span id="cb2-15"><a aria-label="15"></a>detect<span class="op">-</span>secrets</span>
-<span id="cb2-16"><a aria-label="16"></a>isort</span>
-<span id="cb2-17"><a aria-label="17"></a>pre<span class="op">-</span>commit</span>
-<span id="cb2-18"><a aria-label="18"></a>pylint</span>
-<span id="cb2-19"><a aria-label="19"></a>pytest</span>
-<span id="cb2-20"><a aria-label="20"></a></span>
-<span id="cb2-21"><a aria-label="21"></a><span class="co"># learning dependencies</span></span>
-<span id="cb2-22"><a aria-label="22"></a>accelerate</span>
-<span id="cb2-23"><a aria-label="23"></a>basicsr</span>
-<span id="cb2-24"><a aria-label="24"></a>diffusers</span>
-<span id="cb2-25"><a aria-label="25"></a>einops</span>
-<span id="cb2-26"><a aria-label="26"></a>scikit<span class="op">-</span>learn</span>
-<span id="cb2-27"><a aria-label="27"></a>torch</span>
-<span id="cb2-28"><a aria-label="28"></a>torchvision</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="Dockerfile"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="co"># syntax=docker/dockerfile:1.7</span></span>
+<span id="cb2-3"><a aria-label="3"></a>FROM docker.io<span class="op">/</span>pytorch<span class="op">/</span>pytorch:<span class="fl">2.9.1</span><span class="op">-</span>cuda12<span class="fl">.8</span><span class="op">-</span>cudnn9<span class="op">-</span>devel</span>
+<span id="cb2-4"><a aria-label="4"></a></span>
+<span id="cb2-5"><a aria-label="5"></a>RUN mkdir <span class="op">-</span>p <span class="op">/</span>workspace <span class="op">&amp;&amp;</span> chmod <span class="op">-</span>R <span class="dv">777</span> <span class="op">/</span>workspace</span>
+<span id="cb2-6"><a aria-label="6"></a>WORKDIR <span class="op">/</span>workspace</span>
+<span id="cb2-7"><a aria-label="7"></a></span>
+<span id="cb2-8"><a aria-label="8"></a>COPY requirements.txt .</span>
+<span id="cb2-9"><a aria-label="9"></a></span>
+<span id="cb2-10"><a aria-label="10"></a>RUN <span class="op">/</span>opt<span class="op">/</span>conda<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install <span class="op">--</span>upgrade pip <span class="op">&amp;&amp;</span> <span class="op">\</span></span>
+<span id="cb2-11"><a aria-label="11"></a>    <span class="op">/</span>opt<span class="op">/</span>conda<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install <span class="op">--</span>no<span class="op">-</span>cache<span class="op">-</span><span class="bu">dir</span> <span class="op">-</span>r requirements.txt</span>
+<span id="cb2-12"><a aria-label="12"></a></span>
+<span id="cb2-13"><a aria-label="13"></a>COPY . .</span>
+<span id="cb2-14"><a aria-label="14"></a></span>
+<span id="cb2-15"><a aria-label="15"></a>CMD [<span class="st">"/opt/conda/bin/python"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-3">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Dockerfile-scratch-volume</strong></pre>
+<pre><strong>requirements.txt</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="Dockerfile-scratch-volume"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a></span>
-<span id="cb3-2"><a aria-label="2"></a><span class="co"># syntax=docker/dockerfile:1.7</span></span>
-<span id="cb3-3"><a aria-label="3"></a>FROM docker.io<span class="op">/</span>pytorch<span class="op">/</span>pytorch:<span class="fl">2.9.1</span><span class="op">-</span>cuda12<span class="fl">.8</span><span class="op">-</span>cudnn9<span class="op">-</span>devel</span>
-<span id="cb3-4"><a aria-label="4"></a></span>
-<span id="cb3-5"><a aria-label="5"></a>RUN mkdir <span class="op">-</span>p <span class="op">/</span>workspace <span class="op">&amp;&amp;</span> chmod <span class="op">-</span>R <span class="dv">777</span> <span class="op">/</span>workspace</span>
-<span id="cb3-6"><a aria-label="6"></a>RUN mkdir <span class="op">-</span>p <span class="op">/</span>.cache<span class="op">/</span>pip <span class="op">/</span>.local <span class="op">&amp;&amp;</span> chmod <span class="op">-</span>R <span class="dv">777</span> <span class="op">/</span>.cache<span class="op">/</span>pip <span class="op">/</span>.local</span>
-<span id="cb3-7"><a aria-label="7"></a></span>
-<span id="cb3-8"><a aria-label="8"></a>WORKDIR <span class="op">/</span>workspace</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="requirements.txt"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co"># core dependencies</span></span>
+<span id="cb3-3"><a aria-label="3"></a>pillow</span>
+<span id="cb3-4"><a aria-label="4"></a>loguru</span>
+<span id="cb3-5"><a aria-label="5"></a>notebook</span>
+<span id="cb3-6"><a aria-label="6"></a>numpy</span>
+<span id="cb3-7"><a aria-label="7"></a>omegaconf</span>
+<span id="cb3-8"><a aria-label="8"></a>pandas</span>
+<span id="cb3-9"><a aria-label="9"></a>pyyaml</span>
+<span id="cb3-10"><a aria-label="10"></a>wandb</span>
+<span id="cb3-11"><a aria-label="11"></a></span>
+<span id="cb3-12"><a aria-label="12"></a><span class="co"># test dependencies</span></span>
+<span id="cb3-13"><a aria-label="13"></a>black</span>
+<span id="cb3-14"><a aria-label="14"></a>codespell</span>
+<span id="cb3-15"><a aria-label="15"></a>detect<span class="op">-</span>secrets</span>
+<span id="cb3-16"><a aria-label="16"></a>isort</span>
+<span id="cb3-17"><a aria-label="17"></a>pre<span class="op">-</span>commit</span>
+<span id="cb3-18"><a aria-label="18"></a>pylint</span>
+<span id="cb3-19"><a aria-label="19"></a>pytest</span>
+<span id="cb3-20"><a aria-label="20"></a></span>
+<span id="cb3-21"><a aria-label="21"></a><span class="co"># learning dependencies</span></span>
+<span id="cb3-22"><a aria-label="22"></a>accelerate</span>
+<span id="cb3-23"><a aria-label="23"></a>basicsr</span>
+<span id="cb3-24"><a aria-label="24"></a>diffusers</span>
+<span id="cb3-25"><a aria-label="25"></a>einops</span>
+<span id="cb3-26"><a aria-label="26"></a>scikit<span class="op">-</span>learn</span>
+<span id="cb3-27"><a aria-label="27"></a>torch</span>
+<span id="cb3-28"><a aria-label="28"></a>torchvision</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -607,137 +607,223 @@ Figure&nbsp;4: User Personas in Kubeflow Trainer
       }</style></aside>
 <!-- *********************** NEW SLIDE *********************** -->
 </section>
-<section id="training-edm2-model-kubeflow-0.3.0" class="slide level2" style="font-size: 60%;">
-<h2>Training EDM2 Model (kubeflow 0.3.0)</h2>
+<section id="training-edm2-model-kubeflow-0.4.0" class="slide level2" style="font-size: 70%;">
+<h2>Training EDM2 Model (kubeflow 0.4.0)</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">STRUCTRE: training-edm2-model-ghcr</a></li><li><a href="#tabset-2-2">SPEED: training-edm2-model-scratch-volume</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">SPEED: training-edm2-model-scratch-volume</a></li><li><a href="#tabset-2-2">STRUCTRE: training-edm2-model-ghcr</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>training-edm2-model-ghcr.ipynb</strong></pre>
+<pre><a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb" target="_blank"><strong>training-edm2-model-scratch-volume.ipynb</strong></a></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="training-edm2-model-ghcr.ipynb"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a></span>
-<span id="cb4-2"><a aria-label="2"></a><span class="co"># https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb</span></span>
-<span id="cb4-3"><a aria-label="3"></a></span>
-<span id="cb4-4"><a aria-label="4"></a><span class="co">## Set how many PyTorch nodes you want to use for distributed training.</span></span>
-<span id="cb4-5"><a aria-label="5"></a>NUM_NODES <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-6"><a aria-label="6"></a></span>
-<span id="cb4-7"><a aria-label="7"></a><span class="co"># Set the resources for each PyTorch node.</span></span>
-<span id="cb4-8"><a aria-label="8"></a>RESOURCES_PER_NODE <span class="op">=</span> {</span>
-<span id="cb4-9"><a aria-label="9"></a>    <span class="st">"cpu"</span>: <span class="st">"4"</span>,           <span class="co"># CPUs per node</span></span>
-<span id="cb4-10"><a aria-label="10"></a>    <span class="st">"memory"</span>: <span class="st">"64Gi"</span>,     <span class="co"># Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works</span></span>
-<span id="cb4-11"><a aria-label="11"></a>    <span class="st">"nvidia.com/gpu"</span>: <span class="dv">1</span>,  <span class="co"># GPUs per node (the number will depend on the available resources)</span></span>
-<span id="cb4-12"><a aria-label="12"></a>}</span>
-<span id="cb4-13"><a aria-label="13"></a></span>
-<span id="cb4-14"><a aria-label="14"></a>GITHUB_CONTAINER_REGISTRY <span class="op">=</span> <span class="st">"ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"</span></span>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="co">## Set how many PyTorch nodes you want to use for distributed training.</span></span>
+<span id="cb4-3"><a aria-label="3"></a>NUM_NODES <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a aria-label="4"></a></span>
+<span id="cb4-5"><a aria-label="5"></a><span class="co"># Set the resources for each PyTorch node.</span></span>
+<span id="cb4-6"><a aria-label="6"></a>RESOURCES_PER_NODE <span class="op">=</span> {</span>
+<span id="cb4-7"><a aria-label="7"></a>    <span class="st">"cpu"</span>: <span class="st">"4"</span>,           <span class="co"># CPUs per node</span></span>
+<span id="cb4-8"><a aria-label="8"></a>    <span class="st">"memory"</span>: <span class="st">"64Gi"</span>,     <span class="co"># Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works</span></span>
+<span id="cb4-9"><a aria-label="9"></a>    <span class="st">"nvidia.com/gpu"</span>: <span class="dv">1</span>,  <span class="co"># GPUs per node (the number will depend on the available resources)</span></span>
+<span id="cb4-10"><a aria-label="10"></a>}</span>
+<span id="cb4-11"><a aria-label="11"></a></span>
+<span id="cb4-12"><a aria-label="12"></a>GITHUB_CONTAINER_REGISTRY <span class="op">=</span> <span class="st">"ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"</span></span>
+<span id="cb4-13"><a aria-label="13"></a><span class="co"># VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace &amp;&amp; chmod -R 777 /workspace </span></span>
+<span id="cb4-14"><a aria-label="14"></a><span class="co">#                    RUN mkdir -p /.cache/pip /.local &amp;&amp; chmod -R 777 /.cache/pip /.local</span></span>
 <span id="cb4-15"><a aria-label="15"></a></span>
-<span id="cb4-16"><a aria-label="16"></a>command <span class="op">=</span> TrainerCommand(</span>
-<span id="cb4-17"><a aria-label="17"></a>    command<span class="op">=</span>[</span>
-<span id="cb4-18"><a aria-label="18"></a>        <span class="st">"torchrun"</span>,</span>
-<span id="cb4-19"><a aria-label="19"></a>        <span class="ss">f"--nnodes=</span><span class="sc">{</span>NUM_NODES<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb4-20"><a aria-label="20"></a>        <span class="st">"train_edm2.py"</span>, <span class="co">#path of script in scratch </span></span>
-<span id="cb4-21"><a aria-label="21"></a>        <span class="st">"--outdir"</span>, <span class="st">"/scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY"</span>, <span class="co"># pragma: allowlist secret</span></span>
-<span id="cb4-22"><a aria-label="22"></a>        <span class="st">"--data"</span>, <span class="st">"/scratch-volume/FETAL_PLANES_DB"</span>, <span class="co"># pragma: allowlist secret</span></span>
-<span id="cb4-23"><a aria-label="23"></a>        <span class="st">"--batch"</span>, <span class="st">"4"</span>,</span>
-<span id="cb4-24"><a aria-label="24"></a>        <span class="st">"--preset"</span>, <span class="st">"edm2-img512-s"</span>,</span>
-<span id="cb4-25"><a aria-label="25"></a>        <span class="st">"--batch-gpu"</span>, <span class="st">"4"</span>,</span>
-<span id="cb4-26"><a aria-label="26"></a>    ]</span>
-<span id="cb4-27"><a aria-label="27"></a>)</span>
-<span id="cb4-28"><a aria-label="28"></a></span>
-<span id="cb4-29"><a aria-label="29"></a></span>
-<span id="cb4-30"><a aria-label="30"></a></span>
-<span id="cb4-31"><a aria-label="31"></a>job_id <span class="op">=</span> trainer.train(</span>
-<span id="cb4-32"><a aria-label="32"></a>    runtime<span class="op">=</span>torch_runtime,</span>
-<span id="cb4-33"><a aria-label="33"></a>    trainer<span class="op">=</span>CustomTrainerContainer(</span>
-<span id="cb4-34"><a aria-label="34"></a>        image<span class="op">=</span>GITHUB_CONTAINER_REGISTRY,</span>
-<span id="cb4-35"><a aria-label="35"></a>        num_nodes<span class="op">=</span>NUM_NODES,</span>
-<span id="cb4-36"><a aria-label="36"></a>        resources_per_node<span class="op">=</span>RESOURCES_PER_NODE,</span>
-<span id="cb4-37"><a aria-label="37"></a>        env<span class="op">=</span>ENV_VARS        </span>
-<span id="cb4-38"><a aria-label="38"></a>    ),</span>
-<span id="cb4-39"><a aria-label="39"></a>    options<span class="op">=</span>[command, pod_template_overrides],</span>
-<span id="cb4-40"><a aria-label="40"></a>)</span>
-<span id="cb4-41"><a aria-label="41"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<span id="cb4-16"><a aria-label="16"></a></span>
+<span id="cb4-17"><a aria-label="17"></a></span>
+<span id="cb4-18"><a aria-label="18"></a><span class="co">## Volume mounts</span></span>
+<span id="cb4-19"><a aria-label="19"></a><span class="im">from</span> kubeflow.trainer.options.kubernetes <span class="im">import</span> RuntimePatch</span>
+<span id="cb4-20"><a aria-label="20"></a></span>
+<span id="cb4-21"><a aria-label="21"></a>pod_name <span class="op">=</span> <span class="st">"node"</span></span>
+<span id="cb4-22"><a aria-label="22"></a>volume_name <span class="op">=</span> <span class="st">"scratch-volume"</span></span>
+<span id="cb4-23"><a aria-label="23"></a>mount_path <span class="op">=</span> <span class="st">"/scratch-volume"</span></span>
+<span id="cb4-24"><a aria-label="24"></a>volumes <span class="op">=</span> [{<span class="st">"name"</span>: volume_name, <span class="st">"persistentVolumeClaim"</span>: {<span class="st">"claimName"</span>: volume_name}}]</span>
+<span id="cb4-25"><a aria-label="25"></a>volume_mounts <span class="op">=</span> [{<span class="st">"name"</span>: volume_name, <span class="st">"mountPath"</span>: mount_path}]</span>
+<span id="cb4-26"><a aria-label="26"></a></span>
+<span id="cb4-27"><a aria-label="27"></a>volume_patch <span class="op">=</span> RuntimePatch(</span>
+<span id="cb4-28"><a aria-label="28"></a>    training_runtime_spec<span class="op">=</span>{</span>
+<span id="cb4-29"><a aria-label="29"></a>        <span class="st">"template"</span>: {</span>
+<span id="cb4-30"><a aria-label="30"></a>            <span class="st">"spec"</span>: {</span>
+<span id="cb4-31"><a aria-label="31"></a>                <span class="st">"replicatedJobs"</span>: [</span>
+<span id="cb4-32"><a aria-label="32"></a>                    {</span>
+<span id="cb4-33"><a aria-label="33"></a>                        <span class="st">"name"</span>: <span class="st">"node"</span>,</span>
+<span id="cb4-34"><a aria-label="34"></a>                        <span class="st">"template"</span>: {</span>
+<span id="cb4-35"><a aria-label="35"></a>                            <span class="st">"spec"</span>: {</span>
+<span id="cb4-36"><a aria-label="36"></a>                                <span class="st">"template"</span>: {</span>
+<span id="cb4-37"><a aria-label="37"></a>                                    <span class="st">"spec"</span>: {</span>
+<span id="cb4-38"><a aria-label="38"></a>                                        <span class="st">"volumes"</span>: volumes,</span>
+<span id="cb4-39"><a aria-label="39"></a>                                        <span class="st">"containers"</span>: [</span>
+<span id="cb4-40"><a aria-label="40"></a>                                            {</span>
+<span id="cb4-41"><a aria-label="41"></a>                                                <span class="st">"name"</span>: pod_name,</span>
+<span id="cb4-42"><a aria-label="42"></a>                                                <span class="st">"volumeMounts"</span>: volume_mounts,</span>
+<span id="cb4-43"><a aria-label="43"></a>                                            }</span>
+<span id="cb4-44"><a aria-label="44"></a>                                        ],</span>
+<span id="cb4-45"><a aria-label="45"></a>                                    }   </span>
+<span id="cb4-46"><a aria-label="46"></a>                                }    </span>
+<span id="cb4-47"><a aria-label="47"></a>                            }</span>
+<span id="cb4-48"><a aria-label="48"></a>                        },</span>
+<span id="cb4-49"><a aria-label="49"></a>                    }</span>
+<span id="cb4-50"><a aria-label="50"></a>                ]</span>
+<span id="cb4-51"><a aria-label="51"></a>            }</span>
+<span id="cb4-52"><a aria-label="52"></a>        }</span>
+<span id="cb4-53"><a aria-label="53"></a>    }</span>
+<span id="cb4-54"><a aria-label="54"></a>)</span>
+<span id="cb4-55"><a aria-label="55"></a></span>
+<span id="cb4-56"><a aria-label="56"></a></span>
+<span id="cb4-57"><a aria-label="57"></a><span class="co">## Trainer Command </span></span>
+<span id="cb4-58"><a aria-label="58"></a></span>
+<span id="cb4-59"><a aria-label="59"></a>command <span class="op">=</span> TrainerCommand(</span>
+<span id="cb4-60"><a aria-label="60"></a>    command<span class="op">=</span>[</span>
+<span id="cb4-61"><a aria-label="61"></a>        <span class="st">"bash"</span>, <span class="st">"-c"</span>,</span>
+<span id="cb4-62"><a aria-label="62"></a>        (</span>
+<span id="cb4-63"><a aria-label="63"></a>            <span class="co"># Create writable dirs</span></span>
+<span id="cb4-64"><a aria-label="64"></a>            <span class="st">"mkdir -p /scratch-volume/pip-packages "</span></span>
+<span id="cb4-65"><a aria-label="65"></a>            <span class="st">"/scratch-volume/torch-inductor-cache "</span></span>
+<span id="cb4-66"><a aria-label="66"></a>            <span class="st">"/scratch-volume/home &amp;&amp; "</span></span>
+<span id="cb4-67"><a aria-label="67"></a>            <span class="co"># Install deps exclude torch/torchvision (already in base image)</span></span>
+<span id="cb4-68"><a aria-label="68"></a>            <span class="co"># Use --upgrade to overwrite stale packages from previous runs</span></span>
+<span id="cb4-69"><a aria-label="69"></a>            <span class="st">"pip install "</span></span>
+<span id="cb4-70"><a aria-label="70"></a>            <span class="st">"pandas "</span></span>
+<span id="cb4-71"><a aria-label="71"></a>            <span class="st">"accelerate "</span></span>
+<span id="cb4-72"><a aria-label="72"></a>            <span class="st">"basicsr "</span></span>
+<span id="cb4-73"><a aria-label="73"></a>            <span class="st">"diffusers "</span></span>
+<span id="cb4-74"><a aria-label="74"></a>            <span class="st">"einops "</span></span>
+<span id="cb4-75"><a aria-label="75"></a>            <span class="st">"scikit-learn "</span></span>
+<span id="cb4-76"><a aria-label="76"></a>            <span class="st">"--target=/scratch-volume/pip-packages "</span></span>
+<span id="cb4-77"><a aria-label="77"></a>            <span class="st">"--upgrade "</span></span>
+<span id="cb4-78"><a aria-label="78"></a>            <span class="st">"--no-cache-dir "</span></span>
+<span id="cb4-79"><a aria-label="79"></a>            <span class="st">"--quiet &amp;&amp; "</span></span>
+<span id="cb4-80"><a aria-label="80"></a>            <span class="co"># Set cache env vars inline to guarantee they're set before torchrun</span></span>
+<span id="cb4-81"><a aria-label="81"></a>            <span class="st">"export HOME=/scratch-volume/home &amp;&amp; "</span></span>
+<span id="cb4-82"><a aria-label="82"></a>            <span class="st">"export TORCHINDUCTOR_CACHE_DIR=/scratch-volume/torch-inductor-cache &amp;&amp; "</span></span>
+<span id="cb4-83"><a aria-label="83"></a>            <span class="st">"export PYTHONPATH=/scratch-volume/pip-packages:$PYTHONPATH &amp;&amp; "</span>          </span>
+<span id="cb4-84"><a aria-label="84"></a>            <span class="st">"torchrun /scratch-volume/fetal-ultrasound-edm2/train_edm2.py "</span></span>
+<span id="cb4-85"><a aria-label="85"></a>            <span class="st">"--outdir /scratch-volume/data-fetal-us-edm2/OUTPUT_DIRECTORY "</span></span>
+<span id="cb4-86"><a aria-label="86"></a>            <span class="st">"--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB "</span></span>
+<span id="cb4-87"><a aria-label="87"></a>            <span class="st">"--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23 "</span></span>
+<span id="cb4-88"><a aria-label="88"></a>            <span class="st">"--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset "</span></span>
+<span id="cb4-89"><a aria-label="89"></a>            <span class="st">"--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES "</span></span>
+<span id="cb4-90"><a aria-label="90"></a>            <span class="st">"--batch 4 "</span></span>
+<span id="cb4-91"><a aria-label="91"></a>            <span class="st">"--preset edm2-img512-s "</span></span>
+<span id="cb4-92"><a aria-label="92"></a>            <span class="st">"--batch-gpu 4"</span></span>
+<span id="cb4-93"><a aria-label="93"></a>        )</span>
+<span id="cb4-94"><a aria-label="94"></a>    ]</span>
+<span id="cb4-95"><a aria-label="95"></a>)</span>
+<span id="cb4-96"><a aria-label="96"></a></span>
+<span id="cb4-97"><a aria-label="97"></a></span>
+<span id="cb4-98"><a aria-label="98"></a>job_id <span class="op">=</span> trainer.train(</span>
+<span id="cb4-99"><a aria-label="99"></a>    runtime<span class="op">=</span>trainer.get_runtime(<span class="st">"torch-distributed"</span>),</span>
+<span id="cb4-100"><a aria-label="100"></a>    trainer<span class="op">=</span>CustomTrainerContainer(</span>
+<span id="cb4-101"><a aria-label="101"></a>        image<span class="op">=</span>GITHUB_CONTAINER_REGISTRY,</span>
+<span id="cb4-102"><a aria-label="102"></a>        num_nodes<span class="op">=</span>NUM_NODES,</span>
+<span id="cb4-103"><a aria-label="103"></a>        resources_per_node<span class="op">=</span>RESOURCES_PER_NODE,</span>
+<span id="cb4-104"><a aria-label="104"></a>        env<span class="op">=</span>ENV_VARS        </span>
+<span id="cb4-105"><a aria-label="105"></a>    ),</span>
+<span id="cb4-106"><a aria-label="106"></a>    options<span class="op">=</span>[volume_patch, command],</span>
+<span id="cb4-107"><a aria-label="107"></a>)</span>
+<span id="cb4-108"><a aria-label="108"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>training-edm2-model-scratch-volume.ipynb</strong></pre>
+<pre><a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb" target="_blank"><strong>training-edm2-model-ghcr.ipynb</strong></a></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="training-edm2-model-scratch-volume.ipynb"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a></span>
-<span id="cb5-2"><a aria-label="2"></a><span class="co"># https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb</span></span>
-<span id="cb5-3"><a aria-label="3"></a></span>
-<span id="cb5-4"><a aria-label="4"></a></span>
-<span id="cb5-5"><a aria-label="5"></a><span class="co">## Set how many PyTorch nodes you want to use for distributed training.</span></span>
-<span id="cb5-6"><a aria-label="6"></a>NUM_NODES <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb5-7"><a aria-label="7"></a></span>
-<span id="cb5-8"><a aria-label="8"></a><span class="co"># Set the resources for each PyTorch node.</span></span>
-<span id="cb5-9"><a aria-label="9"></a>RESOURCES_PER_NODE <span class="op">=</span> {</span>
-<span id="cb5-10"><a aria-label="10"></a>    <span class="st">"cpu"</span>: <span class="st">"4"</span>,           <span class="co"># CPUs per node</span></span>
-<span id="cb5-11"><a aria-label="11"></a>    <span class="st">"memory"</span>: <span class="st">"64Gi"</span>,     <span class="co"># Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works</span></span>
-<span id="cb5-12"><a aria-label="12"></a>    <span class="st">"nvidia.com/gpu"</span>: <span class="dv">1</span>,  <span class="co"># GPUs per node (the number will depend on the available resources)</span></span>
-<span id="cb5-13"><a aria-label="13"></a>}</span>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a></span>
+<span id="cb5-2"><a aria-label="2"></a></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="co">## Set how many PyTorch nodes you want to use for distributed training.</span></span>
+<span id="cb5-4"><a aria-label="4"></a>NUM_NODES <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-5"><a aria-label="5"></a></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="co"># Set the resources for each PyTorch node.</span></span>
+<span id="cb5-7"><a aria-label="7"></a>RESOURCES_PER_NODE <span class="op">=</span> {</span>
+<span id="cb5-8"><a aria-label="8"></a>    <span class="st">"cpu"</span>: <span class="st">"4"</span>,           <span class="co"># CPUs per node</span></span>
+<span id="cb5-9"><a aria-label="9"></a>    <span class="st">"memory"</span>: <span class="st">"64Gi"</span>,     <span class="co"># Memory in GiB per node (tried 2Gi CrashLoopBackOff/OOMKilled), 64Gi works</span></span>
+<span id="cb5-10"><a aria-label="10"></a>    <span class="st">"nvidia.com/gpu"</span>: <span class="dv">1</span>,  <span class="co"># GPUs per node (the number will depend on the available resources)</span></span>
+<span id="cb5-11"><a aria-label="11"></a>}</span>
+<span id="cb5-12"><a aria-label="12"></a></span>
+<span id="cb5-13"><a aria-label="13"></a>GITHUB_CONTAINER_REGISTRY <span class="op">=</span> <span class="st">"ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"</span></span>
 <span id="cb5-14"><a aria-label="14"></a></span>
-<span id="cb5-15"><a aria-label="15"></a>GITHUB_CONTAINER_REGISTRY <span class="op">=</span> <span class="st">"ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"</span></span>
-<span id="cb5-16"><a aria-label="16"></a><span class="co"># VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace &amp;&amp; chmod -R 777 /workspace </span></span>
-<span id="cb5-17"><a aria-label="17"></a><span class="co">#                    RUN mkdir -p /.cache/pip /.local &amp;&amp; chmod -R 777 /.cache/pip /.local</span></span>
-<span id="cb5-18"><a aria-label="18"></a></span>
+<span id="cb5-15"><a aria-label="15"></a></span>
+<span id="cb5-16"><a aria-label="16"></a><span class="co">## Mount scratch volume</span></span>
+<span id="cb5-17"><a aria-label="17"></a></span>
+<span id="cb5-18"><a aria-label="18"></a><span class="im">from</span> kubeflow.trainer.options.kubernetes <span class="im">import</span> RuntimePatch</span>
 <span id="cb5-19"><a aria-label="19"></a></span>
-<span id="cb5-20"><a aria-label="20"></a>command <span class="op">=</span> TrainerCommand(</span>
-<span id="cb5-21"><a aria-label="21"></a>    command<span class="op">=</span>[</span>
-<span id="cb5-22"><a aria-label="22"></a>        <span class="st">"bash"</span>, <span class="st">"-c"</span>,</span>
-<span id="cb5-23"><a aria-label="23"></a>        (</span>
-<span id="cb5-24"><a aria-label="24"></a>            <span class="co"># Create writable dirs</span></span>
-<span id="cb5-25"><a aria-label="25"></a>            <span class="st">"mkdir -p /scratch-volume/pip-packages "</span></span>
-<span id="cb5-26"><a aria-label="26"></a>            <span class="st">"/scratch-volume/torch-inductor-cache "</span></span>
-<span id="cb5-27"><a aria-label="27"></a>            <span class="st">"/scratch-volume/home &amp;&amp; "</span></span>
-<span id="cb5-28"><a aria-label="28"></a>            <span class="co"># Install deps exclude torch/torchvision (already in base image)</span></span>
-<span id="cb5-29"><a aria-label="29"></a>            <span class="co"># Use --upgrade to overwrite stale packages from previous runs</span></span>
-<span id="cb5-30"><a aria-label="30"></a>            <span class="st">"pip install "</span></span>
-<span id="cb5-31"><a aria-label="31"></a>            <span class="st">"pandas "</span></span>
-<span id="cb5-32"><a aria-label="32"></a>            <span class="st">"accelerate "</span></span>
-<span id="cb5-33"><a aria-label="33"></a>            <span class="st">"basicsr "</span></span>
-<span id="cb5-34"><a aria-label="34"></a>            <span class="st">"diffusers "</span></span>
-<span id="cb5-35"><a aria-label="35"></a>            <span class="st">"einops "</span></span>
-<span id="cb5-36"><a aria-label="36"></a>            <span class="st">"scikit-learn "</span></span>
-<span id="cb5-37"><a aria-label="37"></a>            <span class="st">"--target=/scratch-volume/pip-packages "</span></span>
-<span id="cb5-38"><a aria-label="38"></a>            <span class="st">"--upgrade "</span></span>
-<span id="cb5-39"><a aria-label="39"></a>            <span class="st">"--no-cache-dir "</span></span>
-<span id="cb5-40"><a aria-label="40"></a>            <span class="st">"--quiet &amp;&amp; "</span></span>
-<span id="cb5-41"><a aria-label="41"></a>            <span class="co"># Set cache env vars inline to guarantee they're set before torchrun</span></span>
-<span id="cb5-42"><a aria-label="42"></a>            <span class="st">"export HOME=/scratch-volume/home &amp;&amp; "</span></span>
-<span id="cb5-43"><a aria-label="43"></a>            <span class="st">"export TORCHINDUCTOR_CACHE_DIR=/scratch-volume/torch-inductor-cache &amp;&amp; "</span></span>
-<span id="cb5-44"><a aria-label="44"></a>            <span class="st">"export PYTHONPATH=/scratch-volume/pip-packages:$PYTHONPATH &amp;&amp; "</span>          </span>
-<span id="cb5-45"><a aria-label="45"></a>            <span class="st">"torchrun /scratch-volume/fetal-ultrasound-edm2/train_edm2.py "</span></span>
-<span id="cb5-46"><a aria-label="46"></a>            <span class="st">"--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY "</span></span>
-<span id="cb5-47"><a aria-label="47"></a>            <span class="st">"--data /scratch-volume/FETAL_PLANES_DB "</span></span>
-<span id="cb5-48"><a aria-label="48"></a>            <span class="st">"--batch 4 "</span></span>
-<span id="cb5-49"><a aria-label="49"></a>            <span class="st">"--preset edm2-img512-s "</span></span>
-<span id="cb5-50"><a aria-label="50"></a>            <span class="st">"--batch-gpu 4"</span></span>
-<span id="cb5-51"><a aria-label="51"></a>        )</span>
-<span id="cb5-52"><a aria-label="52"></a>    ]</span>
+<span id="cb5-20"><a aria-label="20"></a>pod_name <span class="op">=</span> <span class="st">"node"</span></span>
+<span id="cb5-21"><a aria-label="21"></a>volume_name <span class="op">=</span> <span class="st">"scratch-volume"</span></span>
+<span id="cb5-22"><a aria-label="22"></a>mount_path <span class="op">=</span> <span class="st">"/scratch-volume"</span></span>
+<span id="cb5-23"><a aria-label="23"></a>volumes <span class="op">=</span> [{<span class="st">"name"</span>: volume_name, <span class="st">"persistentVolumeClaim"</span>: {<span class="st">"claimName"</span>: volume_name}}]</span>
+<span id="cb5-24"><a aria-label="24"></a>volume_mounts <span class="op">=</span> [{<span class="st">"name"</span>: volume_name, <span class="st">"mountPath"</span>: mount_path}]</span>
+<span id="cb5-25"><a aria-label="25"></a></span>
+<span id="cb5-26"><a aria-label="26"></a>volume_patch <span class="op">=</span> RuntimePatch(</span>
+<span id="cb5-27"><a aria-label="27"></a>    training_runtime_spec<span class="op">=</span>{</span>
+<span id="cb5-28"><a aria-label="28"></a>        <span class="st">"template"</span>: {</span>
+<span id="cb5-29"><a aria-label="29"></a>            <span class="st">"spec"</span>: {</span>
+<span id="cb5-30"><a aria-label="30"></a>                <span class="st">"replicatedJobs"</span>: [</span>
+<span id="cb5-31"><a aria-label="31"></a>                    {</span>
+<span id="cb5-32"><a aria-label="32"></a>                        <span class="st">"name"</span>: <span class="st">"node"</span>,</span>
+<span id="cb5-33"><a aria-label="33"></a>                        <span class="st">"template"</span>: {</span>
+<span id="cb5-34"><a aria-label="34"></a>                            <span class="st">"spec"</span>: {</span>
+<span id="cb5-35"><a aria-label="35"></a>                                <span class="st">"template"</span>: {</span>
+<span id="cb5-36"><a aria-label="36"></a>                                    <span class="st">"spec"</span>: {</span>
+<span id="cb5-37"><a aria-label="37"></a>                                        <span class="st">"volumes"</span>: volumes,</span>
+<span id="cb5-38"><a aria-label="38"></a>                                        <span class="st">"containers"</span>: [</span>
+<span id="cb5-39"><a aria-label="39"></a>                                            {</span>
+<span id="cb5-40"><a aria-label="40"></a>                                                <span class="st">"name"</span>: pod_name,</span>
+<span id="cb5-41"><a aria-label="41"></a>                                                <span class="st">"volumeMounts"</span>: volume_mounts,</span>
+<span id="cb5-42"><a aria-label="42"></a>                                            }</span>
+<span id="cb5-43"><a aria-label="43"></a>                                        ],</span>
+<span id="cb5-44"><a aria-label="44"></a>                                    }   </span>
+<span id="cb5-45"><a aria-label="45"></a>                                }    </span>
+<span id="cb5-46"><a aria-label="46"></a>                            }</span>
+<span id="cb5-47"><a aria-label="47"></a>                        },</span>
+<span id="cb5-48"><a aria-label="48"></a>                    }</span>
+<span id="cb5-49"><a aria-label="49"></a>                ]</span>
+<span id="cb5-50"><a aria-label="50"></a>            }</span>
+<span id="cb5-51"><a aria-label="51"></a>        }</span>
+<span id="cb5-52"><a aria-label="52"></a>    }</span>
 <span id="cb5-53"><a aria-label="53"></a>)</span>
 <span id="cb5-54"><a aria-label="54"></a></span>
 <span id="cb5-55"><a aria-label="55"></a></span>
-<span id="cb5-56"><a aria-label="56"></a></span>
-<span id="cb5-57"><a aria-label="57"></a>job_id <span class="op">=</span> trainer.train(</span>
-<span id="cb5-58"><a aria-label="58"></a>    runtime<span class="op">=</span>torch_runtime,</span>
-<span id="cb5-59"><a aria-label="59"></a>    trainer<span class="op">=</span>CustomTrainerContainer(</span>
-<span id="cb5-60"><a aria-label="60"></a>        image<span class="op">=</span>GITHUB_CONTAINER_REGISTRY,</span>
-<span id="cb5-61"><a aria-label="61"></a>        num_nodes<span class="op">=</span>NUM_NODES,</span>
-<span id="cb5-62"><a aria-label="62"></a>        resources_per_node<span class="op">=</span>RESOURCES_PER_NODE,</span>
-<span id="cb5-63"><a aria-label="63"></a>        env<span class="op">=</span>ENV_VARS        </span>
-<span id="cb5-64"><a aria-label="64"></a>    ),</span>
-<span id="cb5-65"><a aria-label="65"></a>    options<span class="op">=</span>[command, pod_template_overrides],</span>
-<span id="cb5-66"><a aria-label="66"></a>)</span>
-<span id="cb5-67"><a aria-label="67"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<span id="cb5-56"><a aria-label="56"></a><span class="co">## Trainer command</span></span>
+<span id="cb5-57"><a aria-label="57"></a>command <span class="op">=</span> TrainerCommand(</span>
+<span id="cb5-58"><a aria-label="58"></a>    command<span class="op">=</span>[</span>
+<span id="cb5-59"><a aria-label="59"></a>        <span class="st">"torchrun"</span>,</span>
+<span id="cb5-60"><a aria-label="60"></a>        <span class="ss">f"--nnodes=</span><span class="sc">{</span>NUM_NODES<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-61"><a aria-label="61"></a>        <span class="st">"train_edm2.py"</span>, <span class="co">#path of script in scratch </span></span>
+<span id="cb5-62"><a aria-label="62"></a>        <span class="st">"--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY"</span>, <span class="co"># pragma: allowlist secret</span></span>
+<span id="cb5-63"><a aria-label="63"></a>        <span class="st">"--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB"</span>,</span>
+<span id="cb5-64"><a aria-label="64"></a>        <span class="st">"--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23"</span>,</span>
+<span id="cb5-65"><a aria-label="65"></a>        <span class="st">"--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset"</span>,</span>
+<span id="cb5-66"><a aria-label="66"></a>        <span class="st">"--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES"</span>,</span>
+<span id="cb5-67"><a aria-label="67"></a>        <span class="st">"--batch 4"</span>,</span>
+<span id="cb5-68"><a aria-label="68"></a>        <span class="st">"--preset edm2-img512-s"</span>,</span>
+<span id="cb5-69"><a aria-label="69"></a>        <span class="st">"--batch-gpu 4"</span>,</span>
+<span id="cb5-70"><a aria-label="70"></a>    ]</span>
+<span id="cb5-71"><a aria-label="71"></a>)</span>
+<span id="cb5-72"><a aria-label="72"></a></span>
+<span id="cb5-73"><a aria-label="73"></a><span class="co">## Train trainer</span></span>
+<span id="cb5-74"><a aria-label="74"></a>job_id <span class="op">=</span> trainer.train(</span>
+<span id="cb5-75"><a aria-label="75"></a>    runtime<span class="op">=</span>trainer.get_runtime(<span class="st">"torch-distributed"</span>),</span>
+<span id="cb5-76"><a aria-label="76"></a>    trainer<span class="op">=</span>CustomTrainerContainer(</span>
+<span id="cb5-77"><a aria-label="77"></a>        image<span class="op">=</span>GITHUB_CONTAINER_REGISTRY,</span>
+<span id="cb5-78"><a aria-label="78"></a>        num_nodes<span class="op">=</span>NUM_NODES,</span>
+<span id="cb5-79"><a aria-label="79"></a>        resources_per_node<span class="op">=</span>RESOURCES_PER_NODE,</span>
+<span id="cb5-80"><a aria-label="80"></a>        env<span class="op">=</span>ENV_VARS        </span>
+<span id="cb5-81"><a aria-label="81"></a>    ),</span>
+<span id="cb5-82"><a aria-label="82"></a>    options<span class="op">=</span>[volume_patch, command],</span>
+<span id="cb5-83"><a aria-label="83"></a>)</span>
+<span id="cb5-84"><a aria-label="84"></a></span>
+<span id="cb5-85"><a aria-label="85"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <div style="font-size: 55%;">
-<p>Jupyter Notebooks: <a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb" class="uri">https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb</a><br>
+<p>Jupyter Notebooks:<br>
+<a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb" class="uri">https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb</a><br>
 <a href="https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb" class="uri">https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb</a></p>
 </div>
 <aside class="notes">
