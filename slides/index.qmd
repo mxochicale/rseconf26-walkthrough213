@@ -528,7 +528,7 @@ job_id = trainer.train(
 
 ```
 
-### STRUCTRE: training-edm2-model-ghcr 
+### STRUCTURE: training-edm2-model-ghcr 
 
 <div class="code-with-filename">
 <div class="code-with-filename-file">
