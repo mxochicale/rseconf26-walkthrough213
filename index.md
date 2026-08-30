@@ -675,18 +675,20 @@ if the repo has one.
 
 ## Conclusions
 
-- **We have started UCL adoption of Unified AI** *to cut vendor reliance
-  and reduce infrastructure cost*
-- **Fast experimentation and reproducible engineering can coexist**
-  *they aren’t a trade-off you have to make once and live with*
-- **Scratch-volume prototyping vs. GHCR containerised production**:
-  *same execution path, different trade-offs of speed vs. scalability*
-- **Diffusion-based synthesis at 512×512** *demonstrates the platform
-  can support real, publishable research (MIUA 2026)*
+- **Started UCL adoption of Unified AI** *cut vendor reliance and lowers
+  infrastructure cost*
+- **Speed and rigour are not a trade-off** *fast experimentation and
+  reproducible engineering coexist*
+- **512×512 image diffusion synthesis** *proof the platform support
+  publishable research (MIUA 2026)*
 
 <div class="notes">
 
 Notes go here
+
+TALK ABOUT DATA, speed of docker builts here \* **Scratch-volume
+prototyping vs. GHCR containerised production**: *same execution path,
+different trade-offs of speed vs. scalability*
 
 <div style="font-size: 55%;">
 
@@ -700,7 +702,7 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## Next steps
+## Next Steps
 
 - **Standardise practice** *drive consistent, reproducible research
   workflows across teams*
