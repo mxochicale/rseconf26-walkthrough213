@@ -744,18 +744,23 @@ Emphasise licensing and how to cite — point people to the CITATION.cff if the 
 <!-- *********************** NEW SLIDE *********************** -->
 ## Conclusions {style="font-size: 100%;"}
 
-* **We have started UCL adoption of Unified AI**
-	_to cut vendor reliance and reduce infrastructure cost_
-* **Fast experimentation and reproducible engineering can coexist** 
-	_they aren't a trade-off you have to make once and live with_
-* **Scratch-volume prototyping vs. GHCR containerised production**: 
-	_same execution path, different trade-offs of speed vs. scalability_
-* **Diffusion-based synthesis at 512×512** 
-	_demonstrates the platform can support real, publishable research (MIUA 2026)_
+* **Started UCL adoption of Unified AI**
+	_cut vendor reliance and lowers infrastructure cost_
+* **Speed and rigour are not a trade-off** 
+	_fast experimentation and reproducible engineering coexist_
+* **512×512 image diffusion synthesis** 
+	_proof the platform support publishable research (MIUA 2026)_
 
 
 ::: {.notes}
 Notes go here
+
+TALK ABOUT DATA, speed of docker builts here
+* **Scratch-volume prototyping vs. GHCR containerised production**: 
+	_same execution path, different trade-offs of speed vs. scalability_
+
+
+
 
 ::: {style="font-size: 55%;"}
 **Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
@@ -770,7 +775,7 @@ Notes go here
 
 
 <!-- *********************** NEW SLIDE *********************** -->
-## Next steps {style="font-size: 100%;"}
+## Next Steps {style="font-size: 100%;"}
 
 * **Standardise practice**
 	_drive consistent, reproducible research workflows across teams_
