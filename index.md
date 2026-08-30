@@ -675,17 +675,14 @@ if the repo has one.
 
 ## Conclusions
 
-Conclusions
-
-- Fast experimentation and reproducible engineering can coexist
-- Scratch-volume prototyping vs. GHCR containerised production
-- Same execution path, different trade-offs: speed vs. scalability
-
-Future Work
-
-- Wider adoption of Unified AI to cut vendor reliance & cost
-- Consistent, reproducible research practice across teams
-- More cross-faculty collaboration and shared case studies
+- **We have started UCL adoption of Unified AI** *to cut vendor reliance
+  and reduce infrastructure cost*
+- **Fast experimentation and reproducible engineering can coexist**
+  *they aren’t a trade-off you have to make once and live with*
+- **Scratch-volume prototyping vs. GHCR containerised production**:
+  *same execution path, different trade-offs of speed vs. scalability*
+- **Diffusion-based synthesis at 512×512** *demonstrates the platform
+  can support real, publishable research (MIUA 2026)*
 
 <div class="notes">
 
@@ -703,13 +700,45 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## Next steps and call for action
+## Next steps
 
-- Explore good practice in AI infrastructure to better support DevOps
-  and MLOps engineers, data scientists and RSEs
-- Help shape future hackathons, workshops and training
-- Get in touch, we’d like to hear from you about good practice and how
-  we might make use of this platform collaboratively
+- **Standardise practice** *drive consistent, reproducible research
+  workflows across teams*
+- **Document good infrastructure practice** *share patterns that support
+  DevOps/MLOps engineers, data scientists, and RSEs*
+- **Grow the community** *use hackathons, workshops, and training
+  sessions to spread adoption and gather feedback*
+- **Scale beyond one use case** *validate the SPEED/STRUCTURE pattern on
+  additional model types and datasets*
+
+<div class="notes">
+
+Notes go here
+
+<div style="font-size: 55%;">
+
+**Sciortino et al. 2017** in Computers in Biology and Medicine
+<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
+Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+
+</div>
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Call for action
+
+We want to hear from you.
+
+🤝 **Get in touch**: *share your experience of good practice and how we
+can make better use of this platform together*
+
+🔁 **Cross-faculty collaboration**: *contribute shared case studies from
+your own research area*
+
+🏛️ **Partnerships via honorary contracts**: *the route to getting access
+to UCL infrastructure*
 
 <div class="notes">
 
@@ -748,8 +777,14 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 ### Unified AI Team
 
+<div class="card">
+
+<span class="card-icon"> </span>
+
 Dorothy Chung, Matthias Golomb, David Guzman, Andrew Esterson and Sylvie
 Ramos
+
+</div>
 
 ------------------------------------------------------------------------
 
