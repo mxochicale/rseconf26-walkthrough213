@@ -60,8 +60,8 @@ mxochicale](https://mxochicale.github.io/web-animations/)</span>
 1.  [**Introduction**](#sectag_title_1) <add details>
 2.  [**Building docker images**](#sectag_title_2) <add details>
 3.  [**Training models**](#sectag_title_3) <add details>
-4.  [**Rapid vs Structured Workflows**](#sectag_title_3) <add details>
-5.  [**Conclusions, Future Work & Next Steps**](#sectag_title_4)
+4.  [**Rapid vs Structured Workflows**](#sectag_title_4) <add details>
+5.  [**Conclusions, Next Steps & Call for Action**](#sectag_title_5)
     <add details>
 
 <div class="notes">
@@ -452,7 +452,7 @@ job_id = trainer.train(
 
 ```
 
-### STRUCTRE: training-edm2-model-ghcr
+### STRUCTURE: training-edm2-model-ghcr
 
 <div class="code-with-filename">
 
@@ -574,6 +574,8 @@ Speaker notes go here. {.scrollable}
 
 # Reproducing results
 
+Rapid vs Structured Workflows
+
 <div class="notes">
 
 <!-- TODO: notes specific to Section title 2 (was previously a duplicate
@@ -607,10 +609,6 @@ synthesis approach.
 Speaker notes go here.
 
 </div>
-
-<!-- ============================================================
-     CALL TO ACTION: Reproduce this work
-     ============================================================ -->
 
 <!-- *********************** NEW SLIDE *********************** -->
 
@@ -664,7 +662,7 @@ if the repo has one.
      SECTION: Section title 4
      ============================================================ -->
 
-# Conclusions, Future Work & Next Steps
+# Conclusions, Next Steps & Call for action
 
 <div class="notes">
 
@@ -675,7 +673,7 @@ if the repo has one.
 
 <!-- *********************** NEW SLIDE *********************** -->
 
-## Conclusions, Future Work & Next Steps
+## Conclusions
 
 Conclusions
 
@@ -689,7 +687,23 @@ Future Work
 - Consistent, reproducible research practice across teams
 - More cross-faculty collaboration and shared case studies
 
-Next steps and call to action
+<div class="notes">
+
+Notes go here
+
+<div style="font-size: 55%;">
+
+**Sciortino et al. 2017** in Computers in Biology and Medicine
+<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
+Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
+
+</div>
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Next steps and call for action
 
 - Explore good practice in AI infrastructure to better support DevOps
   and MLOps engineers, data scientists and RSEs
@@ -717,7 +731,7 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 <div class="columns">
 
-<div class="column" width="50%">
+<div class="column" width="35%">
 
 ### Collaborators
 
@@ -730,7 +744,7 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 </div>
 
-<div class="column" width="50%">
+<div class="column" width="55%">
 
 ### Unified AI Team
 
@@ -756,8 +770,10 @@ Ramos
 
 <div class="notes">
 
-Thank the room. Leave the slide up during questions — GitHub handle and
+Thank the room. Leave the slide up during questions. GitHub handle and
 repo URL are visible for anyone who wants to follow up.
+
+{.smaller}
 
 </div>
 
