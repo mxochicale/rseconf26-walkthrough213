@@ -108,7 +108,8 @@ Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI R
 [[Matthias J. Golomb](https://profiles.ucl.ac.uk/107875-matthias-golomb), [David Guzman](https://www.linkedin.com/in/david-guzman-555a321ab), [Andrew Esterson](https://profiles.ucl.ac.uk/99482-andrew-esterson), [Sylvie Da Graca Ramos](https://profiles.ucl.ac.uk/95114-sylvie-da-graca-ramos), and [**Miguel Xochicale**](http://mxochicale.github.io/) · [UCL-ARC](https://www.ucl.ac.uk/advanced-research-computing/)]{style="font-size:0.55em; color:#b7bdc9;"}
 
 ::: {.badge-row}
-[⭐ GitHub repo](https://github.com/xfetus/fetal-ultrasound-edm2){.badge}
+[⭐ GitHub: code/data](https://github.com/xfetus/fetal-ultrasound-edm2){.badge}
+[⭐ GitHub: slides](https://github.com/mxochicale/rseconf26-walkthrough213/){.badge}
 [📄 Submission abstract 213](https://virtual.oxfordabstracts.com/event/76908/submission/213){.badge}
 [🔗 DOI: 10.xxxx/xxxxx](#TO_ADD_ZENODO_DOI){.badge}
 :::
@@ -366,12 +367,12 @@ Speaker notes go here.
 
 ::: {.column width="48%"}
 {{< video figures/d1-ezgif.com-gif-to-mp4-converter.mp4 >}}
-**Original Elapse time** `17:54`
+**Original Elapse time** `17'54''`
 :::
 
 ::: {.column width="48%"}
 {{< video figures/d2-ezgif.com-gif-to-mp4-converter.mp4 >}}
-**Original elapse time** `09:41`
+**Original elapse time** `09'41''`
 :::
 
 ::::
@@ -392,12 +393,12 @@ Notes go here
 
 ::: {.column width="48%"}
 {{< video figures/d3-ezgif.com-gif-to-mp4-converter.mp4 >}}
-**Original elapse time** `00:24`
+**Original elapse time** `00'24''`
 :::
 
 ::: {.column width="48%"}
 {{< video figures/d4-ezgif.com-gif-to-mp4-converter.mp4 >}}
-**Original elapse time** `23:06`
+**Original elapse time** `23'06''`
 :::
 
 ::::
@@ -715,18 +716,17 @@ job_id = trainer.train(
 :::
 
 
-::: {style="font-size: 55%;"}
-
-Jupyter Notebooks:    
-<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>       
-<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
-
-:::
 
 
 ::: {.notes}
 Speaker notes go here.
  {.scrollable} 
+
+Jupyter Notebooks:    
+<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>       
+<https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
+
+
 :::
 
 
