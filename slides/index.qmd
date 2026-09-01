@@ -828,13 +828,14 @@ Emphasise licensing and how to cite — point people to the CITATION.cff if the 
 <!-- *********************** NEW SLIDE *********************** -->
 ## Conclusions {style="font-size: 100%;"}
 
-* **Started UCL adoption of Unified AI**
-	_cut vendor reliance and lowers infrastructure cost_
-* **Speed and rigour are not a trade-off** 
-	_fast experimentation and reproducible engineering coexist_
-* **512×512 image diffusion synthesis** 
-	_proof the platform support publishable research (MIUA 2026)_
+* **Started UCL's adoption of Unified AI**     
+  _Cuts vendor reliance and lowers infrastructure cost_
 
+* **Speed and rigour are not a trade-off**    
+  _Fast experimentation and reproducible engineering coexist_
+
+* **512×512 image diffusion synthesis**    
+  _Proves the platform supports publishable research (MIUA 2026)_
 
 ::: {.notes}
 Notes go here
@@ -859,15 +860,15 @@ TALK ABOUT DATA, speed of docker builts here
 
 
 <!-- *********************** NEW SLIDE *********************** -->
-## Next Steps {style="font-size: 100%;"}
+## Next Steps {style="font-size: 90%;"}
 
-* **Standardise practice**
+* **Standardise practice**   
 	_drive consistent, reproducible research workflows across teams_
-* **Document good infrastructure practice** 
+* **Document good infrastructure practice**    
 	_share patterns that support DevOps/MLOps engineers, data scientists, and RSEs_
-* **Grow the community** 
+* **Grow the community**     
 	_use hackathons, workshops, and training sessions to spread adoption and gather feedback_
-* **Scale beyond one use case** 
+* **Scale beyond one use case**    
 	_validate the SPEED/STRUCTURE pattern on additional model types and datasets_
 
 
@@ -888,11 +889,14 @@ Notes go here
 
 We want to hear from you.
 
-🤝 **Get in touch**: _share your experience of good practice and how we can make better use of this platform together_
+* 🤝 **Get in touch**:   
+	_share your experience of good practice and how we can make better use of this platform together_
 
-🔁 **Cross-faculty collaboration**: _contribute shared case studies from your own research area_
+* 🔁 **Cross-faculty collaboration**:   
+	_contribute shared case studies from your own research area_
 
-🏛️ **Partnerships via honorary contracts**: _the route to getting access to UCL infrastructure_
+* 🏛️ **Partnerships via honorary contracts**:   
+	_the route to getting access to UCL infrastructure_
 
 
 
@@ -967,58 +971,6 @@ GitHub handle and repo URL are visible for anyone who wants to follow up.
 {.smaller}
 
 :::
-
-
-<!-- ============================================================
-     EXTRA SLIDES (appendix)
-     ============================================================ -->
-# Appendix {background-color="#111111"}
-
-Extra slides for Q&A
-
-
-
-
-<!-- *********************** NEW SLIDE *********************** -->
-## Title of the slide {style="font-size: 100%;"}
-
-* Bullet point 1
-* Bullet point 2
-* **Bullet point** 3
-  * Bullet point 3.1
-  * Bullet point 3.2
-
-
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-:::
-
-::: {.notes}
-Notes go here
-:::
-
-
-
-<!-- *********************** NEW SLIDE *********************** -->
-## {{< fa brands github >}} Github: Getting started docs {style="font-size: 100%;"}
-
-::: {#fig-template-section1}
-
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.
-:::
-
-::: {style="font-size: 55%;"}
-**Sciortino et al. 2017** in Computers in Biology and Medicine <https://doi.org/10.1016/j.compbiomed.2017.01.008>
-**He et al. 2021** in Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
 
 
 
