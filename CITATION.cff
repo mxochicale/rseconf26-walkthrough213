@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this presentation, please cite it as below."
+type: presentation
+title: "Speed vs Structure: Building Reproducible AI Workflows with the UCL Unified AI Research Platform"
+authors:
+  - family-names: "Golomb"
+    given-names: "Matthias"
+    name-particle: "J."
+  - family-names: "Guzman"
+    given-names: "David"
+  - family-names: "Esterson"
+    given-names: "Andrew"
+  - family-names: "Da Graca Ramos"
+    given-names: "Sylvie"
+  - family-names: "Xochicale"
+    given-names: "Miguel"
+    orcid: "https://orcid.org/0000-0002-8225-7517"
+version: v0.0.1
+date-released: 2026-09-01
+doi: 10.5281/zenodo.22229677
+url: "https://zenodo.org/records/22229677"
+repository-code: "https://github.com/mxochicale/rseconf26-walkthrough213"
+license: CC-BY-4.0
+publisher:
+  name: RSECon26
