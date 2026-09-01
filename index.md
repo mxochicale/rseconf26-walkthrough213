@@ -25,7 +25,9 @@ and [**Miguel Xochicale**](http://mxochicale.github.io/) ·
 <div class="badge-row">
 
 <a href="https://github.com/xfetus/fetal-ultrasound-edm2"
-class="badge">⭐ GitHub repo</a>
+class="badge">⭐ GitHub: code/data</a>
+<a href="https://github.com/mxochicale/rseconf26-walkthrough213/"
+class="badge">⭐ GitHub: slides</a>
 <a href="https://virtual.oxfordabstracts.com/event/76908/submission/213"
 class="badge">📄 Submission abstract 213</a>
 <a href="#TO_ADD_ZENODO_DOI" class="badge">🔗 DOI: 10.xxxx/xxxxx</a>
@@ -294,14 +296,14 @@ Speaker notes go here. {.scrollable}
 <div class="column" width="48%">
 
 ![](figures/d1-ezgif.com-gif-to-mp4-converter.mp4) **Original Elapse
-time** `17:54`
+time** `17'54''`
 
 </div>
 
 <div class="column" width="48%">
 
 ![](figures/d2-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `09:41`
+time** `09'41''`
 
 </div>
 
@@ -324,14 +326,14 @@ Notes go here
 <div class="column" width="48%">
 
 ![](figures/d3-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `00:24`
+time** `00'24''`
 
 </div>
 
 <div class="column" width="48%">
 
 ![](figures/d4-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `23:06`
+time** `23'06''`
 
 </div>
 
@@ -645,17 +647,13 @@ job_id = trainer.train(
 
 </div>
 
-<div style="font-size: 55%;">
+<div class="notes">
+
+Speaker notes go here. {.scrollable}
 
 Jupyter Notebooks:\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
-
-</div>
-
-<div class="notes">
-
-Speaker notes go here. {.scrollable}
 
 </div>
 
