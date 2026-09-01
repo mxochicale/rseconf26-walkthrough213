@@ -19,7 +19,8 @@ Golomb](https://profiles.ucl.ac.uk/107875-matthias-golomb), [David
 Guzman](https://www.linkedin.com/in/david-guzman-555a321ab), [Andrew
 Esterson](https://profiles.ucl.ac.uk/99482-andrew-esterson), [Sylvie Da
 Graca Ramos](https://profiles.ucl.ac.uk/95114-sylvie-da-graca-ramos),
-and [**Miguel Xochicale**](http://mxochicale.github.io/) ·
+and [**Miguel
+Xochicale**](https://profiles.ucl.ac.uk/91071-miguel-xochicale) ·
 [UCL-ARC](https://www.ucl.ac.uk/advanced-research-computing/)</span>
 
 <div class="badge-row">
@@ -30,7 +31,8 @@ class="badge">⭐ GitHub: code/data</a>
 class="badge">⭐ GitHub: slides</a>
 <a href="https://virtual.oxfordabstracts.com/event/76908/submission/213"
 class="badge">📄 Submission abstract 213</a>
-<a href="#TO_ADD_ZENODO_DOI" class="badge">🔗 DOI: 10.xxxx/xxxxx</a>
+<a href="https://zenodo.org/records/22229677" class="badge">🔗 DOI:
+10.5281/zenodo.22229677</a>
 
 </div>
 
