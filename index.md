@@ -766,12 +766,14 @@ if the repo has one.
 
 ## Conclusions
 
-- **Started UCL adoption of Unified AI** *cut vendor reliance and lowers
-  infrastructure cost*
-- **Speed and rigour are not a trade-off** *fast experimentation and
-  reproducible engineering coexist*
-- **512×512 image diffusion synthesis** *proof the platform support
-  publishable research (MIUA 2026)*
+- **Started UCL’s adoption of Unified AI**\
+  *Cuts vendor reliance and lowers infrastructure cost*
+
+- **Speed and rigour are not a trade-off**\
+  *Fast experimentation and reproducible engineering coexist*
+
+- **512×512 image diffusion synthesis**\
+  *Proves the platform supports publishable research (MIUA 2026)*
 
 <div class="notes">
 
@@ -795,14 +797,17 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 ## Next Steps
 
-- **Standardise practice** *drive consistent, reproducible research
-  workflows across teams*
-- **Document good infrastructure practice** *share patterns that support
-  DevOps/MLOps engineers, data scientists, and RSEs*
-- **Grow the community** *use hackathons, workshops, and training
-  sessions to spread adoption and gather feedback*
-- **Scale beyond one use case** *validate the SPEED/STRUCTURE pattern on
-  additional model types and datasets*
+- **Standardise practice**\
+  *drive consistent, reproducible research workflows across teams*
+- **Document good infrastructure practice**\
+  *share patterns that support DevOps/MLOps engineers, data scientists,
+  and RSEs*
+- **Grow the community**\
+  *use hackathons, workshops, and training sessions to spread adoption
+  and gather feedback*
+- **Scale beyond one use case**\
+  *validate the SPEED/STRUCTURE pattern on additional model types and
+  datasets*
 
 <div class="notes">
 
@@ -824,14 +829,15 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 We want to hear from you.
 
-🤝 **Get in touch**: *share your experience of good practice and how we
-can make better use of this platform together*
+- 🤝 **Get in touch**:\
+  *share your experience of good practice and how we can make better use
+  of this platform together*
 
-🔁 **Cross-faculty collaboration**: *contribute shared case studies from
-your own research area*
+- 🔁 **Cross-faculty collaboration**:\
+  *contribute shared case studies from your own research area*
 
-🏛️ **Partnerships via honorary contracts**: *the route to getting access
-to UCL infrastructure*
+- 🏛️ **Partnerships via honorary contracts**:\
+  *the route to getting access to UCL infrastructure*
 
 <div class="notes">
 
@@ -902,65 +908,5 @@ Thank the room. Leave the slide up during questions. GitHub handle and
 repo URL are visible for anyone who wants to follow up.
 
 {.smaller}
-
-</div>
-
-<!-- ============================================================
-     EXTRA SLIDES (appendix)
-     ============================================================ -->
-
-# Appendix
-
-Extra slides for Q&A
-
-<!-- *********************** NEW SLIDE *********************** -->
-
-## Title of the slide
-
-- Bullet point 1
-- Bullet point 2
-- **Bullet point** 3
-  - Bullet point 3.1
-  - Bullet point 3.2
-
-<div style="font-size: 55%;">
-
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-
-</div>
-
-<div class="notes">
-
-Notes go here
-
-</div>
-
-<!-- *********************** NEW SLIDE *********************** -->
-
-##  Github: Getting started docs
-
-<div id="fig-template-section1">
-
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
-
-Figure 6: Getting started documentation provide with a range of links to
-setup, use, run and debug application including github workflow.
-
-</div>
-
-<div style="font-size: 55%;">
-
-**Sciortino et al. 2017** in Computers in Biology and Medicine
-<https://doi.org/10.1016/j.compbiomed.2017.01.008> **He et al. 2021** in
-Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
-
-</div>
-
-<div class="notes">
-
-Speaker notes go here.
 
 </div>

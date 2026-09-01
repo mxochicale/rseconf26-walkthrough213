@@ -88,21 +88,21 @@
     "href": "index.html#conclusions",
     "title": "",
     "section": "Conclusions",
-    "text": "Conclusions\n\nStarted UCL adoption of Unified AI cut vendor reliance and lowers infrastructure cost\nSpeed and rigour are not a trade-off fast experimentation and reproducible engineering coexist\n512×512 image diffusion synthesis proof the platform support publishable research (MIUA 2026)\n\n\nNotes go here\nTALK ABOUT DATA, speed of docker builts here * Scratch-volume prototyping vs. GHCR containerised production: same execution path, different trade-offs of speed vs. scalability\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
+    "text": "Conclusions\n\nStarted UCL’s adoption of Unified AI\nCuts vendor reliance and lowers infrastructure cost\nSpeed and rigour are not a trade-off\nFast experimentation and reproducible engineering coexist\n512×512 image diffusion synthesis\nProves the platform supports publishable research (MIUA 2026)\n\n\nNotes go here\nTALK ABOUT DATA, speed of docker builts here * Scratch-volume prototyping vs. GHCR containerised production: same execution path, different trade-offs of speed vs. scalability\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
   },
   {
     "objectID": "index.html#next-steps",
     "href": "index.html#next-steps",
     "title": "",
     "section": "Next Steps",
-    "text": "Next Steps\n\nStandardise practice drive consistent, reproducible research workflows across teams\nDocument good infrastructure practice share patterns that support DevOps/MLOps engineers, data scientists, and RSEs\nGrow the community use hackathons, workshops, and training sessions to spread adoption and gather feedback\nScale beyond one use case validate the SPEED/STRUCTURE pattern on additional model types and datasets\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
+    "text": "Next Steps\n\nStandardise practice\ndrive consistent, reproducible research workflows across teams\nDocument good infrastructure practice\nshare patterns that support DevOps/MLOps engineers, data scientists, and RSEs\nGrow the community\nuse hackathons, workshops, and training sessions to spread adoption and gather feedback\nScale beyond one use case\nvalidate the SPEED/STRUCTURE pattern on additional model types and datasets\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
   },
   {
     "objectID": "index.html#call-for-action",
     "href": "index.html#call-for-action",
     "title": "",
     "section": "Call for action",
-    "text": "Call for action\nWe want to hear from you.\n🤝 Get in touch: share your experience of good practice and how we can make better use of this platform together\n🔁 Cross-faculty collaboration: contribute shared case studies from your own research area\n🏛️ Partnerships via honorary contracts: the route to getting access to UCL infrastructure\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
+    "text": "Call for action\nWe want to hear from you.\n\n🤝 Get in touch:\nshare your experience of good practice and how we can make better use of this platform together\n🔁 Cross-faculty collaboration:\ncontribute shared case studies from your own research area\n🏛️ Partnerships via honorary contracts:\nthe route to getting access to UCL infrastructure\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
   },
   {
     "objectID": "index.html#thank-you",
@@ -110,19 +110,5 @@
     "title": "",
     "section": "Thank You",
     "text": "Thank You\n\n\nCollaborators\n\nHarvey Mannering (PhD student) and Zhiwu Huang (Lecturer) at University of Southampton\nYilin Zhang (PhD student) at University of Southampton\n\nZiao Liu (PhD student) at Tsinghua University\n\nJacqueline Matthew ( Clinical Research Fellow) at King’s College London\n\n\nUnified AI Team\n\n \nDorothy Chung, Matthias Golomb, David Guzman, Andrew Esterson and Sylvie Ramos\n\n\n\n\n\n💬 Get in Touch\n\n\nEmail: m.xochicale@ucl.ac.uk\nGitHub: github.com/mxochicale\nLinkedIn: in/mxochicale\nUCL ARC: ucl.ac.uk/arc\nUnified AI: Unified AI Platform for Research\n\n\n\n\n\nThank the room. Leave the slide up during questions. GitHub handle and repo URL are visible for anyone who wants to follow up.\n{.smaller}"
-  },
-  {
-    "objectID": "index.html#title-of-the-slide",
-    "href": "index.html#title-of-the-slide",
-    "title": "",
-    "section": "Title of the slide",
-    "text": "Title of the slide\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nBullet point 3.1\nBullet point 3.2\n\n\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nNotes go here"
-  },
-  {
-    "objectID": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
-    "href": "index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320676974687562203e7d7d-github-getting-started-docs",
-    "title": "",
-    "section": " Github: Getting started docs",
-    "text": "Github: Getting started docs\n\n\nFigure 6: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978\n\n\nSpeaker notes go here."
   }
 ]
