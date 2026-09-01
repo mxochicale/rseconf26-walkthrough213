@@ -8,6 +8,8 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
@@ -549,6 +551,124 @@ Figure&nbsp;3: Worflow for GitHub Container Registry
 </div>
 <aside class="notes">
 <p>Speaker notes go here. {.scrollable}</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- *********************** NEW SLIDE *********************** -->
+</section>
+<section id="build-docker-images" class="slide level2" style="font-size: 90%;">
+<h2>Build docker images</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="figures/d1-ezgif.com-gif-to-mp4-converter.mp4"></video> <strong>Original Elapse time</strong> <code>17:54</code></p>
+</div><div class="column" style="width:48%;">
+<p><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="figures/d2-ezgif.com-gif-to-mp4-converter.mp4"></video> <strong>Original elapse time</strong> <code>09:41</code></p>
+</div></div>
+<aside class="notes">
+<p>Notes go here</p>
+<p><strong>~46% faster build time</strong></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- *********************** NEW SLIDE *********************** -->
+</section>
+<section id="push-images-to-ghcr" class="slide level2" style="font-size: 90%;">
+<h2>Push images to GHCR</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><video id="video_shortcode_videojs_video3" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="figures/d3-ezgif.com-gif-to-mp4-converter.mp4"></video> <strong>Original elapse time</strong> <code>00:24</code></p>
+</div><div class="column" style="width:48%;">
+<p><video id="video_shortcode_videojs_video4" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="figures/d4-ezgif.com-gif-to-mp4-converter.mp4"></video> <strong>Original elapse time</strong> <code>23:06</code></p>
+</div></div>
+<aside class="notes">
+<p>Notes go here</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- *********************** NEW SLIDE *********************** -->
+</section>
+<section id="summary-of-docker-images-and-ghcr-versions" class="slide level2" style="font-size: 70%;">
+<h2>Summary of docker images and GHCR versions</h2>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Local tag</th>
+<th style="text-align: left;">GHCR tag</th>
+<th style="text-align: left;">Image ID</th>
+<th style="text-align: right;">Disk usage</th>
+<th style="text-align: right;">Content size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">v0.0.11</td>
+<td style="text-align: left;"><code>fetal-ultrasound-edm2-distributed-learning</code></td>
+<td style="text-align: left;"><code>ghcr.io/xfetus/fetal-ultrasound-edm2/...</code></td>
+<td style="text-align: left;"><code>abafe76a2090</code></td>
+<td style="text-align: right;">27 GB</td>
+<td style="text-align: right;">9.56 GB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">v0.1.41</td>
+<td style="text-align: left;"><code>fetal-ultrasound-edm2-distributed-learning</code></td>
+<td style="text-align: left;"><code>ghcr.io/xfetus/fetal-ultrasound-edm2/...</code></td>
+<td style="text-align: left;"><code>2e2c049aa527</code></td>
+<td style="text-align: right;">33.8 GB</td>
+<td style="text-align: right;">12.6 GB</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Local and GHCR tags share the same image ID per version; same content, just retagged for the registry.</p>
+</div>
+</div>
+</div>
+<p><a href="https://github.com/xfetus/fetal-ultrasound-edm2/pkgs/container/fetal-ultrasound-edm2%2Ffetal-ultrasound-edm2-distributed-learning/versions">View all versions on GHCR -&gt;</a></p>
+<aside class="notes">
+<p>Notes go here</p>
+<p>Improve push mechanics</p>
+<p>Enable BuildKit (DOCKER_BUILDKIT=1); better caching and often better layer diffing. Check your upload bandwidth (speedtest-cli or similar); genuinely limited pipes will bottleneck no matter what you do to the image. Consider pushing from a CI runner (e.g., GitHub Actions) with a much better uplink than your local machine, especially since you’re already targeting GHCR — building and pushing to GHCR from a GitHub Actions workflow avoids your local upload bottleneck entirely.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1517,6 +1637,10 @@ Figure&nbsp;6: Getting started documentation provide with a range of links to se
         }
       });
       </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
+    <script>videojs(video_shortcode_videojs_video2);</script>
+    <script>videojs(video_shortcode_videojs_video3);</script>
+    <script>videojs(video_shortcode_videojs_video4);</script>
     
 
 </body></html>

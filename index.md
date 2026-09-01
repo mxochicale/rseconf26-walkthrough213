@@ -285,6 +285,97 @@ Speaker notes go here. {.scrollable}
 
 </div>
 
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Build docker images
+
+<div class="columns">
+
+<div class="column" width="48%">
+
+![](figures/d1-ezgif.com-gif-to-mp4-converter.mp4) **Original Elapse
+time** `17:54`
+
+</div>
+
+<div class="column" width="48%">
+
+![](figures/d2-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
+time** `09:41`
+
+</div>
+
+</div>
+
+<div class="notes">
+
+Notes go here
+
+**~46% faster build time**
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Push images to GHCR
+
+<div class="columns">
+
+<div class="column" width="48%">
+
+![](figures/d3-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
+time** `00:24`
+
+</div>
+
+<div class="column" width="48%">
+
+![](figures/d4-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
+time** `23:06`
+
+</div>
+
+</div>
+
+<div class="notes">
+
+Notes go here
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Summary of docker images and GHCR versions
+
+| Version | Local tag | GHCR tag | Image ID | Disk usage | Content size |
+|:---|:---|:---|:---|---:|---:|
+| v0.0.11 | `fetal-ultrasound-edm2-distributed-learning` | `ghcr.io/xfetus/fetal-ultrasound-edm2/...` | `abafe76a2090` | 27 GB | 9.56 GB |
+| v0.1.41 | `fetal-ultrasound-edm2-distributed-learning` | `ghcr.io/xfetus/fetal-ultrasound-edm2/...` | `2e2c049aa527` | 33.8 GB | 12.6 GB |
+
+> [!NOTE]
+>
+> Local and GHCR tags share the same image ID per version; same content,
+> just retagged for the registry.
+
+[View all versions on GHCR
+-\>](https://github.com/xfetus/fetal-ultrasound-edm2/pkgs/container/fetal-ultrasound-edm2%2Ffetal-ultrasound-edm2-distributed-learning/versions)
+
+<div class="notes">
+
+Notes go here
+
+Improve push mechanics
+
+Enable BuildKit (DOCKER_BUILDKIT=1); better caching and often better
+layer diffing. Check your upload bandwidth (speedtest-cli or similar);
+genuinely limited pipes will bottleneck no matter what you do to the
+image. Consider pushing from a CI runner (e.g., GitHub Actions) with a
+much better uplink than your local machine, especially since you’re
+already targeting GHCR — building and pushing to GHCR from a GitHub
+Actions workflow avoids your local upload bottleneck entirely.
+
+</div>
+
 <!-- ============================================================
      SECTION: Section title 3
      ============================================================ -->

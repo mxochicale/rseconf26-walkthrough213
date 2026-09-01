@@ -35,6 +35,27 @@
     "text": "Dockerfiles\n\nSPEED: Dockerfile-scratch-volumeSTRUCTURE: Dockerfile -&gt;&lt;- requirements.txt\n\n\n\n\nDockerfile-scratch-volume\n\n\n# syntax=docker/dockerfile:1.7\nFROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel\n\nRUN mkdir -p /workspace && chmod -R 777 /workspace\nRUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local\n\nWORKDIR /workspace\n\n\n\n\n\nDockerfile\n\n\n# syntax=docker/dockerfile:1.7\nFROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel\n\nRUN mkdir -p /workspace && chmod -R 777 /workspace\nWORKDIR /workspace\n\nCOPY requirements.txt .\n\nRUN /opt/conda/bin/python -m pip install --upgrade pip && \\\n    /opt/conda/bin/python -m pip install --no-cache-dir -r requirements.txt\n\nCOPY . .\n\nCMD [\"/opt/conda/bin/python\"]\n\n\n\n\n\nrequirements.txt\n\n\n# core dependencies\npillow\nloguru\nnotebook\nnumpy\nomegaconf\npandas\npyyaml\nwandb\n\n# test dependencies\nblack\ncodespell\ndetect-secrets\nisort\npre-commit\npylint\npytest\n\n# learning dependencies\naccelerate\nbasicsr\ndiffusers\neinops\nscikit-learn\ntorch\ntorchvision\n\n\n\n\n\nSpeaker notes go here. {.scrollable}"
   },
   {
+    "objectID": "index.html#build-docker-images",
+    "href": "index.html#build-docker-images",
+    "title": "",
+    "section": "Build docker images",
+    "text": "Build docker images\n\n\n Original Elapse time 17:54\n\n Original elapse time 09:41\n\n\nNotes go here\n~46% faster build time"
+  },
+  {
+    "objectID": "index.html#push-images-to-ghcr",
+    "href": "index.html#push-images-to-ghcr",
+    "title": "",
+    "section": "Push images to GHCR",
+    "text": "Push images to GHCR\n\n\n Original elapse time 00:24\n\n Original elapse time 23:06\n\n\nNotes go here"
+  },
+  {
+    "objectID": "index.html#summary-of-docker-images-and-ghcr-versions",
+    "href": "index.html#summary-of-docker-images-and-ghcr-versions",
+    "title": "",
+    "section": "Summary of docker images and GHCR versions",
+    "text": "Summary of docker images and GHCR versions\n\n\n\n\n\n\n\n\n\n\n\nVersion\nLocal tag\nGHCR tag\nImage ID\nDisk usage\nContent size\n\n\n\n\nv0.0.11\nfetal-ultrasound-edm2-distributed-learning\nghcr.io/xfetus/fetal-ultrasound-edm2/...\nabafe76a2090\n27 GB\n9.56 GB\n\n\nv0.1.41\nfetal-ultrasound-edm2-distributed-learning\nghcr.io/xfetus/fetal-ultrasound-edm2/...\n2e2c049aa527\n33.8 GB\n12.6 GB\n\n\n\n\n\n\n\n\n\nNote\n\n\nLocal and GHCR tags share the same image ID per version; same content, just retagged for the registry.\n\n\n\nView all versions on GHCR -&gt;\n\nNotes go here\nImprove push mechanics\nEnable BuildKit (DOCKER_BUILDKIT=1); better caching and often better layer diffing. Check your upload bandwidth (speedtest-cli or similar); genuinely limited pipes will bottleneck no matter what you do to the image. Consider pushing from a CI runner (e.g., GitHub Actions) with a much better uplink than your local machine, especially since you’re already targeting GHCR — building and pushing to GHCR from a GitHub Actions workflow avoids your local upload bottleneck entirely."
+  },
+  {
     "objectID": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
     "href": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
     "title": "",
