@@ -366,11 +366,13 @@ Speaker notes go here.
 :::: {.columns}
 
 ::: {.column width="48%"}
+SPEED: v0.0.11
 {{< video figures/d1-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original Elapse time** `17'54''`
 :::
 
 ::: {.column width="48%"}
+STRUCTURE: v0.1.41
 {{< video figures/d2-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `09'41''`
 :::
@@ -392,11 +394,13 @@ Notes go here
 :::: {.columns}
 
 ::: {.column width="48%"}
+SPEED: v0.0.11
 {{< video figures/d3-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `00'24''`
 :::
 
 ::: {.column width="48%"}
+STRUCTURE: v0.1.41
 {{< video figures/d4-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `23'06''`
 :::
