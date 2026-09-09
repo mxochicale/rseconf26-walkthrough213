@@ -463,6 +463,39 @@ Consider pushing from a CI runner (e.g., GitHub Actions) with a much better upli
 
 
 <!-- *********************** NEW SLIDE *********************** -->
+## UAI Kubeflow Trainer: Key benefits {style="font-size: 70%;"}
+
+
+* 🚀 Simple, Scalable, and Built for LLM Fine-Tuning
+
+_Effortlessly scale from single-machine training to large, distributed Kubernetes clusters with Kubeflow’s Python APIs and supported Training Runtimes._
+
+* 🔧 Extensible and Portable
+
+_Run Kubeflow Trainer on any cloud or on-premises Kubernetes cluster._
+
+* 💰 Optimized for GPU Efficiency
+
+_Reduce GPU costs through intelligent dataset streaming and model initialization._
+
+* ⚡️ Distributed AI Data Caching (to explore)
+
+_Kubeflow Trainer streams tensors directly to GPU nodes via a distributed cache layer – enabling seamless access to large datasets, minimizing I/O overhead, and cutting GPU costs._
+
+::: {style="font-size: 55%;"}
+Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+:::
+
+
+::: {.notes}
+
+:::
+
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
 ## UAI Kubeflow Trainer: User personas and capabilities {style="font-size: 70%;"}
 
 ::: {#fig-template-section1}
@@ -881,14 +914,21 @@ TALK ABOUT DATA, speed of docker builts here
 <!-- *********************** NEW SLIDE *********************** -->
 ## Next Steps {style="font-size: 90%;"}
 
+
+
 * **Standardise practice**   
 	_drive consistent, reproducible research workflows across teams_
+
 * **Document good infrastructure practice**    
 	_share patterns that support DevOps/MLOps engineers, data scientists, and RSEs_
+
 * **Grow the community**     
 	_use hackathons, workshops, and training sessions to spread adoption and gather feedback_
+
 * **Scale beyond one use case**    
 	_validate the SPEED/STRUCTURE pattern on additional model types and datasets_
+
+* **Efficient access and distribution of container images** by providing daemonset pre-pulling of curated images [link](https://architecture.cncf.io/architectures/cern-scientific-computing/){.cta}
 
 
 ::: {.notes}
