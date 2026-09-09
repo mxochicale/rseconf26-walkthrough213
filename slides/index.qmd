@@ -772,19 +772,35 @@ Jupyter Notebooks:
 <!-- *********************** NEW SLIDE *********************** -->
 ## Unified AI platform {style="font-size: 90%;"}
 
-:::: {.columns}
 
-::: {.column width="48%"}
 Create notebook
-{{< video figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4 >}}
+
+{{< video figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4 width="1100" aspect-ratio="21x9"  >}}
 **Original Elapse time** `2'31''`
+
+
+::: {.notes}
+Notes go here
 :::
 
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Unified AI platform {style="font-size: 90%;"}
+
+:::: {.columns}
 
 ::: {.column width="48%"}
 Run model training
 {{< video figures/uai-run-pipeline-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `20'13''`
+:::
+
+::: {.column width="48%"}
+Trained model 
+{{< video figures/uai-run-pipeline-trained-model-ezgif.com-gif-to-mp4-converter.mp4 >}}
+**Original elapse time** `01'18''`
 :::
 
 ::::
