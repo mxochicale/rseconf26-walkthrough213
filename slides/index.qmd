@@ -810,34 +810,19 @@ Speaker notes go here.
 ## Reproduce this work {style="font-size: 100%;"}
 
 
-:::: {.columns}
-
-::: {.column width="55%"}
-#### Get running in three steps
-
-1. **Clone** the repo, everything here (code, data, this deck) lives in one place
-2. **Build** the environment `Dockerfile` included
-3. **Run** the notebook or pipeline, outputs regenerate the figures in this talk
+1. **Clone** the [GitHub repo: fetal-ultrasound-edm2](https://github.com/xfetus/fetal-ultrasound-edm2), everything lives in one place
 
 ```bash
 git clone https://github.com/xfetus/fetal-ultrasound-edm2.git
 ```
-:::
+	- Source code + tests   
+	- Open datasets   
+	- Reproducible environment   
+	- Example data / demo notebooks   
 
-::: {.column width="45%"}
-::: {.card}
-<span class="card-icon">📦</span>
-What's included:  
-- Source code + tests   
-- Reproducible environment   
-- Example data / demo notebook   
-- This slide deck (Quarto)
-:::
+2. **Build** the environment `Dockerfile` or just **pull** built images
+3. **Run** and prototype the notebook locally or the end-to-end pipeline in Unified AI platform.
 
-[View on GitHub →](https://github.com/xfetus/fetal-ultrasound-edm2){.cta}
-:::
-
-::::
 
 ::: {.notes}
 Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.
