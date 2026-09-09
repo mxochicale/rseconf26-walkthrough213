@@ -699,21 +699,36 @@ Jupyter Notebooks:\
 
 ## Unified AI platform
 
-<div class="columns">
-
-<div class="column" width="48%">
-
 Create notebook
+
 ![](figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4)
 **Original Elapse time** `2'31''`
 
+<div class="notes">
+
+Notes go here
+
 </div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Unified AI platform
+
+<div class="columns">
 
 <div class="column" width="48%">
 
 Run model training
 ![](figures/uai-run-pipeline-ezgif.com-gif-to-mp4-converter.mp4)
 **Original elapse time** `20'13''`
+
+</div>
+
+<div class="column" width="48%">
+
+Trained model
+![](figures/uai-run-pipeline-trained-model-ezgif.com-gif-to-mp4-converter.mp4)
+**Original elapse time** `01'18''`
 
 </div>
 
