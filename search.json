@@ -56,6 +56,13 @@
     "text": "Summary of docker images and GHCR versions\n\n\n\n\n\n\n\n\n\n\n\nVersion\nLocal tag\nGHCR tag\nImage ID\nDisk usage\nContent size\n\n\n\n\nv0.0.11\nfetal-ultrasound-edm2-distributed-learning\nghcr.io/xfetus/fetal-ultrasound-edm2/...\nabafe76a2090\n27 GB\n9.56 GB\n\n\nv0.1.41\nfetal-ultrasound-edm2-distributed-learning\nghcr.io/xfetus/fetal-ultrasound-edm2/...\n2e2c049aa527\n33.8 GB\n12.6 GB\n\n\n\n\n\n\n\n\n\nNote\n\n\nLocal and GHCR tags share the same image ID per version; same content, just retagged for the registry.\n\n\n\nView all versions on GHCR -&gt;\n\nNotes go here\nImprove push mechanics\nEnable BuildKit (DOCKER_BUILDKIT=1); better caching and often better layer diffing. Check your upload bandwidth (speedtest-cli or similar); genuinely limited pipes will bottleneck no matter what you do to the image. Consider pushing from a CI runner (e.g., GitHub Actions) with a much better uplink than your local machine, especially since you’re already targeting GHCR — building and pushing to GHCR from a GitHub Actions workflow avoids your local upload bottleneck entirely."
   },
   {
+    "objectID": "index.html#uai-kubeflow-trainer-key-benefits",
+    "href": "index.html#uai-kubeflow-trainer-key-benefits",
+    "title": "",
+    "section": "UAI Kubeflow Trainer: Key benefits",
+    "text": "UAI Kubeflow Trainer: Key benefits\n\n🚀 Simple, Scalable, and Built for LLM Fine-Tuning\n\nEffortlessly scale from single-machine training to large, distributed Kubernetes clusters with Kubeflow’s Python APIs and supported Training Runtimes.\n\n🔧 Extensible and Portable\n\nRun Kubeflow Trainer on any cloud or on-premises Kubernetes cluster.\n\n💰 Optimized for GPU Efficiency\n\nReduce GPU costs through intelligent dataset streaming and model initialization.\n\n⚡️ Distributed AI Data Caching (to explore)\n\nKubeflow Trainer streams tensors directly to GPU nodes via a distributed cache layer – enabling seamless access to large datasets, minimizing I/O overhead, and cutting GPU costs.\n\nKubeflow Trainer: https://www.kubeflow.org/docs/components/trainer/overview/"
+  },
+  {
     "objectID": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
     "href": "index.html#uai-kubeflow-trainer-user-personas-and-capabilities",
     "title": "",
@@ -102,7 +109,7 @@
     "href": "index.html#next-steps",
     "title": "",
     "section": "Next Steps",
-    "text": "Next Steps\n\nStandardise practice\ndrive consistent, reproducible research workflows across teams\nDocument good infrastructure practice\nshare patterns that support DevOps/MLOps engineers, data scientists, and RSEs\nGrow the community\nuse hackathons, workshops, and training sessions to spread adoption and gather feedback\nScale beyond one use case\nvalidate the SPEED/STRUCTURE pattern on additional model types and datasets\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
+    "text": "Next Steps\n\nStandardise practice\ndrive consistent, reproducible research workflows across teams\nDocument good infrastructure practice\nshare patterns that support DevOps/MLOps engineers, data scientists, and RSEs\nGrow the community\nuse hackathons, workshops, and training sessions to spread adoption and gather feedback\nScale beyond one use case\nvalidate the SPEED/STRUCTURE pattern on additional model types and datasets\nEfficient access and distribution of container images by providing daemonset pre-pulling of curated images link\n\n\nNotes go here\n\nSciortino et al. 2017 in Computers in Biology and Medicine https://doi.org/10.1016/j.compbiomed.2017.01.008 He et al. 2021 in Front. Med. https://doi.org/10.3389/fmed.2021.729978"
   },
   {
     "objectID": "index.html#call-for-action",

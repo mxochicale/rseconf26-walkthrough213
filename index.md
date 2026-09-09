@@ -397,6 +397,42 @@ Actions workflow avoids your local upload bottleneck entirely.
 
 <!-- *********************** NEW SLIDE *********************** -->
 
+## UAI Kubeflow Trainer: Key benefits
+
+- 🚀 Simple, Scalable, and Built for LLM Fine-Tuning
+
+*Effortlessly scale from single-machine training to large, distributed
+Kubernetes clusters with Kubeflow’s Python APIs and supported Training
+Runtimes.*
+
+- 🔧 Extensible and Portable
+
+*Run Kubeflow Trainer on any cloud or on-premises Kubernetes cluster.*
+
+- 💰 Optimized for GPU Efficiency
+
+*Reduce GPU costs through intelligent dataset streaming and model
+initialization.*
+
+- ⚡️ Distributed AI Data Caching (to explore)
+
+*Kubeflow Trainer streams tensors directly to GPU nodes via a
+distributed cache layer – enabling seamless access to large datasets,
+minimizing I/O overhead, and cutting GPU costs.*
+
+<div style="font-size: 55%;">
+
+Kubeflow Trainer:
+<https://www.kubeflow.org/docs/components/trainer/overview/>
+
+</div>
+
+<div class="notes">
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
 ## UAI Kubeflow Trainer: User personas and capabilities
 
 <div id="fig-template-section1">
@@ -809,15 +845,23 @@ Front. Med. <https://doi.org/10.3389/fmed.2021.729978>
 
 - **Standardise practice**\
   *drive consistent, reproducible research workflows across teams*
+
 - **Document good infrastructure practice**\
   *share patterns that support DevOps/MLOps engineers, data scientists,
   and RSEs*
+
 - **Grow the community**\
   *use hackathons, workshops, and training sessions to spread adoption
   and gather feedback*
+
 - **Scale beyond one use case**\
   *validate the SPEED/STRUCTURE pattern on additional model types and
   datasets*
+
+- **Efficient access and distribution of container images** by providing
+  daemonset pre-pulling of curated images <a
+  href="https://architecture.cncf.io/architectures/cern-scientific-computing/"
+  class="cta">link</a>
 
 <div class="notes">
 
