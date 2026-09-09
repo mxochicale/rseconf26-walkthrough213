@@ -297,15 +297,15 @@ Speaker notes go here. {.scrollable}
 
 <div class="column" width="48%">
 
-![](figures/d1-ezgif.com-gif-to-mp4-converter.mp4) **Original Elapse
-time** `17'54''`
+SPEED: v0.0.11 ![](figures/d1-ezgif.com-gif-to-mp4-converter.mp4)
+**Original Elapse time** `17'54''`
 
 </div>
 
 <div class="column" width="48%">
 
-![](figures/d2-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `09'41''`
+STRUCTURE: v0.1.41 ![](figures/d2-ezgif.com-gif-to-mp4-converter.mp4)
+**Original elapse time** `09'41''`
 
 </div>
 
@@ -327,15 +327,15 @@ Notes go here
 
 <div class="column" width="48%">
 
-![](figures/d3-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `00'24''`
+SPEED: v0.0.11 ![](figures/d3-ezgif.com-gif-to-mp4-converter.mp4)
+**Original elapse time** `00'24''`
 
 </div>
 
 <div class="column" width="48%">
 
-![](figures/d4-ezgif.com-gif-to-mp4-converter.mp4) **Original elapse
-time** `23'06''`
+STRUCTURE: v0.1.41 ![](figures/d4-ezgif.com-gif-to-mp4-converter.mp4)
+**Original elapse time** `23'06''`
 
 </div>
 
@@ -656,6 +656,36 @@ Speaker notes go here. {.scrollable}
 Jupyter Notebooks:\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>\
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
+
+</div>
+
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Unified AI platform
+
+<div class="columns">
+
+<div class="column" width="48%">
+
+Create notebook
+![](figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4)
+**Original Elapse time** `2'31''`
+
+</div>
+
+<div class="column" width="48%">
+
+Run model training
+![](figures/uai-run-pipeline-ezgif.com-gif-to-mp4-converter.mp4)
+**Original elapse time** `20'13''`
+
+</div>
+
+</div>
+
+<div class="notes">
+
+Notes go here
 
 </div>
 
