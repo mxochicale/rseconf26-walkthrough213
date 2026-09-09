@@ -736,6 +736,36 @@ Jupyter Notebooks:
 
 
 
+<!-- *********************** NEW SLIDE *********************** -->
+## Unified AI platform {style="font-size: 90%;"}
+
+:::: {.columns}
+
+::: {.column width="48%"}
+Create notebook
+{{< video figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4 >}}
+**Original Elapse time** `2'31''`
+:::
+
+
+::: {.column width="48%"}
+Run model training
+{{< video figures/uai-run-pipeline-ezgif.com-gif-to-mp4-converter.mp4 >}}
+**Original elapse time** `20'13''`
+:::
+
+::::
+
+
+::: {.notes}
+Notes go here
+
+
+:::
+
+
+
+
 
 <!-- ============================================================
      SECTION: Section title 4
