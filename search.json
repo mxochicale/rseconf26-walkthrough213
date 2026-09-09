@@ -88,7 +88,7 @@
     "href": "index.html#reproduce-this-work",
     "title": "",
     "section": "Reproduce this work",
-    "text": "Reproduce this work\n\n\nGet running in three steps\n\nClone the repo, everything here (code, data, this deck) lives in one place\nBuild the environment Dockerfile included\nRun the notebook or pipeline, outputs regenerate the figures in this talk\n\ngit clone https://github.com/xfetus/fetal-ultrasound-edm2.git\n\n\n📦 What’s included:\n- Source code + tests\n- Reproducible environment\n- Example data / demo notebook\n- This slide deck (Quarto)\n\nView on GitHub →\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
+    "text": "Reproduce this work\n\nClone the GitHub repo: fetal-ultrasound-edm2, everything lives in one place\n\ngit clone https://github.com/xfetus/fetal-ultrasound-edm2.git\n- Source code + tests   \n- Open datasets   \n- Reproducible environment   \n- Example data / demo notebooks   \n\nBuild the environment Dockerfile or just pull built images\nRun and prototype the notebook locally or the end-to-end pipeline in Unified AI platform.\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
   },
   {
     "objectID": "index.html#conclusions",
