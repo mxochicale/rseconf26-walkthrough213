@@ -484,10 +484,7 @@ RESOURCES_PER_NODE = {
     "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
 }
 
-GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"
-# VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace && chmod -R 777 /workspace 
-#                    RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
-
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.11"
 
 
 ## Volume mounts
@@ -542,6 +539,7 @@ command = TrainerCommand(
             # Install deps exclude torch/torchvision (already in base image)
             # Use --upgrade to overwrite stale packages from previous runs
             "pip install "
+            "torch==2.9.1 "
             "pandas "
             "accelerate "
             "basicsr "
@@ -608,8 +606,7 @@ RESOURCES_PER_NODE = {
     "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
 }
 
-GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
-
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.41"
 
 ## Mount scratch volume
 
@@ -651,20 +648,19 @@ volume_patch = RuntimePatch(
 )
 
 
-## Trainer command
 command = TrainerCommand(
     command=[
         "torchrun",
         f"--nnodes={NUM_NODES}",
         "train_edm2.py", #path of script in scratch 
-        "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
-        "--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB",
-        "--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23",
-        "--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset",
-        "--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES",
-        "--batch 4",
-        "--preset edm2-img512-s",
-        "--batch-gpu 4",
+        "--outdir", "/scratch-volume/data-fetal-us-edm2/OUTPUT_DIRECTORY",
+        "--data", "/scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB",
+        "--fpus23", "/scratch-volume/data-fetal-us-edm2/FPUS23",
+        "--african", "/scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset",
+        "--fetal-abdomen", "/scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES",
+        "--batch", "4",
+        "--preset", "edm2-img512-s",
+        "--batch-gpu", "4",
     ]
 )
 
