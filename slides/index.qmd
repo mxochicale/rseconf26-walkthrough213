@@ -366,11 +366,13 @@ Speaker notes go here.
 :::: {.columns}
 
 ::: {.column width="48%"}
+SPEED: v0.0.11
 {{< video figures/d1-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original Elapse time** `17'54''`
 :::
 
 ::: {.column width="48%"}
+STRUCTURE: v0.1.41
 {{< video figures/d2-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `09'41''`
 :::
@@ -392,11 +394,13 @@ Notes go here
 :::: {.columns}
 
 ::: {.column width="48%"}
+SPEED: v0.0.11
 {{< video figures/d3-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `00'24''`
 :::
 
 ::: {.column width="48%"}
+STRUCTURE: v0.1.41
 {{< video figures/d4-ezgif.com-gif-to-mp4-converter.mp4 >}}
 **Original elapse time** `23'06''`
 :::
@@ -459,6 +463,39 @@ Consider pushing from a CI runner (e.g., GitHub Actions) with a much better upli
 
 
 <!-- *********************** NEW SLIDE *********************** -->
+## UAI Kubeflow Trainer: Key benefits {style="font-size: 70%;"}
+
+
+* 🚀 Simple, Scalable, and Built for LLM Fine-Tuning
+
+_Effortlessly scale from single-machine training to large, distributed Kubernetes clusters with Kubeflow’s Python APIs and supported Training Runtimes._
+
+* 🔧 Extensible and Portable
+
+_Run Kubeflow Trainer on any cloud or on-premises Kubernetes cluster._
+
+* 💰 Optimized for GPU Efficiency
+
+_Reduce GPU costs through intelligent dataset streaming and model initialization._
+
+* ⚡️ Distributed AI Data Caching (to explore)
+
+_Kubeflow Trainer streams tensors directly to GPU nodes via a distributed cache layer – enabling seamless access to large datasets, minimizing I/O overhead, and cutting GPU costs._
+
+::: {style="font-size: 55%;"}
+Kubeflow Trainer: <https://www.kubeflow.org/docs/components/trainer/overview/>
+:::
+
+
+::: {.notes}
+
+:::
+
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
 ## UAI Kubeflow Trainer: User personas and capabilities {style="font-size: 70%;"}
 
 ::: {#fig-template-section1}
@@ -513,10 +550,7 @@ RESOURCES_PER_NODE = {
     "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
 }
 
-GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.1"
-# VERSION_ID=v0.0.1 #FROM docker.io/pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel / RUN mkdir -p /workspace && chmod -R 777 /workspace 
-#                    RUN mkdir -p /.cache/pip /.local && chmod -R 777 /.cache/pip /.local
-
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.0.11"
 
 
 ## Volume mounts
@@ -571,6 +605,7 @@ command = TrainerCommand(
             # Install deps exclude torch/torchvision (already in base image)
             # Use --upgrade to overwrite stale packages from previous runs
             "pip install "
+            "torch==2.9.1 "
             "pandas "
             "accelerate "
             "basicsr "
@@ -634,8 +669,7 @@ RESOURCES_PER_NODE = {
     "nvidia.com/gpu": 1,  # GPUs per node (the number will depend on the available resources)
 }
 
-GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.1"
-
+GITHUB_CONTAINER_REGISTRY = "ghcr.io/xfetus/fetal-ultrasound-edm2/fetal-ultrasound-edm2-distributed-learning:v0.1.41"
 
 ## Mount scratch volume
 
@@ -677,20 +711,19 @@ volume_patch = RuntimePatch(
 )
 
 
-## Trainer command
 command = TrainerCommand(
     command=[
         "torchrun",
         f"--nnodes={NUM_NODES}",
         "train_edm2.py", #path of script in scratch 
-        "--outdir /scratch-volume/FETAL_PLANES_DB/OUTPUT_DIRECTORY", # pragma: allowlist secret
-        "--data /scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB",
-        "--fpus23 /scratch-volume/data-fetal-us-edm2/FPUS23",
-        "--african /scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset",
-        "--fetal-abdomen /scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES",
-        "--batch 4",
-        "--preset edm2-img512-s",
-        "--batch-gpu 4",
+        "--outdir", "/scratch-volume/data-fetal-us-edm2/OUTPUT_DIRECTORY",
+        "--data", "/scratch-volume/data-fetal-us-edm2/FETAL_PLANES_DB",
+        "--fpus23", "/scratch-volume/data-fetal-us-edm2/FPUS23",
+        "--african", "/scratch-volume/data-fetal-us-edm2/AfricanDataset/Zenodo_dataset",
+        "--fetal-abdomen", "/scratch-volume/data-fetal-us-edm2/FetalAbdominalSegmentation/IMAGES",
+        "--batch", "4",
+        "--preset", "edm2-img512-s",
+        "--batch-gpu", "4",
     ]
 )
 
@@ -725,6 +758,55 @@ Speaker notes go here.
 Jupyter Notebooks:    
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-ghcr.ipynb>       
 <https://github.com/xfetus/fetal-ultrasound-edm2/blob/main/unified-ai/training-edm2-model-scratch-volume.ipynb>
+
+
+:::
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Unified AI platform {style="font-size: 90%;"}
+
+
+Create notebook
+
+{{< video figures/uai-create-notebook-ezgif.com-gif-to-mp4-converter.mp4 width="1100" aspect-ratio="21x9"  >}}
+**Original Elapse time** `2'31''`
+
+
+::: {.notes}
+Notes go here
+:::
+
+
+
+
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Unified AI platform {style="font-size: 90%;"}
+
+:::: {.columns}
+
+::: {.column width="48%"}
+Run model training
+{{< video figures/uai-run-pipeline-ezgif.com-gif-to-mp4-converter.mp4 >}}
+**Original elapse time** `20'13''`
+:::
+
+::: {.column width="48%"}
+Trained model 
+{{< video figures/uai-run-pipeline-trained-model-ezgif.com-gif-to-mp4-converter.mp4 >}}
+**Original elapse time** `01'18''`
+:::
+
+::::
+
+
+::: {.notes}
+Notes go here
 
 
 :::
@@ -776,38 +858,39 @@ Speaker notes go here.
 ## Reproduce this work {style="font-size: 100%;"}
 
 
-:::: {.columns}
-
-::: {.column width="55%"}
-#### Get running in three steps
-
-1. **Clone** the repo, everything here (code, data, this deck) lives in one place
-2. **Build** the environment `Dockerfile` included
-3. **Run** the notebook or pipeline, outputs regenerate the figures in this talk
+1. **Clone** the [GitHub repo: fetal-ultrasound-edm2](https://github.com/xfetus/fetal-ultrasound-edm2), everything lives in one place
 
 ```bash
 git clone https://github.com/xfetus/fetal-ultrasound-edm2.git
 ```
-:::
+	- Source code + tests   
+	- Open datasets   
+	- Reproducible environment   
+	- Example data / demo notebooks   
 
-::: {.column width="45%"}
-::: {.card}
-<span class="card-icon">📦</span>
-What's included:  
-- Source code + tests   
-- Reproducible environment   
-- Example data / demo notebook   
-- This slide deck (Quarto)
-:::
+2. **Build** the environment `Dockerfile` or just **pull** built images
+3. **Run** and prototype the notebook locally or the end-to-end pipeline in Unified AI platform.
 
-[View on GitHub →](https://github.com/xfetus/fetal-ultrasound-edm2){.cta}
-:::
-
-::::
 
 ::: {.notes}
 Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.
 :::
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Kubeflow examples in Unified AI platform {style="font-size: 90%;"}
+
+<https://github.com/UCL-ARC/kubeflow-examples>
+
+{{< video figures/uai-docs-kubeflow-examples-ezgif.com-gif-to-mp4-converter.mp4 width="1200" aspect-ratio="21x9"  >}}
+**Original Elapse time** `2'05''`
+
+
+::: {.notes}
+Notes go here
+:::
+
 
 
 
@@ -862,14 +945,21 @@ TALK ABOUT DATA, speed of docker builts here
 <!-- *********************** NEW SLIDE *********************** -->
 ## Next Steps {style="font-size: 90%;"}
 
+
+
 * **Standardise practice**   
 	_drive consistent, reproducible research workflows across teams_
+
 * **Document good infrastructure practice**    
 	_share patterns that support DevOps/MLOps engineers, data scientists, and RSEs_
+
 * **Grow the community**     
 	_use hackathons, workshops, and training sessions to spread adoption and gather feedback_
+
 * **Scale beyond one use case**    
 	_validate the SPEED/STRUCTURE pattern on additional model types and datasets_
+
+* **Efficient access and distribution of container images** by providing daemonset pre-pulling of curated images [link](https://architecture.cncf.io/architectures/cern-scientific-computing/){.cta}
 
 
 ::: {.notes}
