@@ -105,6 +105,13 @@
     "text": "Reproduce this work\n\nClone the GitHub repo: fetal-ultrasound-edm2, everything lives in one place\n\ngit clone https://github.com/xfetus/fetal-ultrasound-edm2.git\n- Source code + tests   \n- Open datasets   \n- Reproducible environment   \n- Example data / demo notebooks   \n\nBuild the environment Dockerfile or just pull built images\nRun and prototype the notebook locally or the end-to-end pipeline in Unified AI platform.\n\n\nEmphasise licensing and how to cite — point people to the CITATION.cff if the repo has one."
   },
   {
+    "objectID": "index.html#kubeflow-examples-in-unified-ai-platform",
+    "href": "index.html#kubeflow-examples-in-unified-ai-platform",
+    "title": "",
+    "section": "Kubeflow examples in Unified AI platform",
+    "text": "Kubeflow examples in Unified AI platform\nhttps://github.com/UCL-ARC/kubeflow-examples\n Original Elapse time 2'05''\n\nNotes go here"
+  },
+  {
     "objectID": "index.html#conclusions",
     "href": "index.html#conclusions",
     "title": "",

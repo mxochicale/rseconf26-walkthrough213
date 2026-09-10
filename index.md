@@ -810,6 +810,21 @@ if the repo has one.
 
 </div>
 
+<!-- *********************** NEW SLIDE *********************** -->
+
+## Kubeflow examples in Unified AI platform
+
+<https://github.com/UCL-ARC/kubeflow-examples>
+
+![](figures/uai-docs-kubeflow-examples-ezgif.com-gif-to-mp4-converter.mp4)
+**Original Elapse time** `2'05''`
+
+<div class="notes">
+
+Notes go here
+
+</div>
+
 <!-- ============================================================
      SECTION: Section title 4
      ============================================================ -->
