@@ -786,6 +786,9 @@ Notes go here
 
 
 
+
+
+
 <!-- *********************** NEW SLIDE *********************** -->
 ## Unified AI platform {style="font-size: 90%;"}
 
@@ -876,6 +879,22 @@ git clone https://github.com/xfetus/fetal-ultrasound-edm2.git
 ::: {.notes}
 Emphasise licensing and how to cite — point people to the CITATION.cff if the repo has one.
 :::
+
+
+
+<!-- *********************** NEW SLIDE *********************** -->
+## Kubeflow examples in Unified AI platform {style="font-size: 90%;"}
+
+<https://github.com/UCL-ARC/kubeflow-examples>
+
+{{< video figures/uai-docs-kubeflow-examples-ezgif.com-gif-to-mp4-converter.mp4 width="1200" aspect-ratio="21x9"  >}}
+**Original Elapse time** `2'05''`
+
+
+::: {.notes}
+Notes go here
+:::
+
 
 
 
